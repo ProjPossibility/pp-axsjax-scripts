@@ -1,0 +1,63 @@
+This email is intended only for those working on AxsJax (Prashanth and
+myself).
+
+
+Notes from conversation with Charles Chen on AxsJax:
+
+Wikipedia--we do two primary things:
+1. Search for article
+2. Read that article
+
+We really want the user to have consistent look, feel, and behavior to
+the page as has been done for other Google applications already (for
+example, try using google search with AxsJax):
+
+'/' = primary search blank
+'?' = list all the current commands
+p = previous item
+n = next item
+g = guided search
+...and more.
+
+Notice one of two things happens when searching on Wikipedia:
+1) The search results appears (we can use n/p to go through search results)
+2) Article returns -- go to article reading mode
+
+Idea: Create an ordered array of paragraphs, and headings, etc which we
+can traverse, perhaps using guided mode (test this on google search, and
+hit 'g')
+
+When a paragraph has focus, have a key that tells you: "This paragraph
+has x links and x citations.  Also have a key that allows you to cycle
+through each link in the paragraph.
+
+Paragraphs should be read through without mentioning each link in
+them--most of the links are trivial and redundant and annoying for the
+screen reader to read.
+
+Advanced features to come back to AFTER this is all over: If we want to
+discuss, edit, examine the history of the page (hasn't given it too much
+thought at this point) --- this is not within the scope of the competition
+
+MySpace: A little more open ended.  Make it accessible in the same
+"style" as other AxsJax applications.
+
+Features
+1) Kill switch on flash players by removing it from the page entirely.
+Global block flash (remove any flash from the page) -- Kind of like an
+ad blocking greasemonkey script
+2) Quick jump to comment area, blog area, different areas of the profile
+3) Cycle through of all the friends
+4) Quick cycle through comments
+5) Editing comments
+
+
+Other sites:
+* Javascript games (use jawbreaker as an example)
+ * Sudoku
+ * Multiplayer Chess:
+http://www.developertutorials.com/dtscripts/view.php?id=4374&vt=0
+ * Crossword puzzles
+ * etc.
+* Livejournal
+* phpBB
