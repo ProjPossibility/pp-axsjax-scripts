@@ -56,12 +56,14 @@ function pickScript(){
     theScript.src = baseURL + 'jawbreaker/axsEnableJawbreaker.js';
     shouldInsertScripts = true;
   }
-else if (currentURL.indexOf('http://en.wikipedia.org')
+
+else if (currentURL.indexOf('http://en.wikipedia.org')=== 0)
 {
-alert('i m called');
-theScript.src = baseURL + 'jawbreaker/axsEnableJawbreaker.js';
-    shouldInsertScripts = true;
+	alert('i m called');
+	theScript.src = baseURL + 'websearch/axsEnableWebSearch.js';
+    	shouldInsertScripts = true;
 }
+
   if (shouldInsertScripts){
     document.getElementsByTagName('head')[0].appendChild(theLib);
     document.getElementsByTagName('head')[0].appendChild(theScript);
