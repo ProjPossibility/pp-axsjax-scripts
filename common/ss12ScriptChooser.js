@@ -60,8 +60,8 @@ function pickScript(){
 else if (currentURL.indexOf('http://en.wikipedia.org')=== 0)
 {
 	alert('i m called');
-	theScript.src = baseURL + 'websearch/axsEnableWebSearch.js';
-    	shouldInsertScripts = true;
+	//theScript.src = baseURL + 'websearch/axsEnableWebSearch.js';
+    	shouldInsertScripts = false;
 }
 
   if (shouldInsertScripts){
