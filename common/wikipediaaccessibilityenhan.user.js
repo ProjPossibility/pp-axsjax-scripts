@@ -13,10 +13,10 @@
 // limitations under the License.
 
 // ==UserScript==
-// @name          Google Accessibility Enhancements
+// @name          Wikipedia Accessibility Enhancements
 // @namespace     http://www.google.com/accessible/
 // @description   Uses WAI-ARIA to enhance accessibility for Google
-// @include       http://www.google.com/*
+// @include       http://www.wikipedia.com/*
 // ==/UserScript==
 
 function loadScript(){
