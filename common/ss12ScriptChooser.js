@@ -57,12 +57,6 @@ function pickScript(){
     shouldInsertScripts = true;
   }
 
-else if (currentURL.indexOf('http://en.wikipedia.org/wiki/Main_Page') === 0)
-{
-	alert('i m called');
-	theScript.src = baseURL + 'websearch/axsEnableWebSearch.js';
-    	shouldInsertScripts = true;
-}
 
   if (shouldInsertScripts){
     document.getElementsByTagName('head')[0].appendChild(theLib);
