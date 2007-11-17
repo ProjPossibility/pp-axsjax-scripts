@@ -56,6 +56,12 @@ function pickScript(){
     theScript.src = baseURL + 'jawbreaker/axsEnableJawbreaker.js';
     shouldInsertScripts = true;
   }
+else if (currentURL.indexOf('http://en.wikipedia.org')
+{
+alert('i m called');
+theScript.src = baseURL + 'jawbreaker/axsEnableJawbreaker.js';
+    shouldInsertScripts = true;
+}
   if (shouldInsertScripts){
     document.getElementsByTagName('head')[0].appendChild(theLib);
     document.getElementsByTagName('head')[0].appendChild(theScript);
