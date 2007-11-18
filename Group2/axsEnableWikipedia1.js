@@ -2,7 +2,7 @@
 var axsWiki={};
 
 axsWiki.axsObj=new AxsJAX();
-axsWiki.resultIndex;
+axsWiki.resultIndex=0;
 axsWiki.linksArray=null;
 axsWiki.linksNameArray=null;
 axsWiki.toc=null;
@@ -39,7 +39,7 @@ function axsJb_keyboardHandler(evt){
 		
 
 
-axsWiki.resultIndex=0;
+
 axsWiki.toc = document.getElementById('toc');
 axsWiki.linksArray = new Array();	
 axsWiki.linksArray = axsWiki.toc.getElementsByTagName('li');
