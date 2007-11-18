@@ -52,10 +52,10 @@ for(var i=1;i<temp.length;i++)
 	temp_span_elements = temp[i].getElementsByTagName('span');
 	
 	alert(temp_span_elements.length);
+	alert(temp_span_elements[0].nodeValue);
 	alert(temp_span_elements[1].nodeValue);
-	alert(temp_span_elements[3].nodeValue);
-	axsWiki.countArray[toc_count]=temp_span_elements[1].nodeValue;
-	axsWiki.nameArray[toc_count++]=temp[i].childNodes[3].childNodes[0].nodeValue;
+	/*axsWiki.countArray[toc_count]=temp_span_elements[1].nodeValue;
+	axsWiki.nameArray[toc_count++]=temp[i].childNodes[3].childNodes[0].nodeValue;*/
 }
 document.addEventListener('keypress', axsJb_keyboardHandler, true);
 }
