@@ -49,7 +49,7 @@ axsLangWiki.init = function() {
       var ref = node[0].href;
       axsLangWiki.addresses.push(ref);
   }
-  document.addEventListener('keypress', axsWiki.keyboardHandler, true);
+  document.addEventListener('keypress', axsLangWiki.keyboardHandler, true);
 };
 
 axsLangWiki.init();
