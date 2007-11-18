@@ -19,12 +19,12 @@ function axsJb_keyboardHandler(evt){
 		{	axsWiki.resultIndex--;
 		}
 		else
-		{	axsWiki.resultIndex=axsWiki.linksArray.length-1;
+		{	axsWiki.resultIndex=axsWiki.nodeArray.length-1;
 		}
 	}
 	else if(evt.keyCode == 40)
 	{
-		if(axsWiki.resultIndex < axsWiki.linksArray.length)
+		if(axsWiki.resultIndex < axsWiki.nodeArray.length)
 		{	axsWiki.resultIndex++;
 		}
 		else
