@@ -34,7 +34,7 @@ function axsJb_keyboardHandler(evt){
 		{	axsWiki.resultIndex=0;
 		}
 	}
-	axsWiki.axsObj.goTo(axsWiki.nodeArray[axsWiki.resultIndex]);
+	axsWiki.axsObj.speakNode(axsWiki.nodeArray[axsWiki.resultIndex]);
 	//alert(axsWiki.countArray[axsWiki.resultIndex]+' '+axsWiki.nameArray[axsWiki.resultIndex]);
 	//alert(toSpeak);
 	
