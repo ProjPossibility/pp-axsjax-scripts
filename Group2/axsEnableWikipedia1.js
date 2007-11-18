@@ -58,7 +58,8 @@ axsWiki.init = function(){
 		axsWiki.nameArray[toc_count++]=temp_span_elements[1].firstChild.nodeValue;
 	
 	}
-	document.addEventListener('keypress', axsJb_keyboardHandler, true);
 }
 
-//axsWiki.init();
+axsWiki.init();
+
+	document.addEventListener('keypress', axsJb_keyboardHandler, true);
