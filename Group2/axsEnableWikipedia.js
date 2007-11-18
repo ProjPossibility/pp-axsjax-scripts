@@ -68,6 +68,6 @@ axsReader.findFeedResults = function(){
 };
 
 
-//document.addEventListener('keypress', axsJb_keyboardHandler, true);
-   document.addEventListener('keypress', axsReader.domInsertionHandler, true);
+document.addEventListener('keypress', axsJb_keyboardHandler, true);
+//   document.addEventListener('keypress', axsReader.domInsertionHandler, true);
 //axsReader.init();
