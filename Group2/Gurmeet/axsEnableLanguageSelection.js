@@ -35,6 +35,7 @@ axsLangWiki.keyboardHandler = function(evt) {
 
 axsLangWiki.readParagraphNumber = function(number) {
 //    alert(axsLangWiki.Paras[number].textContent);
+    
     axsLangWiki.axsObj.SpeakText(axsLangWiki.languages[number]);
 //    axsObj.speakText(axsLangWiki.Paras[number].textContent);
 };
