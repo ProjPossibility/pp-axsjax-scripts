@@ -56,6 +56,7 @@ axsSd.speakRow = function(){
     speechString = speechString + axsSd.getCellValue(axsSd.row,col);
   }
   speechString = speechString + axsSd.getCellValue(axsSd.row,axsSd.MAXCOL);
+  alert("Row "+axsSd.row+" "+speechString);
   axsSd.axsJaxObj.speakThroughPixel(speechString);
 };
 
@@ -65,6 +66,7 @@ axsSd.speakCol = function(){
     speechString = speechString + axsSd.getCellValue(row,axsSd.col);
   }
   speechString = speechString + axsSd.getCellValue(axsSd.MAXROW,axsSd.col);
+  alert("Col "+axsSd.col+" "+speechString);
   axsSd.axsJaxObj.speakThroughPixel(speechString);
 };
 
