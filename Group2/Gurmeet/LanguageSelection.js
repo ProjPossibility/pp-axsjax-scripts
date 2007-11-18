@@ -49,6 +49,7 @@ axsLangWiki.init = function() {
       axsLangWiki.languages.push(node);
       var ref = node.getAttribute('href');
       axsLangWiki.addresses.push(ref);
+      alert(axsLangWiki.languages[i]+"  "+axsLangWiki.addresses[i]);
   }
 };
 
