@@ -45,7 +45,7 @@ function init() {
   Paras = document.getElementsByTagName("p");
   maxParas = Paras.length;
   currentPara = -1;
-  currentState = READING_PARAGRAPH;
+  currentState = READING_PARAGRAPHS;
 }
 
 init();
