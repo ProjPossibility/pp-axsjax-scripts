@@ -5,6 +5,7 @@ axsWiki.axsObj=new AxsJAX();
 axsWiki.resultIndex=0;
 axsWiki.nodeArray=null;
 axsWiki.toc=null;
+axsWiki.currentLink;
 
 
 
@@ -19,7 +20,12 @@ function axsJb_keyboardHandler(evt){
 		{	axsWiki.resultIndex=axsWiki.nodeArray.length-1;
 		}
 		if(axsWiki.nodeArray[axsWiki.resultIndex].firstChild.nodeValue!='hide');
-			axsWiki.axsObj.goTo(axsWiki.nodeArray[axsWiki.resultIndex]);
+		{	
+			var currentResult = axsWiki.nodeArray[axsWiki.resultsIndex];
+			axsWiki.currentLink = currentResult.href;
+			axsWiki.axsObj.goTo(currentResult);
+			//axsWiki.axsObj.goTo(axsWiki.nodeArray[axsWiki.resultIndex]);
+		}
 	}
 	else if(evt.keyCode == 40)
 	{
@@ -30,7 +36,15 @@ function axsJb_keyboardHandler(evt){
 		{	axsWiki.resultIndex=1;
 		}
 		if(axsWiki.nodeArray[axsWiki.resultIndex].firstChild.nodeValue!='hide');
-			axsWiki.axsObj.goTo(axsWiki.nodeArray[axsWiki.resultIndex]);
+		{
+			var currentResult = axsWiki.nodeArray[axsWiki.resultsIndex];
+			axsWiki.currentLink = currentResult.href;
+			axsWiki.axsObj.goTo(currentResult);
+			//axsWiki.axsObj.goTo(axsWiki.nodeArray[axsWiki.resultIndex]);
+		}
+	}
+	else if(evt.keyCode==13)
+	{	document.location = axsWiki.currentLink;
 	}
 	
 		
