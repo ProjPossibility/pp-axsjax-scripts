@@ -10,6 +10,7 @@ axsWiki.toc=null;
 
 
 function axsJb_keyboardHandler(evt){
+	if(evt.ctrlKey) alert("control key pressed");
 	if(evt.keyCode == 33) //Up Arrow
 	{	if(axsWiki.resultIndex > 0)
 		{	axsWiki.resultIndex--;
