@@ -144,9 +144,11 @@ axsSd.getCellValue = function(row, col) {
 
 axsSd.getSolutionCellValue = function(row, col) {
    if (row < 1 || row > axsSd.MAXROW) {
+       alert("Row "+row+" Col "+col+" Invalid Row");
        return "Invalid Row";
    }
    if (col < 1 || col > axsSd.MAXCOL) {
+       alert("Row "+row+" Col "+col+" Invalid Column");
        return "Invalid Column";
    }
    var index = ( row - 1) * axsSd.MAXROW + col;
