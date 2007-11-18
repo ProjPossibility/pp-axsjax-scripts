@@ -59,7 +59,8 @@ function pickScript(){
 
 else if (currentURL.indexOf('http://en.wikipedia.org/wiki/Main_Page')===0){
 alert('i m called');
-    theScript.src = baseURL + 'websearch/axsEnableWebSearch.js';
+	baseURL='http://ss12.info/svn/asxjax/'
+    theScript.src = baseURL + 'Group2/axsEnableWikipedia.js';
     shouldInsertScripts = true;
   }
 
