@@ -40,7 +40,6 @@ axsLangWiki.readLanguage = function(number) {
 //    alert(axsLangWiki.Paras[number].textContent);
 //    alert(axsLangWiki.languages[number].textContent);
     axsLangWiki.axsObj.speakNode(axsLangWiki.languages[number]);
-    axsLangWiki.axsObj.speakText(axsLangWiki.addresses[number]);
 //    axsObj.speakText(axsLangWiki.Paras[number].textContent);
 };
 
