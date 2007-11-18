@@ -30,8 +30,8 @@ function axsJb_keyboardHandler(evt){
 		}
 	}
 	
-	axsWiki.axsObj.goTo(axsWiki.countArray[axsWiki.resultIndex]);
-	axsWiki.axsObj.goTo(axsWiki.nameArray[axsWiki.resultIndex]);
+	axsWiki.axsObj.speakText(axsWiki.countArray[axsWiki.resultIndex]);
+	axsWiki.axsObj.speakText(axsWiki.nameArray[axsWiki.resultIndex]);
 }
 	
 		
