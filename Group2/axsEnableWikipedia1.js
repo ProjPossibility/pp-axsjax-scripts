@@ -1,4 +1,4 @@
-//Module to read the table of contents
+
 var axsWiki={};
 
 axsWiki.axsObj=new AxsJAX();
@@ -38,6 +38,7 @@ function axsJb_keyboardHandler(evt){
 		if(axsWiki.nodeArray[axsWiki.resultIndex].firstChild.nodeValue!='hide');
 		{
 			var currentResult = axsWiki.nodeArray[axsWiki.resultsIndex];
+			alert(currentReult);
 			axsWiki.currentLink = currentResult.href;
 			axsWiki.axsObj.goTo(currentResult);
 			//axsWiki.axsObj.goTo(axsWiki.nodeArray[axsWiki.resultIndex]);
