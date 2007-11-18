@@ -9,7 +9,7 @@ axsWiki.linksArray=null;
 
 function axsJb_keyboardHandler(evt){
 //  axsJb_axsJaxObj.speakNode('Hello World');
-var toc = document.getElementById('toc');
+var toc = document.getElementsById('toc');
 
 	/*var td = document.getElementsByTagName('td');
 	//alert(td.length);
@@ -20,7 +20,7 @@ var toc = document.getElementById('toc');
 		alert(tocContents[i].firstChild.getAttribute('href')+'\t'+tocContents[i].firstChild.childNodes[3].childNodes[0].nodeValue);
 	}*/
 axsWiki.linksArray = new Array();	
-axsWiki.linksArray = toc.getElementByTagName('li');
+axsWiki.linksArray = toc[0].getElementByTagName('li');
 for(var i = 0;i<axsWiki.linksArray.length;i++)
 {		
 alert(i);
