@@ -74,8 +74,7 @@ function toc_keypress(evt)
 		{	axsWiki.resultIndex=1;
 		}
 		if(axsWiki.resultIndex!=0)
-		{	if (axsWiki.resultIndex == axsWiki.nodeArray.length)
-					alert(axsWiki.resultIndex);
+		{	
 			var currentResult = axsWiki.nodeArray[axsWiki.resultIndex];
 			axsWiki.currentLink = currentResult.href;
 			axsWiki.axsObj.goTo(currentResult);
@@ -86,8 +85,10 @@ function toc_keypress(evt)
 	{	
 		document.location = axsWiki.currentLink;
 		axsWiki.currentState = READING_PARAGRAPHS;
-		alert(axsWiki.currentLink);
-		paragraphReader.readParagraphClass(axsWiki.currentLink);		
+		//alert(axsWiki.currentLink);
+		var str=substr(axsWiki.currentLink.indexOf("#",0),axsWiki.currentLink.length);
+		alert(str);
+		paragraphReader.readParagraphClass(str);		
 	}
 
 }
