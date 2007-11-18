@@ -2,8 +2,6 @@
 //http://www.minijuegosgratis.com/juegos/jawbreaker/jawbreaker.htm
 
 // create namespace
-var axsReader = {};
-
 var axsJb_row = 0;
 var axsJb_col = 0;
 var axsJb_MAXROW = 11;
@@ -11,11 +9,9 @@ var axsJb_MAXCOL = 10;
 var axsJb_axsJaxObj = new AxsJAX();
 axsReader.axsJAXObj = null;
 
-axsReader.tagSelectorTopDivId = null;
-axsReader.feedResultsArray = null;
-axsReader.feedBundlesArray = null;
-axsReader.RESULTS_LOADED_STRING = 'Results loaded.';
-axsReader.NO_RESULTS_STRING = 'Your search did not match any feeds. ' +
+feedResultsArray = null;
+RESULTS_LOADED_STRING = 'Results loaded.';
+NO_RESULTS_STRING = 'Your search did not match any feeds. ' +
     'Please make sure all words are spelled correctly, ' +
     'or try different keywords, or try more general keywords. ';
 
@@ -24,6 +20,19 @@ axsReader.NO_RESULTS_STRING = 'Your search did not match any feeds. ' +
  */
 function axsJb_keyboardHandler(evt){
   axsJb_axsJaxObj.speakThroughPixel("Hello World");
+  feedResultsArray = new Array();
+  var inputArray = event.target.getElementsByTagName('p');
+  for (var i = 0, result; result = divArray[i]; i++) {
+    if (result.className == 'row'){
+      feedResultsArray.push(result);
+    }
+  }
+    if (feedResultsArray.length > 0){
+     axsJb_axsJaxObj.speakText(RESULTS_LOADED_STRING);
+    } else {
+      axsJb_axsJaxObj.speakText(NO_RESULTS_STRING);
+    }
+
 }
 
 /**
@@ -68,6 +77,6 @@ axsReader.findFeedResults = function(){
 };
 
 
-//document.addEventListener('keypress', axsJb_keyboardHandler, true);
-axsReader.init();
+document.addEventListener('keypress', axsJb_keyboardHandler, true);
+//axsReader.init();
 //document.addEventListener('keypress', axsReader.domInsertionHandler, true);
