@@ -19,7 +19,7 @@ axsWiki.keyboardHandler = function(evt) {
 	if (evt.charCode == 110) {  // n
          if (axsWiki.currentPara < axsWiki.maxParas - 1) {
             axsWiki.currentPara++;
-            readParagraphNumber(axsWiki.currentPara);
+            axsWiki.readParagraphNumber(axsWiki.currentPara);
          } else if (axsWiki.currentPara == axsWiki.maxParas - 1) {
             axsWiki.currentPara = 0;
             axsWiki.readParagraphNumber(axsWiki.currentPara);
@@ -28,7 +28,7 @@ axsWiki.keyboardHandler = function(evt) {
       if (evt.charCode == 112) {  // p
          if (axsWiki.currentPara > 0) {
             axsWiki.currentPara--;
-            axsWiki.readParagraph(axsWiki.currentPara);
+            axsWiki.readParagraphNumber(axsWiki.currentPara);
          } else if (axsWiki.currentPara == 0) {
             axsWiki.currentPara = axsWiki.maxParas - 1;
             axsWiki.readParagraphNumber(axsWikicurrentPara);
