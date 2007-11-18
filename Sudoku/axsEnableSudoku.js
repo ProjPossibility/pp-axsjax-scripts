@@ -153,7 +153,7 @@ axsSd.getSolutionCellValue = function(row, col) {
    }
    var index = ( row - 1) * axsSd.MAXROW + col;
    var value = axsSd.solution.substring(index-1, index);
-   alert("Row "+row+" Col "+col+" col "+value);
+   alert("Row "+row+" Col "+col+" "+value);
    return value;
 }
 
