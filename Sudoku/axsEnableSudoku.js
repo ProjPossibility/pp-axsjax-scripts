@@ -52,18 +52,18 @@ function axsJb_sayStats(){
 axsSd.speakRow = function(){
   var speechString = "Row " +  axsSd.row + ": ";
   for (var col = 1; col < axsSd.MAXCOL; col++){
-    speechString = speechString + axsSd.getCurrentCellValue(axsJb_row,col));
+    speechString = speechString + axsSd.getCurrentCellValue(axsJb_row,col);
   }
-  speechString = speechString + axsSd.getCurrentCellValue(axsJb_row,axsJb_MAXCOL));
+  speechString = speechString + axsSd.getCurrentCellValue(axsJb_row,axsJb_MAXCOL);
   axsSd.axsJaxObj.speakThroughPixel(speechString);
 };
 
 axsSd.speakCol = function(){
   var speechString = "Col " +  axsSd.col + ": ";
   for (var row = 1; row < axsSd.MAXROW; row++){
-    speechString = speechString + axsSd.getCurrentCellValue(row,axsSd.col));
+    speechString = speechString + axsSd.getCurrentCellValue(row,axsSd.col);
   }
-  speechString = speechString + axsSd.getCurrentCellValue(axsSd.MAXROW,axsSd.col));
+  speechString = speechString + axsSd.getCurrentCellValue(axsSd.MAXROW,axsSd.col);
   axsSd.axsJaxObj.speakThroughPixel(speechString);
 };
 
