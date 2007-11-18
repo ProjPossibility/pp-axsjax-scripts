@@ -45,6 +45,7 @@ axsReader.domInsertionHandler = function(event){
     axsReader.inputFocused = false; //There is no blur event when the
                                     //search results get loaded
     axsReader.findFeedResults();
+	  axsJb_axsJaxObj.speakThroughPixel("Hello World");
     if (axsReader.feedResultsArray.length > 0){
       axsReader.axsJAXObj.speakText(axsReader.RESULTS_LOADED_STRING);
     } else {
