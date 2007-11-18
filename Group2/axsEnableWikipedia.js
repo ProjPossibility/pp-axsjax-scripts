@@ -35,12 +35,12 @@ axsReader.init = function(){
   axsReader.axsJAXObj = new AxsJAX();
  
 //   window.addEventListener('DOMNodeInserted', axsReader.domInsertionHandler, true);
- // window.addEventListener('keypress', axsReader.extraKeyboardNavHandler, true);
+   window.addEventListener('keypress', axsReader.domInsertionHandler, true);
  // window.addEventListener('focus', axsReader.focusHandler, true);
  // window.addEventListener('blur', axsReader.blurHandler, true);
 };
 
- function axsReader.domInsertionHandler(event){
+axsReader.domInsertionHandler  function(event){
  // if (event.target.firstChild){
     axsReader.inputFocused = false; //There is no blur event when the
                                     //search results get loaded
@@ -70,4 +70,4 @@ axsReader.findFeedResults = function(){
 
 //document.addEventListener('keypress', axsJb_keyboardHandler, true);
 axsReader.init();
-document.addEventListener('keypress', axsReader.domInsertionHandler, true);
+//document.addEventListener('keypress', axsReader.domInsertionHandler, true);
