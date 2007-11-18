@@ -109,7 +109,7 @@ function axsJb_keyboardHandler(evt){
 paragraphReader.readParagraphClass = function(class) {
    var start = false;
    for (var i = 0; i < paragraphReader.maxParas; i++) {
-      var node = paragraphGraph.Paras[i].getElementsByTagName('a');
+      var node = paragraphReader.Paras[i].getElementsByTagName('a');
       for (var j = 0; j < node.length; j++) {
          var id = node[j].getAttribute('id');
          if (id == class) {
