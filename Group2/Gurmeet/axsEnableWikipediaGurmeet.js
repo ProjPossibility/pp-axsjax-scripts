@@ -16,6 +16,12 @@ axsWiki.axsObj = new AxsJAX(true);
  */
 axsWiki.keyboardHandler = function(evt) {
   if (axsWiki.currentState == axsWiki.READING_PARAGRAPHS) {
+      if (evt.charCode == 49) {  // 1
+         axsWiki.readParagraphClass("Classification");
+      }
+      if (evt.charCode == 50) {
+         axsWiki.readParagraphClass("Morphology");
+      }
 	if (evt.charCode == 110) {  // n
          if (axsWiki.currentPara < axsWiki.maxParas - 1) {
             axsWiki.currentPara++;
@@ -38,7 +44,16 @@ axsWiki.keyboardHandler = function(evt) {
 };
 
 axsWiki.readParagraphClass = function(class) {
-   
+   var start = false;
+   for (var i = 0; i < axsWiki.maxParas; i++) {
+      var node = axsWiki.Paras[i].getElementsByTagName('a');
+      for (var j = 0; j < node.length; j++) {
+         var id = node[j].getAttribute('id');
+         if (id == class) {
+             axsWiki.readParagraphNumber(i+1)
+         }
+      }
+   }
 };
 
 axsWiki.readParagraphNumber = function(number) {
