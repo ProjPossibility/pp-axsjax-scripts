@@ -1,18 +1,18 @@
 //AxsJAX script for Wikipedia game at:
 //http://en.wikipedia.org/juegos/jawbreaker/jawbreaker.htm
 
-var maxParas = 0;
-var Paras = null;
-var currentPara = 0;
-var currentState = 0;
-var READING_PARAGRAPHS = 1;
-var READING_TOC = 2;
-var axsJb_axsJaxObj = new AxsJAX();
+maxParas = 0;
+Paras = null;
+currentPara = 0;
+currentState = 0;
+READING_PARAGRAPHS = 1;
+READING_TOC = 2;
+axsJaxObj = new AxsJAX(true);
 
 /*
  * 
  */
-function axsJb_keyboardHandler(evt){
+function keyboardHandler(evt) {
   if (currentState == READING_PARAGRAPHS) {
 	if (evt.charCode == 110) {  // n
          if (currentPara < maxParas - 1) {
@@ -33,19 +33,19 @@ function axsJb_keyboardHandler(evt){
          }
       }
   }
-}
 
 function readParagraph(number) {
     alert(Paras[number].textContent);
-    axsJb_axsJaxObj.speakText(Paras[number].textContent);
+    axsJaxObj.goTo(Paras[number]);
+//    axsJaxObj.speakText(Paras[number].textContent);
 }
 
 function init() {
   Paras = document.getElementsByTagName("p");
   maxParas = Paras.length;
   currentPara = -1;
-  currentState = READING_PARAGRAPHS;
+  currentState = READING_PARAGRAPH;
 }
 
 init();
-document.addEventListener('keypress', axsJb_keyboardHandler, true);
+document.addEventListener('keypress', keyboardHandler, true);
