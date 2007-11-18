@@ -148,6 +148,7 @@ axsSd.getSolution = function() {
 
 axsSd.init = function() {
    axsSd.axsJaxObj = new AxsJAX(true);
+   axsSd.getSolution();
    document.addEventListener('keypress', axsSd.keyboardHandler, true);
 };
 
