@@ -37,8 +37,7 @@ function axsJb_keyboardHandler(evt){
 		}
 		if(axsWiki.nodeArray[axsWiki.resultIndex].firstChild.nodeValue!='hide');
 		{
-			var currentResult = axsWiki.nodeArray[axsWiki.resultsIndex];
-			alert(currentResult);
+			var currentResult = axsWiki.nodeArray[axsWiki.resultIndex];
 			axsWiki.currentLink = currentResult.href;
 			axsWiki.axsObj.goTo(currentResult);
 			//axsWiki.axsObj.goTo(axsWiki.nodeArray[axsWiki.resultIndex]);
