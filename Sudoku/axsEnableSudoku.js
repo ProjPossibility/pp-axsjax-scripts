@@ -12,7 +12,7 @@ axsSd.solution = null;
 axsSd.type = null;
 
 
-axsSd.getCurrentPosition function() {
+axsSd.getCurrentPosition = function() {
   var value = axsSd.getCurrentCellValue(axsSd.row, axsSd.col);
   var message = axsSd.row + ', ' + axsSd.col + '.'+ 'value '+value;
   axsSd.axsJaxObj.speakText(message);
@@ -49,7 +49,7 @@ function axsJb_sayStats(){
   axsJb_axsJaxObj.speakThroughPixel('Block count: ' + blockCount + '. Block score: ' + blockScore + '. Total score: ' + totalScore + '.');
 }
 
-axsSd.speakRow function(){
+axsSd.speakRow = function(){
   var speechString = "Row " +  axsSd.row + ": ";
   for (var col = 1; col < axsSd.MAXCOL; col++){
     speechString = speechString + axsSd.getCurrentCellValue(axsJb_row,col));
@@ -58,7 +58,7 @@ axsSd.speakRow function(){
   axsSd.axsJaxObj.speakThroughPixel(speechString);
 };
 
-axsSd.speakCol function(){
+axsSd.speakCol = function(){
   var speechString = "Col " +  axsSd.col + ": ";
   for (var row = 1; row < axsSd.MAXROW; row++){
     speechString = speechString + axsSd.getCurrentCellValue(row,axsSd.col));
@@ -67,11 +67,11 @@ axsSd.speakCol function(){
   axsSd.axsJaxObj.speakThroughPixel(speechString);
 };
 
-axsSd.keyboardHandler function(evt) {
+axsSd.keyboardHandler = function(evt) {
    axsSd.getSolution();
 };
 
-axsSd.keyboardHandler2 function(evt) {
+axsSd.keyboardHandler2 = function(evt) {
   if (evt.charCode == 97){      //a
     axsJb_col = 0;
     axsJb_getCurrentPosition();
@@ -135,7 +135,7 @@ axsSd.keyboardHandler2 function(evt) {
   }  
 };
 
-axsSd.getSolution function() {
+axsSd.getSolution = function() {
    var Sol = document.getElementsbyTagName("cheat");
    axsSd.axsJaxObj.speakNode(Sol[0]);
 };
