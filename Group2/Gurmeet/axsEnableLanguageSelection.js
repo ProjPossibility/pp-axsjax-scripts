@@ -1,73 +1,54 @@
 //AxsJAX script for Wikipedia game at:
 //http://en.wikipedia.org/*
 
-axsWiki = {};
+axsLangWiki = {};
 
-axsWiki.maxParas = 0;
-axsWiki.Paras = null;
-axsWiki.currentPara = 0;
-axsWiki.currentState = 0;
-axsWiki.READING_PARAGRAPHS = 1;
-axsWiki.READING_TOC = 2;
-axsWiki.axsObj = new AxsJAX(true);
+axsLangWiki.languages = null;
+axsLangWiki.addresses = null;
+axsLangWiki.currentPara = 0;
+axsLangWiki.maxParas = 0;
 
 /*
  * 
  */
-axsWiki.keyboardHandler = function(evt) {
-  if (axsWiki.currentState == axsWiki.READING_PARAGRAPHS) {
-      if (evt.charCode == 49) {  // 1
-         axsWiki.readParagraphClass("Classification");
-      }
-      if (evt.charCode == 50) {
-         axsWiki.readParagraphClass("Morphology");
-      }
-	if (evt.charCode == 110) {  // n
-         if (axsWiki.currentPara < axsWiki.maxParas - 1) {
-            axsWiki.currentPara++;
-            axsWiki.readParagraphNumber(axsWiki.currentPara);
-         } else if (axsWiki.currentPara == axsWiki.maxParas - 1) {
-            axsWiki.currentPara = 0;
-            axsWiki.readParagraphNumber(axsWiki.currentPara);
+axsLangWiki.keyboardHandler = function(evt) {
+  	if (evt.charCode == 110) {  // n
+         if (axsLangWiki.currentPara < axsLangWiki.maxParas - 1) {
+            axsLangWiki.currentPara++;
+            axsLangWiki.readLanguage(axsLangWiki.currentPara);
+         } else if (axsLangWiki.currentPara == axsLangWiki.maxParas - 1) {
+            axsLangWiki.currentPara = 0;
+            axsLangWiki.readLanguage(axsLangWiki.currentPara);
          }
       }
       if (evt.charCode == 112) {  // p
-         if (axsWiki.currentPara > 0) {
-            axsWiki.currentPara--;
-            axsWiki.readParagraphNumber(axsWiki.currentPara);
-         } else if (axsWiki.currentPara == 0) {
-            axsWiki.currentPara = axsWiki.maxParas - 1;
-            axsWiki.readParagraphNumber(axsWikicurrentPara);
+         if (axsLangWiki.currentPara > 0) {
+            axsLangWiki.currentPara--;
+            axsLangWiki.readLanguage(axsLangWiki.currentPara);
+         } else if (axsLangWiki.currentPara == 0) {
+            axsLangWiki.currentPara = axsLangWiki.maxParas - 1;
+            axsLangWiki.readLanguage(axsLangWikicurrentPara);
          }
       }
   }
 };
 
-axsWiki.readParagraphClass = function(class) {
-   var start = false;
-   for (var i = 0; i < axsWiki.maxParas; i++) {
-      var node = axsWiki.Paras[i].getElementsByTagName('a');
-      for (var j = 0; j < node.length; j++) {
-         var id = node[j].getAttribute('id');
-         if (id == class) {
-             axsWiki.readParagraphNumber(i+1)
-         }
-      }
-   }
+axsLangWiki.readParagraphNumber = function(number) {
+//    alert(axsLangWiki.Paras[number].textContent);
+    axsLangWiki.axsObj.SpeakText(axsLangWiki.languages[number]);
+//    axsObj.speakText(axsLangWiki.Paras[number].textContent);
 };
 
-axsWiki.readParagraphNumber = function(number) {
-//    alert(axsWiki.Paras[number].textContent);
-    axsWiki.axsObj.goTo(axsWiki.Paras[number]);
-//    axsObj.speakText(axsWiki.Paras[number].textContent);
+axsLangWiki.init = function() {
+  axsLangWiki.languages = new Array();
+  axsLangWiki.addresses = new Array();
+  var nodes = document.getElementsByTagName('strong');
+  for (var i = 0; i < nodes.length; i++) {
+      var node = nodes[i].getElementsByTagName('a');
+      axsLangWiki.languages.push(node);
+      var ref = node.getAttribute('href');
+      axsLangWiki.addresses.push(ref);
+  }
 };
 
-axsWiki.init = function() {
-  axsWiki.Paras = document.getElementsByTagName("p");
-  axsWiki.maxParas = axsWiki.Paras.length;
-  axsWiki.currentPara = -1;
-  axsWiki.currentState = axsWiki.READING_PARAGRAPHS;
-  document.addEventListener('keypress', axsWiki.keyboardHandler, true);
-};
-
-axsWiki.init();
+axsLangWiki.init();
