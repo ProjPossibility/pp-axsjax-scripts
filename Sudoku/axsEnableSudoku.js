@@ -140,8 +140,8 @@ axsSd.getSolution = function() {
    alert(Sol.length);
    var valString = " ";
    for (var i = 0; i < Sol.length; i++) { 
-      valString = valString + Sol[i].nodeName+" ";    
-      if (Sol[i].nodeName == "cheat") {
+      valString = valString + Sol[i].nodeValue+" ";    
+      if (Sol[i].nodeValue == "cheat") {
          axsSd.axsJaxObj.speakText("Cheat Found");
       }
    }
