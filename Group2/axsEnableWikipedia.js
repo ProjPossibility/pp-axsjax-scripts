@@ -13,7 +13,6 @@ var axsJb_axsJaxObj = new AxsJAX();
 axsReader.tagSelectorTopDivId = null;
 axsReader.feedResultsArray = null;
 axsReader.feedBundlesArray = null;
-axsReader.axsJAXObj = null;
 axsReader.RESULTS_LOADED_STRING = 'Results loaded.';
 axsReader.NO_RESULTS_STRING = 'Your search did not match any feeds. ' +
     'Please make sure all words are spelled correctly, ' +
