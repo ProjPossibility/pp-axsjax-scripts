@@ -36,7 +36,7 @@ function keyboardHandler(evt) {
 }
 
 function readParagraph(number) {
-    alert(Paras[number].textContent);
+//    alert(Paras[number].textContent);
     axsJaxObj.goTo(Paras[number]);
 //    axsJaxObj.speakText(Paras[number].textContent);
 }
