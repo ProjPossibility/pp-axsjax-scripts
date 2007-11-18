@@ -53,9 +53,9 @@ function axsJb_sayStats(){
 axsSd.speakRow = function(){
   var speechString = "Row " +  axsSd.row + ": ";
   for (var col = 1; col < axsSd.MAXCOL; col++){
-    speechString = speechString + axsSd.getCellValue(axsJb_row,col);
+    speechString = speechString + axsSd.getCellValue(axsSd.row,col);
   }
-  speechString = speechString + axsSd.getCellValue(axsJb_row,axsJb_MAXCOL);
+  speechString = speechString + axsSd.getCellValue(axsSd.row,axsSd.MAXCOL);
   axsSd.axsJaxObj.speakThroughPixel(speechString);
 };
 
@@ -150,7 +150,7 @@ axsSd.getSolutionCellValue = function(row, col) {
        return "Invalid Column";
    }
    var index = ( row - 1) * axsSd.MAXROW + col;
-   var value = axsSd.substring(index-1, index);
+   var value = axsSd.solution.substring(index-1, index);
    return value;
 }
 
