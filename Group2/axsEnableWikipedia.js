@@ -8,12 +8,12 @@ var axsJb_axsJaxObj = new AxsJAX();
  */
 function axsJb_keyboardHandler(evt){
   axsJb_axsJaxObj.speakThroughPixel("Hi Sarika");
-var entiredoc = document.documentElement;
+/*var entiredoc = document.documentElement;
 var docnodes=entiredoc.childNodes;
  axsJb_axsJaxObj.speakText("Number of elements "+docnodes);
 for (i=0; i<docnodes.length; i++)
 alert(docnodes[i].tagName);
-
+*/
   var paras = document.getElementsByTagName("p");
   var n = paras.length;
   var i = 0;
