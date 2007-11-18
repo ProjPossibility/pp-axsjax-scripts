@@ -40,7 +40,7 @@ axsReader.init = function(){
  // window.addEventListener('blur', axsReader.blurHandler, true);
 };
 
-axsReader.domInsertionHandler  function(event){
+axsReader.domInsertionHandler = function(event){
  // if (event.target.firstChild){
     axsReader.inputFocused = false; //There is no blur event when the
                                     //search results get loaded
@@ -51,7 +51,6 @@ axsReader.domInsertionHandler  function(event){
       axsReader.axsJAXObj.speakText(axsReader.NO_RESULTS_STRING);
     }
   //}
-
 };
 
 
