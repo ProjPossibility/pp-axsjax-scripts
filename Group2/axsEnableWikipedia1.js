@@ -18,6 +18,8 @@ function axsJb_keyboardHandler(evt){
 		else
 		{	axsWiki.resultIndex=axsWiki.nodeArray.length-1;
 		}
+		if(axsWiki.nodeArray[axsWiki.resultIndex].firstChild.nodeValue!='hide');
+			axsWiki.axsObj.goTo(axsWiki.nodeArray[axsWiki.resultIndex]);
 	}
 	else if(evt.keyCode == 40)
 	{
@@ -27,9 +29,10 @@ function axsJb_keyboardHandler(evt){
 		else
 		{	axsWiki.resultIndex=1;
 		}
+		if(axsWiki.nodeArray[axsWiki.resultIndex].firstChild.nodeValue!='hide');
+			axsWiki.axsObj.goTo(axsWiki.nodeArray[axsWiki.resultIndex]);
 	}
-	if(axsWiki.nodeArray[axsWiki.resultIndex].firstChild.nodeValue!='hide');
-		axsWiki.axsObj.goTo(axsWiki.nodeArray[axsWiki.resultIndex]);
+	
 		
 }
 	
