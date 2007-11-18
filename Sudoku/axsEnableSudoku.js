@@ -13,8 +13,9 @@ axsSd.type = null;
 
 
 axsSd.getCurrentPosition = function() {
-  var value = axsSd.getCurrentCellValue(axsSd.row, axsSd.col);
-  var message = axsSd.row + ', ' + axsSd.col + '.'+ 'value '+value;
+  var value = axsSd.getCellValue(axsSd.row, axsSd.col);
+  var message = axsSd.row + ', ' + axsSd.col + '.';
+  message = message + 'value '+ axsSd.getSolutionCellValue(axsSd.row, axsSd.col);
   axsSd.axsJaxObj.speakText(message);
 };
 
@@ -52,26 +53,22 @@ function axsJb_sayStats(){
 axsSd.speakRow = function(){
   var speechString = "Row " +  axsSd.row + ": ";
   for (var col = 1; col < axsSd.MAXCOL; col++){
-    speechString = speechString + axsSd.getCurrentCellValue(axsJb_row,col);
+    speechString = speechString + axsSd.getCellValue(axsJb_row,col);
   }
-  speechString = speechString + axsSd.getCurrentCellValue(axsJb_row,axsJb_MAXCOL);
+  speechString = speechString + axsSd.getCellValue(axsJb_row,axsJb_MAXCOL);
   axsSd.axsJaxObj.speakThroughPixel(speechString);
 };
 
 axsSd.speakCol = function(){
   var speechString = "Col " +  axsSd.col + ": ";
   for (var row = 1; row < axsSd.MAXROW; row++){
-    speechString = speechString + axsSd.getCurrentCellValue(row,axsSd.col);
+    speechString = speechString + axsSd.getCellValue(row,axsSd.col);
   }
-  speechString = speechString + axsSd.getCurrentCellValue(axsSd.MAXROW,axsSd.col);
+  speechString = speechString + axsSd.getCellValue(axsSd.MAXROW,axsSd.col);
   axsSd.axsJaxObj.speakThroughPixel(speechString);
 };
 
 axsSd.keyboardHandler = function(evt) {
-   axsSd.getSolution();
-};
-
-axsSd.keyboardHandler2 = function(evt) {
   if (evt.charCode == 97){      //a
     axsJb_col = 0;
     axsJb_getCurrentPosition();
@@ -137,13 +134,24 @@ axsSd.keyboardHandler2 = function(evt) {
 
 axsSd.getSolution = function() {
    var Sol = document.getElementsByName("cheat");
-   alert(Sol.length);
-   var valString = " ";
-   for (var i = 0; i < Sol.length; i++) { 
-      valString = valString + Sol[i].value+" ";    
-   }
-   alert(valString);
+   axsSd.solution = Sol[0].value;
 };
+
+axsSd.getCellValue = function(row, col) {
+   axsSd.getSolutionCellValue(row, col);
+};
+
+axsSd.getSolutionCellValue = function(row, col) {
+   if (row < 1 || row > axsSd.MAXROW) {
+       return "Invalid Row";
+   }
+   if (col < 1 || col > axsSd.MAXCOL) {
+       return "Invalid Column";
+   }
+   var index = ( row - 1) * axsSd.MAXROW + col;
+   var value = axsSd.substring(index-1, index);
+   return value;
+}
 
 axsSd.init = function() {
    axsSd.axsJaxObj = new AxsJAX(true);
