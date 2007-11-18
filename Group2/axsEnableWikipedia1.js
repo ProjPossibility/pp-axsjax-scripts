@@ -47,8 +47,10 @@ axsWiki.cntArray = new Array();
 var temp = axsWiki.toc.getElementsByTagName('a');
 for(var i=0;i<temp.length;i++)
 {	axsWiki.linksArray[toc_count]=temp[i].getAttribute('href');
-	axsWiki.cntArray[toc_count]=temp[i].childNodes[0].childNodes[0].nodeValue;
-	axsWiki.nameArray[toc_count++]=temp[i].childNodes[1].childNodes[0].nodeValue;
+	alert(temp[i].childNodes[1].nodeName);
+	alert(temp[i].childNodes[3].nodeName);
+	axsWiki.cntArray[toc_count]=temp[i].childNodes[1].childNodes[0].nodeValue;
+	axsWiki.nameArray[toc_count++]=temp[i].childNodes[3].childNodes[0].nodeValue;
 }
 /*axsWiki.linksNameArray = new Array();
 var temp = new Array()
