@@ -42,9 +42,9 @@ axsWiki.readParagraphClass = function(class) {
 };
 
 axsWiki.readParagraphNumber = function(number) {
-//    alert(Paras[number].textContent);
-    axsWiki.axsObj.goTo(Paras[number]);
-//    axsObj.speakText(Paras[number].textContent);
+//    alert(axsWiki.Paras[number].textContent);
+    axsWiki.axsObj.goTo(axsWiki.Paras[number]);
+//    axsObj.speakText(axsWiki.Paras[number].textContent);
 };
 
 axsWiki.init = function() {
