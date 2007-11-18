@@ -12,15 +12,19 @@ axsWiki.toc=null;
 function axsJb_keyboardHandler(evt){
 	if(evt.keyCode == 33) //Up Arrow
 	{	if(axsWiki.resultIndex > 0)
-			axsWiki.resultIndex--;
+		{	axsWiki.resultIndex--;
+		}
 		else
-			axsWiki.resultIndex=axsWiki.linksArray.length-1;
+		{	axsWiki.resultIndex=axsWiki.linksArray.length-1;
+		}
 	}
 	else if(evt.keyCode == 34)
 	{	if(axsWiki.resultIndex < axsWiki.linksArray.length)
-			axsWiki.resultIndex++;
+		{	axsWiki.resultIndex++;
+		}
 		else
-			axsWiki.resultIndex=0;
+		{	axsWiki.resultIndex=0;
+		}
 	}
 	
 	
