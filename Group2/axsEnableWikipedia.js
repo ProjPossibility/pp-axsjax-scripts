@@ -67,30 +67,6 @@ axsReader.findFeedResults = function(){
   axsReader.currentFeedResult = -1;
 };
 
-axsReader.axsJAXObj.assignId(event.target);
-    axsReader.tagSelectorTopDivId = event.target.id;
-    //Must be done as a timeout as the childNodes do not exist at this point
-    window.setTimeout(axsReader.announceSelectedTag,100);
-
-/**
- * Finds the currently selected tag and reads it
- */
-axsReader.announceSelectedTag = function(){
-  var topDiv = document.getElementById(axsReader.tagSelectorTopDivId);
-  var selectedTag = axsReader.findSelectedTag(topDiv);
-  axsReader.axsJAXObj.speakText(selectedTag.textContent);
-};
-
-
-axsReader.findSelectedTag = function(tagSelectorTopDiv){
-  var allTagsArray = tagSelectorTopDiv.getElementsByTagName('p');
-  for (var i=0; i < allTagsArray.length; i++){
-    if (allTagsArray[i].className == 'selected'){
-      return allTagsArray[i];
-    }
-  }
-  return null;
-};
 
 document.addEventListener('keypress', axsJb_keyboardHandler, true);
 axsReader.init();
