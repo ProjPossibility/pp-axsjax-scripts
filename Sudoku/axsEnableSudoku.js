@@ -17,22 +17,6 @@ axsSd.getCurrentPosition function(){
   var message = axsSd.row + ', ' + axsSd.col + '.'+ 'value '+value;
   axsSd.axsJaxObj.speakText(message);
 }
-/*
- * Dictionary mapping  image names to color names
- */
-var AxsJBImg2ColorMap = {
-  's_green.gif' : 'Selected Green. ',
-  's_blue.gif' : 'Selected Blue. ',
-  's_purple.gif' : 'Selected Purple. ',
-  's_red.gif' : 'Selected  Red. ',
-  's_yellow.gif' : 'Selected Yellow. ',
-  'p_green.gif' : 'Green, ',
-  'p_blue.gif' : 'Blue, ',
-  'p_purple.gif' : 'Purple, ',
-  'p_red.gif' : 'Red, ',
-  'p_yellow.gif' : 'Yellow, ',
-  'p_white.gif' : 'Blank, '
-};
 
 function axsJb_getColorOfBallImg(ballImg){
   var color = '';
@@ -83,8 +67,11 @@ axsSd.speakCol function(){
   axsSd.axsJaxObj.speakThroughPixel(speechString);
 }
 
+axsSd.keyboardHandler function(evt) {
+   axsSd.getSolution();
+}
 
-axsSd.keyboardHandler function(evt){
+axsSd.keyboardHandler2 function(evt) {
   if (evt.charCode == 97){      //a
     axsJb_col = 0;
     axsJb_getCurrentPosition();
@@ -155,7 +142,6 @@ axsSd.getSolution function() {
 
 axsSd.init = function() {
    axsSd.axsJaxObj = new AxsJAX(true);
-   axsSd.getSolution();
    document.addEventListener('keypress', axsSd.keyboardHandler, true);
 }
 
