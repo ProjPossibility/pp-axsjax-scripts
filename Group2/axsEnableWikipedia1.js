@@ -11,6 +11,7 @@ axsWiki.toc=null;
 
 function axsJb_keyboardHandler(evt){
 	if(evt.ctrlKey) alert("control key pressed");
+	alert(evt.keyCode);
 	if(evt.keyCode == 33) //Up Arrow
 	{	if(axsWiki.resultIndex > 0)
 		{	axsWiki.resultIndex--;
@@ -47,5 +48,4 @@ axsWiki.linksNameArray = new Array();
 var temp = new Array()
 temp = axsWiki.toc.getElementsByTagName('a');
 for(var i=0;i<temp.length;i++) axsWiki.linksNameArray[i]= temp[i].getAttribute('href');
-alert(axsWiki.linksArray.length);
 document.addEventListener('keypress', axsJb_keyboardHandler, true);
