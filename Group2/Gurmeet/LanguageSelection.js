@@ -27,15 +27,15 @@ axsLangWiki.keyboardHandler = function(evt) {
             axsLangWiki.readLanguage(axsLangWiki.currentPara);
          } else if (axsLangWiki.currentPara == 0) {
             axsLangWiki.currentPara = axsLangWiki.maxParas - 1;
-            axsLangWiki.readLanguage(axsLangWikicurrentPara);
+            axsLangWiki.readLanguage(axsLangWiki.currentPara);
          }
-      }
+      } 
 };
 
 axsLangWiki.readParagraphNumber = function(number) {
 //    alert(axsLangWiki.Paras[number].textContent);
-    
-    axsLangWiki.axsObj.SpeakText(axsLangWiki.languages[number]);
+    alert(axsLangWiki.languages[number].textContent);
+    axsLangWiki.axsObj.SpeakText(axsLangWiki.languages[number].textContent);
 //    axsObj.speakText(axsLangWiki.Paras[number].textContent);
 };
 
@@ -48,7 +48,6 @@ axsLangWiki.init = function() {
       axsLangWiki.languages.push(node);
       var ref = node[0].href;
       axsLangWiki.addresses.push(ref);
-      alert(axsLangWiki.languages[i]+"  "+axsLangWiki.addresses[i]);
   }
 };
 
