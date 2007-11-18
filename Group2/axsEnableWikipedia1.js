@@ -113,6 +113,7 @@ paragraphReader.readParagraphClass = function(class) {
       var node = paragraphReader.Paras[i].getElementsByTagName('a');
       for (var j = 0; j < node.length; j++) {
          var id = node[j].getAttribute('id');
+	 alert('looking for ' + id);
          if (id == class) {
              paragraphReader.readParagraphNumber(i+1)
          }
