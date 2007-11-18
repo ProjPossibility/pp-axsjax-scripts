@@ -1,19 +1,21 @@
-//AxsJAX script for Jawbreaker game at:
-//http://www.minijuegosgratis.com/juegos/jawbreaker/jawbreaker.htm
+//AxsJAX script for Sudoku game at:
+//http://view.websudoku.com/
 
-var axsJb_row = 0;
-var axsJb_col = 0;
-var axsJb_MAXROW = 11;
-var axsJb_MAXCOL = 10;
-var axsJb_axsJaxObj = new AxsJAX();
+var axsSd = {};
+
+axsSd.row = 1;
+axsSd.col = 1;
+axsSd.MAXROW = 9;
+axsSd.MAXCOL = 9;
+axsSd.axsJaxObj = null;
+axsSd.solution = null;
+axsSd.type = null;
 
 
-function axsJb_getCurrentPosition(){
-  var ballImg = axsJb_getCurrentBallImgNode(axsJb_row,axsJb_col);
-  var color = axsJb_getColorOfBallImg(ballImg);
-  var message = color + axsJb_row + ', ' + axsJb_col + '.';
-  ballImg.alt = message;
-  axsJb_axsJaxObj.speakNode(ballImg);
+axsSd.getCurrentPosition function(){
+  var value = axsSd.getCurrentCellValue(axsSd.row, axsSd.col);
+  var message = axsSd.row + ', ' + axsSd.col + '.'+ 'value '+value;
+  axsSd.axsJaxObj.speakText(message);
 }
 /*
  * Dictionary mapping  image names to color names
@@ -63,26 +65,26 @@ function axsJb_sayStats(){
   axsJb_axsJaxObj.speakThroughPixel('Block count: ' + blockCount + '. Block score: ' + blockScore + '. Total score: ' + totalScore + '.');
 }
 
-function axsJb_speakRow(){
-  var speechString = "Row " +  axsJb_row + ": ";
-  for (var col = 0; col < axsJb_MAXCOL; col++){
-    speechString = speechString + axsJb_getColorOfBallImg(axsJb_getCurrentBallImgNode(axsJb_row,col));
+axsSd.speakRow function(){
+  var speechString = "Row " +  axsSd.row + ": ";
+  for (var col = 1; col < axsSd.MAXCOL; col++){
+    speechString = speechString + axsSd.getCurrentCellValue(axsJb_row,col));
   }
-  speechString = speechString + axsJb_getColorOfBallImg(axsJb_getCurrentBallImgNode(axsJb_row,axsJb_MAXCOL));
-  axsJb_axsJaxObj.speakThroughPixel(speechString);
+  speechString = speechString + axsSd.getCurrentCellValue(axsJb_row,axsJb_MAXCOL));
+  axsSd.axsJaxObj.speakThroughPixel(speechString);
 }
 
-function axsJb_speakCol(){
-  var speechString = "Col " +  axsJb_col + ": ";
-  for (var row = 0; row < axsJb_MAXROW; row++){
-    speechString = speechString + axsJb_getColorOfBallImg(axsJb_getCurrentBallImgNode(row,axsJb_col));
+axsSd.speakCol function(){
+  var speechString = "Col " +  axsSd.col + ": ";
+  for (var row = 1; row < axsSd.MAXROW; row++){
+    speechString = speechString + axsSd.getCurrentCellValue(row,axsSd.col));
   }
-  speechString = speechString + axsJb_getColorOfBallImg(axsJb_getCurrentBallImgNode(axsJb_MAXROW,axsJb_col));
-  axsJb_axsJaxObj.speakThroughPixel(speechString);
+  speechString = speechString + axsSd.getCurrentCellValue(axsSd.MAXROW,axsSd.col));
+  axsSd.axsJaxObj.speakThroughPixel(speechString);
 }
 
 
-function axsJb_keyboardHandler(evt){
+axsSd.keyboardHandler function(evt){
   if (evt.charCode == 97){      //a
     axsJb_col = 0;
     axsJb_getCurrentPosition();
@@ -146,5 +148,15 @@ function axsJb_keyboardHandler(evt){
   }  
 }
 
+axsSd.getSolution function() {
+   var Sol = document.getElementsbyTagName("cheat");
+   axsSd.axsJaxObj.speakNode(Sol[0]);
+}
 
-document.addEventListener('keypress', axsJb_keyboardHandler, true);
+axsSd.init = function() {
+   axsSd.axsJaxObj = new AxsJAX(true);
+   axsSd.getSolution();
+   document.addEventListener('keypress', axsSd.keyboardHandler, true);
+}
+
+axsSd.init();
