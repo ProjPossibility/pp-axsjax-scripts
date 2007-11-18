@@ -39,7 +39,7 @@ axsLangWiki.keyboardHandler = function(evt) {
 axsLangWiki.readLanguage = function(number) {
 //    alert(axsLangWiki.Paras[number].textContent);
     alert(axsLangWiki.languages[number].textContent);
-    axsLangWiki.axsObj.goTo(axsLangWiki.languages[number]);
+    axsLangWiki.axsObj.speakNode(axsLangWiki.languages[number]);
 //    axsObj.speakText(axsLangWiki.Paras[number].textContent);
 };
 
@@ -50,7 +50,7 @@ axsLangWiki.init = function() {
   axsLangWiki.maxParas = nodes.length;
   for (var i = 0; i < nodes.length; i++) {
       var node = nodes[i].getElementsByTagName('a');
-      axsLangWiki.languages.push(node);
+      axsLangWiki.languages.push(node[0]);
       var ref = node[0].href;
       axsLangWiki.addresses.push(ref);
   }
