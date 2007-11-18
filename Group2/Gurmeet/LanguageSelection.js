@@ -55,6 +55,7 @@ axsLangWiki.init = function() {
       axsLangWiki.addresses.push(ref);
   }
   axsLangWiki.axsObj = new AxsJAX(true);
+  document.getElementById("searchInput").blur();
   document.addEventListener('keypress', axsLangWiki.keyboardHandler, true);
 };
 
