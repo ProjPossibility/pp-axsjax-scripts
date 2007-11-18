@@ -29,7 +29,7 @@ function axsJb_keyboardHandler(evt){
 		}
 	}
 	alert(axsWiki.nodeArray[0]);
-	axsWiki.axsObj.goToaxsWiki.nodeArray[axsWiki.resultIndex]);
+	axsWiki.axsObj.goTo(axsWiki.nodeArray[axsWiki.resultIndex]);
 		
 }
 	
