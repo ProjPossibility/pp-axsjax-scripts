@@ -30,9 +30,9 @@ function axsJb_keyboardHandler(evt){
 		}
 	}
 	//alert(axsWiki.countArray[axsWiki.resultIndex]+' '+axsWiki.nameArray[axsWiki.resultIndex]);
-	var toSpeak = /*axsWiki.countArray[axsWiki.resultIndex]*/axsWiki.nameArray[axsWiki.resultIndex];
+	var toSpeak = axsWiki.countArray[axsWiki.resultIndex]+ ' ' +axsWiki.nameArray[axsWiki.resultIndex];
 	//alert(toSpeak);
-	axsWiki.axsObj.speakThroughPixel("blah blah");
+	axsWiki.axsObj.speakThroughPixel(toSpeak);
 	
 }
 	
