@@ -1,5 +1,5 @@
 //Module to read the table of contents
-var axsWiki{}
+var axsWiki={};
 
 axsWiki.axsObj=new AxsJAX();
 axsWiki.resultIndex=0;
