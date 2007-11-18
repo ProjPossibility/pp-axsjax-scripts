@@ -24,15 +24,18 @@ function axsJb_keyboardHandler(evt){
 	else if(evt.keyCode == 40)
 	{	if(axsWiki.resultIndex < axsWiki.linksArray.length)
 		{	axsWiki.resultIndex++;
+		
+			var toSpeak = axsWiki.countArray[axsWiki.resultIndex]+ ' ' +axsWiki.nameArray[axsWiki.resultIndex];
+		
+	axsWiki.axsObj.speakThroughPixel(toSpeak);
+
 		}
 		else
 		{	axsWiki.resultIndex=0;
 		}
 	}
 	//alert(axsWiki.countArray[axsWiki.resultIndex]+' '+axsWiki.nameArray[axsWiki.resultIndex]);
-	var toSpeak = axsWiki.countArray[axsWiki.resultIndex]+ ' ' +axsWiki.nameArray[axsWiki.resultIndex];
 	//alert(toSpeak);
-	axsWiki.axsObj.speakThroughPixel(toSpeak);
 	
 }
 	
