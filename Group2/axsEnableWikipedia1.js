@@ -116,6 +116,7 @@ paragraphReader.readParagraphClass = function(class) {
          var id = node[j].getAttribute('id');
 	 //alert('looking for ' + id);
          if (id == class) {
+		     paragraphReader.currentPara = i+1;
              paragraphReader.readParagraphNumber(i+1)
          }
       }
