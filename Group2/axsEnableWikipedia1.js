@@ -4,7 +4,8 @@ var axsWiki={};
 axsWiki.axsObj=new AxsJAX();
 axsWiki.resultIndex=-1;
 axsWiki.linksArray=null;
-axsWiki.linksNameArray=null;
+axsWiki.nameArray=null;
+axsWiki.cntArray=null;
 axsWiki.toc=null;
 
 
@@ -31,19 +32,26 @@ function axsJb_keyboardHandler(evt){
 	
 	
 	
-	//alert(axsWiki.linksNameArray[axsWiki.resultIndex]);
-	axsWiki.axsObj.goTo(axsWiki.linksArray[axsWiki.resultIndex]);
+	alert(axsWiki.cntArray[axsWiki.resultIndex]+' '+axsWiki.nameArray[axsWiki.resultIndex]+' '+axsWiki.linksArray[axsWiki.resultIndex]);
+	//axsWiki.axsObj.goTo(axsWiki.linksArray[axsWiki.resultIndex]);
 }
 	
 		
 
 
-
+var toc_count=0;
 axsWiki.toc = document.getElementById('toc');
-axsWiki.linksArray = new Array();	
-axsWiki.linksArray = axsWiki.toc.getElementsByTagName('li');
-axsWiki.linksNameArray = new Array();
+axsWiki.linksArray = new Array();
+axsWiki.nameArray = new Array();
+axsWiki.cntArray = new Array();
+var temp = axsWiki.toc.getElementsByTagName('a');
+for(var i=0;i<temp.length;i++)
+{	axsWiki.linksArray[toc_count]=temp[i].getAttribute('href');
+	axsWiki.cntArray[toc_count]=temp[i].childNodes[1].nodeValue;
+	axsWiki.nameArray[toc_count++]=temp[i].childNodes[3].nodeValue;
+}
+/*axsWiki.linksNameArray = new Array();
 var temp = new Array()
 temp = axsWiki.toc.getElementsByTagName('a');
-for(var i=0;i<temp.length;i++) axsWiki.linksNameArray[i]= temp[i].getAttribute('href');
+for(var i=0;i<temp.length;i++) axsWiki.linksNameArray[i]= temp[i].getAttribute('href');*/
 document.addEventListener('keypress', axsJb_keyboardHandler, true);
