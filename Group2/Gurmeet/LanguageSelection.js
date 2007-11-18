@@ -12,6 +12,7 @@ axsLangWiki.maxParas = 0;
  * 
  */
 axsLangWiki.keyboardHandler = function(evt) {
+      alert(evt.charCode+"  "+axsLangWiki.currentPara);
   	if (evt.charCode == 110) {  // n
          if (axsLangWiki.currentPara < axsLangWiki.maxParas - 1) {
             axsLangWiki.currentPara++;
