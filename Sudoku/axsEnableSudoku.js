@@ -138,12 +138,14 @@ axsSd.keyboardHandler2 = function(evt) {
 axsSd.getSolution = function() {
    var Sol = document.getElementsByTagName("INPUT");
    alert(Sol.length);
-   for (var i = 0; i < Sol.length; i++) {
-      axsSd.axsJaxObj.speakText("Cheat Found");
+   var valString = " ";
+   for (var i = 0; i < Sol.length; i++) { 
+      valString = valString + Sol[i].nodeName+" ";    
       if (Sol[i].nodeName == "cheat") {
-         alert(Sol[i].nodeValue);
+         axsSd.axsJaxObj.speakText("Cheat Found");
       }
    }
+   alert(valString);
 };
 
 axsSd.init = function() {
