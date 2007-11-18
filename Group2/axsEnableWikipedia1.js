@@ -30,16 +30,12 @@ function axsJb_keyboardHandler(evt){
 		}
 	}
 	//alert(axsWiki.countArray[axsWiki.resultIndex]+' '+axsWiki.nameArray[axsWiki.resultIndex]);
-	//var toSpeak = /*axsWiki.countArray[axsWiki.resultIndex]*/axsWiki.nameArray[axsWiki.resultIndex];
+	var toSpeak = /*axsWiki.countArray[axsWiki.resultIndex]*/axsWiki.nameArray[axsWiki.resultIndex];
 	//alert(toSpeak);
-	speakTOC("poasdf");	
+	axsWiki.axsObj.speakThroughPixel("blah blah");
+	
 }
-
-function speakTOC(item) {
-
-	axsWiki.axsObj.speakText("blah blah");
-
-}	
+	
 		
 
 axsWiki.init = function(){
