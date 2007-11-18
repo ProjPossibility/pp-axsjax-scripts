@@ -30,9 +30,6 @@ function axsJb_keyboardHandler(evt){
 		}
 	}
 	
-	
-	
-	
 	axsWiki.axsObj.goTo(axsWiki.countArray[axsWiki.resultIndex]);
 	axsWiki.axsObj.goTo(axsWiki.nameArray[axsWiki.resultIndex]);
 }
@@ -49,13 +46,9 @@ var temp = axsWiki.toc.getElementsByTagName('a');
 
 for(var i=1;i<temp.length;i++)
 {	axsWiki.linksArray[toc_count]=temp[i].getAttribute('href');
-	//alert(temp[i].getAttribute('href'));
-	
 	var temp_span_elements = new Array();
 	temp_span_elements = temp[i].getElementsByTagName('span');
-	
 	axsWiki.countArray[toc_count]=temp_span_elements[0].firstChild.nodeValue;
-	
 	axsWiki.nameArray[toc_count++]=temp_span_elements[1].firstChild.nodeValue;
 	
 }
