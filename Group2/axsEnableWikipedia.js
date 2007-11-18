@@ -34,7 +34,7 @@ axsReader.init = function(){
   axsReader.feedBundlesArray = new Array();
   axsReader.axsJAXObj = new AxsJAX();
  
-   window.addEventListener('DOMNodeInserted', axsReader.domInsertionHandler, true);
+//   window.addEventListener('DOMNodeInserted', axsReader.domInsertionHandler, true);
  // window.addEventListener('keypress', axsReader.extraKeyboardNavHandler, true);
  // window.addEventListener('focus', axsReader.focusHandler, true);
  // window.addEventListener('blur', axsReader.blurHandler, true);
