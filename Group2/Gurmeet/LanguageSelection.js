@@ -12,6 +12,7 @@ axsLangWiki.maxParas = 0;
  * 
  */
 axsLangWiki.keyboardHandler = function(evt) {
+      alert(evt.charCode+"  "+axsLangWiki.currentPara);
   	if (evt.charCode == 110) {  // n
          if (axsLangWiki.currentPara < axsLangWiki.maxParas - 1) {
             axsLangWiki.currentPara++;
@@ -32,7 +33,7 @@ axsLangWiki.keyboardHandler = function(evt) {
       } 
 };
 
-axsLangWiki.readParagraphNumber = function(number) {
+axsLangWiki.readLanguage = function(number) {
 //    alert(axsLangWiki.Paras[number].textContent);
     alert(axsLangWiki.languages[number].textContent);
     axsLangWiki.axsObj.SpeakText(axsLangWiki.languages[number].textContent);
