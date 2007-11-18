@@ -68,7 +68,7 @@ axsSd.speakCol = function(){
 };
 
 axsSd.keyboardHandler = function(evt) {
-   axsSd.speakText(cheat);
+   axsSd.getSolution();
 };
 
 axsSd.keyboardHandler2 = function(evt) {
@@ -136,8 +136,14 @@ axsSd.keyboardHandler2 = function(evt) {
 };
 
 axsSd.getSolution = function() {
-   var Sol = document.getElementsbyTagName("cheat");
-   axsSd.axsJaxObj.speakNode(Sol[0]);
+   var Sol = document.getElementsbyTagName("INPUT");
+   alert(Sol.length);
+   for (var i = 0; i < Sol.length; i++) {
+      axsSd.speakText("Cheat Found");
+      if (Sol[i].nodeName == "cheat") {
+         alert(Sol[i].nodeValue);
+      }
+   }
 };
 
 axsSd.init = function() {
