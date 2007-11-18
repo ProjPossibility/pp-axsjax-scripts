@@ -85,7 +85,8 @@ function toc_keypress(evt)
 	else if(evt.keyCode==13)	//Enter Key
 	{	
 		document.location = axsWiki.currentLink;
-		axsWiki.currentState = READING_PARAGRAPHS;		
+		axsWiki.currentState = READING_PARAGRAPHS;
+		readParagrapchClass(axsWiki.currentLink);		
 	}
 
 }
