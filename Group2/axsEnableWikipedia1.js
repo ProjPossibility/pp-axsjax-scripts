@@ -25,7 +25,7 @@ function axsJb_keyboardHandler(evt){
 	
 	
 	
-	alert(axsWiki.linksNameArray[axsWiki.resultIndex]);
+	//alert(axsWiki.linksNameArray[axsWiki.resultIndex]);
 	axsWiki.axsObj.goTo(axsWiki.linksArray[axsWiki.resultIndex]);
 }
 	
@@ -40,4 +40,5 @@ axsWiki.linksNameArray = new Array();
 var temp = new Array()
 temp = axsWiki.toc.getElementsByTagName('a');
 for(var i=0;i<temp.length;i++) axsWiki.linksNameArray[i]= temp[i].getAttribute('href');
+alert(axsWiki.linksArray.length);
 document.addEventListener('keypress', axsJb_keyboardHandler, true);
