@@ -14,6 +14,7 @@ function axsJb_keyboardHandler(evt){
   axsJb_axsJaxObj.speakThroughPixel("Bye Bye");
   var paras = document.getElementsByTagName("p");
   var n = paras.length;
+  alert(paras.length);
   var annc = n+" "+"paragraphs on page";
   axsJb_axsJaxObj.speakThroughPixel(annc);
   var i = 0;
