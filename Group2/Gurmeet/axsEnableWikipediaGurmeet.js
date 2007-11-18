@@ -12,7 +12,7 @@ var axsJb_axsJaxObj = new AxsJAX();
  */
 function axsJb_keyboardHandler(evt){
   axsJb_axsJaxObj.speakThroughPixel("Bye Bye");
-  var paras = document.getElementByTagName("p");
+  var paras = document.getElementsByTagName("p");
   var n = paras.length;
   var annc = n+" "+"paragraphs on page";
   axsJb_axsJaxObj.speakThroughPixel(annc);
