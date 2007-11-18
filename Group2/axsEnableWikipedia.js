@@ -3,34 +3,27 @@
 
 var axsJb_axsJaxObj = new AxsJAX();
 
-var feedResultsArray = null;
-var RESULTS_LOADED_STRING = 'Results loaded.';
-var NO_RESULTS_STRING = 'Your search did not match any feeds. ' +
-    'Please make sure all words are spelled correctly, ' +
-    'or try different keywords, or try more general keywords. ';
-
 /*
  * Dictionary mapping  image names to color names
  */
-function axsJb_keyboardHandler(event){
-  axsJb_axsJaxObj.speakThroughPixel("Hello World");
-  feedResultsArray = new Array();
-  var inputArray = event.target.getElementsByTagName("p");
-  alert("hiiiii");
-  for (var i = 0, result; result = inputArray[i]; i++) {
-	
-   // if (result.className == 'row'){
-      feedResultsArray.push(result);
-  //  }
+function axsJb_keyboardHandler(evt){
+  axsJb_axsJaxObj.speakThroughPixel("Hi Sarika");
+var entiredoc = document.documentElement;
+var docnodes=entiredoc.childNodes;
+ axsJb_axsJaxObj.speakText("Number of elements "+docnodes);
+for (i=0; i<docnodes.length; i++)
+alert(docnodes[i].tagName);
+
+  var paras = document.getElementsByTagName("p");
+  var n = paras.length;
+  var i = 0;
+  for (i = 0; i < n; i++) {
+     var node = paras[i];
+     alert(node.textContent);
+     axsJb_axsJaxObj.speakText(node.textContent);
   }
 
-    alert("hi"+feedResultsArray.length);
-    if (feedResultsArray.length > 0){
-     axsJb_axsJaxObj.speakText(RESULTS_LOADED_STRING);
-    } else {
-      axsJb_axsJaxObj.speakText(NO_RESULTS_STRING);
-    }
-
 }
+
 
 document.addEventListener('keypress', axsJb_keyboardHandler, true);
