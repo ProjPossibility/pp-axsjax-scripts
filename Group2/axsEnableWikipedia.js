@@ -17,11 +17,13 @@ function axsJb_keyboardHandler(event){
   feedResultsArray = new Array();
   var inputArray = event.target.getElementsByTagName("p");
   for (var i = 0, result; result = inputArray[i]; i++) {
-	  alert("hi");
+	
    // if (result.className == 'row'){
       feedResultsArray.push(result);
   //  }
   }
+
+    alert("hi"+feedResultsArray.length);
     if (feedResultsArray.length > 0){
      axsJb_axsJaxObj.speakText(RESULTS_LOADED_STRING);
     } else {
