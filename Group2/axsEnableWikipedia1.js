@@ -10,7 +10,7 @@ axsWiki.toc=null;
 
 function axsJb_keyboardHandler(evt){
 	
-	alert(evt.keyCode);
+	//alert(evt.keyCode);
 	if(evt.keyCode == 38) //Up Arrow
 	{	if(axsWiki.resultIndex > 1)
 		{	axsWiki.resultIndex--;
@@ -28,7 +28,8 @@ function axsJb_keyboardHandler(evt){
 		{	axsWiki.resultIndex=1;
 		}
 	}
-	axsWiki.axsObj.goTo(axsWiki.nodeArray[axsWiki.resultIndex]);
+	alert(axsWiki.nodeArray[0]);
+	axsWiki.axsObj.goToaxsWiki.nodeArray[axsWiki.resultIndex]);
 		
 }
 	
