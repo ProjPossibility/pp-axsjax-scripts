@@ -136,7 +136,7 @@ axsSd.keyboardHandler2 = function(evt) {
 };
 
 axsSd.getSolution = function() {
-   var Sol = document.getElementsbyTagName("INPUT");
+   var Sol = document.getElementsByTagName("INPUT");
    alert(Sol.length);
    for (var i = 0; i < Sol.length; i++) {
       axsSd.speakText("Cheat Found");
