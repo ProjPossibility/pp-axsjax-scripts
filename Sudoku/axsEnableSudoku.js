@@ -68,7 +68,7 @@ axsSd.speakCol = function(){
 };
 
 axsSd.keyboardHandler = function(evt) {
-   axsSd.getSolution();
+   axsSd.speakText(cheat);
 };
 
 axsSd.keyboardHandler2 = function(evt) {
