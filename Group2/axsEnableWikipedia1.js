@@ -2,7 +2,7 @@
 var axsWiki={};
 
 axsWiki.axsObj=new AxsJAX();
-axsWiki.resultIndex=0;
+axsWiki.resultIndex=-1;
 axsWiki.linksArray=null;
 axsWiki.linksNameArray=null;
 axsWiki.toc=null;
