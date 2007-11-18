@@ -50,6 +50,7 @@ axsWiki.nameArray = new Array();
 axsWiki.countArray = new Array();
 //var temp = axsWiki.toc.getElementsByTagName('a');
 axsWiki.nodeArray = axsWiki.toc.getElementsByTagName('a');
+alert(axsWiki.nodeArray.length);
 /*for(var i=0;i<temp.length;i++)
 {	axsWiki.linksArray[toc_count]=temp[i].getAttribute('href');
 	var temp_span_elements = new Array();
