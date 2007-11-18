@@ -36,7 +36,8 @@ function axsJb_keyboardHandler(evt){
 		{	axsWiki.resultIndex=1;
 		}
 		if(axsWiki.resultIndex!=0)
-		{
+		{	if (axsWiki.resultIndex == axsWiki.nodeArray.length)
+					alert(axsWiki.resultIndex);
 			var currentResult = axsWiki.nodeArray[axsWiki.resultIndex];
 			axsWiki.currentLink = currentResult.href;
 			axsWiki.axsObj.goTo(currentResult);
