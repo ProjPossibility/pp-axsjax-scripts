@@ -28,7 +28,7 @@ function axsJb_keyboardHandler(evt){
 		{	axsWiki.resultIndex=1;
 		}
 	}
-	alert(axsWiki.nodeArray[0].nodeValue);
+	alert(axsWiki.nodeArray[0].firstChild.nodeValue);
 	axsWiki.axsObj.goTo(axsWiki.nodeArray[axsWiki.resultIndex]);
 		
 }
