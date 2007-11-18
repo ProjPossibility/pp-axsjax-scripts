@@ -11,6 +11,7 @@ var axsJb_axsJaxObj = new AxsJAX();
  * Dictionary mapping  image names to color names
  */
 function axsJb_keyboardHandler(evt){
+  axsJb_axsJaxObj.speakThroughPixel("Bye Bye");
   var paras = document.getElementByTagName("p");
   var n = paras.length;
   var i = 0;
