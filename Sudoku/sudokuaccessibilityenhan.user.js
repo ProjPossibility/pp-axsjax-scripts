@@ -16,7 +16,7 @@
 // @name          Sudoku Accessibility Enhancements
 // @namespace     http://www.google.com/accessible/
 // @description   Uses WAI-ARIA to enhance accessibility for Google
-// @include       http://www.websudoku.com/*
+// @include       http://view.websudoku.com/*
 // ==/UserScript==
 
 function loadScript(){
