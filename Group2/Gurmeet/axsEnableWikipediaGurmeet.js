@@ -48,10 +48,10 @@ axsWiki.readParagraphNumber = function(number) {
 };
 
 axsWiki.init = function() {
-  Paras = document.getElementsByTagName("p");
-  maxParas = Paras.length;
-  currentPara = -1;
-  currentState = READING_PARAGRAPHS;
+  axsWiki.Paras = document.getElementsByTagName("p");
+  axsWiki.maxParas = axsWiki.Paras.length;
+  axsWiki.currentPara = -1;
+  axsWiki.currentState = axsWiki.READING_PARAGRAPHS;
   document.addEventListener('keypress', axsWiki.keyboardHandler, true);
 };
 
