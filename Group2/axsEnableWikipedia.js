@@ -10,7 +10,7 @@ function axsJb_keyboardHandler(evt){
   axsJb_axsJaxObj.speakThroughPixel("Hi Sarika");
 var entiredoc = document.documentElement;
 var docnodes=entiredoc.childNodes;
- axsJb_axsJaxObj.speakText("Number of elements "+docnodes);
+// axsJb_axsJaxObj.speakText("Number of elements "+docnodes);
 for (i=0; i<docnodes.length; i++)
 alert(docnodes[i].tagName);
 
