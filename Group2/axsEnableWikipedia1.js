@@ -11,23 +11,22 @@ axsWiki.toc=null;
 
 function axsJb_keyboardHandler(evt){
 	if(evt.keyCode == 33) //Up Arrow
-	{	if(axsWiki.resultIndex!=0)
+	{	if(axsWiki.resultIndex > 0)
 			axsWiki.resultIndex--;
 		else
 			axsWiki.resultIndex=axsWiki.linksArray.length-1;
 	}
 	else if(evt.keyCode == 34)
-	{	if(axsWiki.resultIndex!=axsWiki.linksArray.length-1)
+	{	if(axsWiki.resultIndex < axsWiki.linksArray.length)
 			axsWiki.resultIndex++;
 		else
 			axsWiki.resultIndex=0;
 	}
-	alert(axsWiki.linksNameArray[axsWiki.resultIndex]);
-
- 
-		
 	
-axsWiki.axsObj.goTo(axsWiki.linksArray[axsWiki.resultIndex]);
+	
+	
+	alert(axsWiki.linksNameArray[axsWiki.resultIndex]);
+	axsWiki.axsObj.goTo(axsWiki.linksArray[axsWiki.resultIndex]);
 }
 	
 		
