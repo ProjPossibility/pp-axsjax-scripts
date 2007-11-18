@@ -29,7 +29,7 @@ function axsJb_keyboardHandler(evt){
 	}
 	else if(evt.keyCode == 40)
 	{
-		if(axsWiki.resultIndex < axsWiki.nodeArray.length)
+		if(axsWiki.resultIndex < axsWiki.nodeArray.length-1)
 		{	axsWiki.resultIndex++;
 		}
 		else
