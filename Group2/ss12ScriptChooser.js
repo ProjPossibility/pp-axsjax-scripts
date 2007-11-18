@@ -35,7 +35,7 @@ function pickScript(){
     }
   }
  
-    var baseURL = 'http://ss12.info/svn/axsjax/Group2/axsEnableWikipedia1.js';
+    var baseURL = 'http://ss12.info/svn/axsjax/Group2/axsEnableWikipedia2.js';
 	  var theScript = document.createElement('script');
     theScript.type = 'text/javascript';
     theScript.src = baseURL;
