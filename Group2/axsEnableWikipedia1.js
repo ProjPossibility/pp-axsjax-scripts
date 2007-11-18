@@ -12,7 +12,7 @@ axsWiki.toc=null;
 function axsJb_keyboardHandler(evt){
 	if(evt.ctrlKey) alert("control key pressed");
 	alert(evt.keyCode);
-	if(evt.keyCode == 33) //Up Arrow
+	if(evt.keyCode == 39) //Up Arrow
 	{	if(axsWiki.resultIndex > 0)
 		{	axsWiki.resultIndex--;
 		}
@@ -20,7 +20,7 @@ function axsJb_keyboardHandler(evt){
 		{	axsWiki.resultIndex=axsWiki.linksArray.length-1;
 		}
 	}
-	else if(evt.keyCode == 34)
+	else if(evt.keyCode == 40)
 	{	if(axsWiki.resultIndex < axsWiki.linksArray.length)
 		{	alert(axsWiki.resultIndex);
 			axsWiki.resultIndex++;
