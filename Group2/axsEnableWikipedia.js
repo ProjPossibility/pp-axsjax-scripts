@@ -16,7 +16,7 @@ function axsJb_keyboardHandler(event){
   axsJb_axsJaxObj.speakThroughPixel("Hello World");
   feedResultsArray = new Array();
   var inputArray = event.target.getElementsByTagName("p");
-  for (var i = 0, result; result = divArray[i]; i++) {
+  for (var i = 0, result; result = inputArray[i]; i++) {
    // if (result.className == 'row'){
       feedResultsArray.push(result);
   //  }
