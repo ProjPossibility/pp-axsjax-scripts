@@ -138,7 +138,7 @@ axsSd.getSolution = function() {
 };
 
 axsSd.getCellValue = function(row, col) {
-   val value = axsSd.getSolutionCellValue(row, col);
+   var value = axsSd.getSolutionCellValue(row, col);
    return value;
 };
 
