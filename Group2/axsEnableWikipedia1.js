@@ -86,7 +86,7 @@ function toc_keypress(evt)
 	{	
 		document.location = axsWiki.currentLink;
 		axsWiki.currentState = READING_PARAGRAPHS;
-		readParagraphClass(axsWiki.currentLink);		
+		paragraphReader.readParagraphClass(axsWiki.currentLink);		
 	}
 
 }
