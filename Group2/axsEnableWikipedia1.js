@@ -21,7 +21,7 @@ function axsJb_keyboardHandler(evt){
 		}
 		if(axsWiki.nodeArray[axsWiki.resultIndex].firstChild.nodeValue!='hide');
 		{	alert(axsWiki.nodeArray[axsWiki.resultsIndex].getElementsByTagName('a').nodeName);
-			var currentResult = axsWiki.nodeArray[axsWiki.resultsIndex];
+			var currentResult = axsWiki.nodeArray[axsWiki.resultIndex];
 			axsWiki.currentLink = currentResult.href;
 			axsWiki.axsObj.goTo(currentResult);
 			//axsWiki.axsObj.goTo(axsWiki.nodeArray[axsWiki.resultIndex]);
