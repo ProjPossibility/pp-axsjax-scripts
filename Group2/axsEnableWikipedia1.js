@@ -48,7 +48,6 @@ axsWiki.init = function(){
 	axsWiki.nameArray = new Array();
 	axsWiki.countArray = new Array();
 	var temp = axsWiki.toc.getElementsByTagName('a');
-
 	for(var i=1;i<temp.length;i++)
 	{	
 		axsWiki.linksArray[toc_count]=temp[i].getAttribute('href');
@@ -58,8 +57,8 @@ axsWiki.init = function(){
 		axsWiki.nameArray[toc_count++]=temp_span_elements[1].firstChild.nodeValue;
 	
 	}
+	document.addEventListener('keypress', axsJb_keyboardHandler, true);
 }
 
 axsWiki.init();
-
-	document.addEventListener('keypress', axsJb_keyboardHandler, true);
+axsWiki.axsObj.speakThroughPixel('this is stupid');
