@@ -23,6 +23,7 @@ axsWiki.linksArray = new Array();
 axsWiki.linksArray = toc.getElementByTagName('li');
 for(var i = 0;i<axsWiki.linksArray.length;i++)
 {		
+alert(i);
 axsWiki.axsObj.goTo(axsWiki.linksArray[i])
 }
 	
