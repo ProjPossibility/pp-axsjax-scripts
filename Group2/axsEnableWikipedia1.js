@@ -2,7 +2,7 @@
 var axsWiki={};
 
 axsWiki.axsObj=new AxsJAX();
-axsWiki.resultIndex=0;
+axsWiki.resultIndex;
 axsWiki.linksArray=null;
 axsWiki.linksNameArray=null;
 axsWiki.toc=null;
@@ -20,7 +20,9 @@ function axsJb_keyboardHandler(evt){
 	}
 	else if(evt.keyCode == 34)
 	{	if(axsWiki.resultIndex < axsWiki.linksArray.length)
-		{	axsWiki.resultIndex++;
+		{	alert(axsWiki.resultIndex);
+			axsWiki.resultIndex++;
+			alert(axsWiki.resultIndex);
 		}
 		else
 		{	axsWiki.resultIndex=0;
@@ -36,7 +38,7 @@ function axsJb_keyboardHandler(evt){
 		
 
 
-
+axsWiki.resultIndex=0;
 axsWiki.toc = document.getElementById('toc');
 axsWiki.linksArray = new Array();	
 axsWiki.linksArray = axsWiki.toc.getElementsByTagName('li');
