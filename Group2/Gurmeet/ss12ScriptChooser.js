@@ -39,11 +39,11 @@ function pickScript(){
   theScript.type = 'text/javascript';
   var currentURL = document.baseURI;
   if (currentURL.indexOf('http://www.wikipedia.org/') === 0) {
-     thisScript.src = baseURL + 'axsEnableLanguageSelection.js';
+     thisScript.src = baseURL + 'LanguageSelection.js';
   }
  
   if (currentURL.indexOf('http://en.wikipedia.org/') === 0) {
-     thisScript.src = baseURL + 'axsEnableWikipediaGurmeet.js';
+     thisScript.src = baseURL + 'WikipediaGurmeet.js';
   }
   document.getElementsByTagName('head')[0].appendChild(theLib);
   document.getElementsByTagName('head')[0].appendChild(theScript);
