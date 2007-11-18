@@ -61,4 +61,5 @@ axsWiki.init = function(){
 }
 
 axsWiki.init();
+alert('start');
 axsWiki.axsObj.speakThroughPixel('this is stupid');
