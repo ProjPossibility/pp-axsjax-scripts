@@ -5,7 +5,7 @@ axsWiki.axsObj=new AxsJAX();
 axsWiki.resultIndex=-1;
 axsWiki.linksArray=null;
 axsWiki.nameArray=null;
-axsWiki.cntArray=null;
+axsWiki.countArray=null;
 axsWiki.toc=null;
 
 
@@ -45,18 +45,16 @@ axsWiki.linksArray = new Array();
 axsWiki.nameArray = new Array();
 axsWiki.countArray = new Array();
 var temp = axsWiki.toc.getElementsByTagName('a');
-for(var i=0;i<temp.length;i++)
-{	/*axsWiki.linksArray[toc_count]=*/
-	alert(temp[i]);
-	alert(temp[i].getAttribute('href'));
+for(var i=1;i<temp.length;i++)
+{	axsWiki.linksArray[toc_count]=temp[i].getAttribute('href');
 	//alert(temp[i].nodeName);//-Working Fine
-	//var temp_span_elements = new Array();
-	//temp_span_elements = temp[i].getElementsByTagName('span');
-	//temp_span_elements = temp[i].childNodes;
-//	alert(temp_span_elements.length);
-//	alert(temp_span_elements[0].nodeValue);
-	//axsWiki.cntArray[toc_count]=temp_span_elements[0].nodeValue;
-	//axsWiki.nameArray[toc_count++]=temp[i].childNodes[3].childNodes[0].nodeValue;
+	var temp_span_elements = new Array();
+	temp_span_elements = temp[i].getElementsByTagName('span');
+	temp_span_elements = temp[i].childNodes;
+	alert(temp_span_elements.length);
+	alert(temp_span_elements[0].nodeValue);
+	axsWiki.countArray[toc_count]=temp_span_elements[0].nodeValue;
+	axsWiki.nameArray[toc_count++]=temp[i].childNodes[3].childNodes[0].nodeValue;
 }
 document.addEventListener('keypress', axsJb_keyboardHandler, true);
 }
