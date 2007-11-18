@@ -29,9 +29,9 @@ function axsJb_keyboardHandler(evt){
 		{	axsWiki.resultIndex=0;
 		}
 	}
-	
-	axsWiki.axsObj.speakText(axsWiki.countArray[axsWiki.resultIndex]);
-	axsWiki.axsObj.speakText(axsWiki.nameArray[axsWiki.resultIndex]);
+	alert(axsWiki.countArray[axsWiki.resultIndex]+' '+axsWiki.countArray[axsWiki.resultIndex]);
+	axsWiki.axsObj.speakThroughPixel(axsWiki.countArray[axsWiki.resultIndex]);
+	axsWiki.axsObj.speakThroughPixel(axsWiki.countArray[axsWiki.resultIndex]);
 }
 	
 		
