@@ -15,7 +15,7 @@ axsWiki.axsObj = new AxsJAX(true);
  * 
  */
 axsWiki.keyboardHandler = function(evt) {
-  if (axsWiki.currentState == READING_PARAGRAPHS) {
+  if (axsWiki.currentState == axsWiki.READING_PARAGRAPHS) {
 	if (evt.charCode == 110) {  // n
          if (axsWiki.currentPara < axsWiki.maxParas - 1) {
             axsWiki.currentPara++;
