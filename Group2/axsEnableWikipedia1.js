@@ -4,32 +4,40 @@ var axsWiki={};
 axsWiki.axsObj=new AxsJAX();
 axsWiki.resultIndex=0;
 axsWiki.linksArray=null;
-//var axsJb_axsJaxObj = new AxsJAX();
+axsWiki.linksNameArray=null;
+axsWiki.toc=null;
+
 
 
 function axsJb_keyboardHandler(evt){
-//  axsJb_axsJaxObj.speakNode('Hello World');
-var toc = document.getElementById('toc');
+	if(evt.keyCode == 33) //Up Arrow
+	{	if(axsWiki.resultIndex!=0)
+			axsWiki.resultIndex--;
+		else
+			axsWiki.resultIndex=axsWiki.linksArray.length-1;
+	}
+	else if(evt.keyCode == 34)
+	{	if(axsWiki.resultIndex!=axsWiki.linksArray.length-1)
+			axsWiki.resultIndex++;
+		else
+			axsWiki.resultIndex=0;
+	}
+	alert(axsWiki.linksNameArray[resultIndex];
 
-	/*var td = document.getElementsByTagName('td');
-	//alert(td.length);
-	var tocContents = td[0].childNodes[3].childNodes;
-	//Working-alert(tocContents[1].nodeName);
-	for(var i =1;i<tocContents.length;i+=2)
-	{	alert(tocContents[i].firstChild.childNodes[1].nodeName);
-		alert(tocContents[i].firstChild.getAttribute('href')+'\t'+tocContents[i].firstChild.childNodes[3].childNodes[0].nodeValue);
-	}*/
-axsWiki.linksArray = new Array();	
-axsWiki.linksArray = toc.getElementsByTagName('li');
-for(var i = 0;i<axsWiki.linksArray.length;i++)
-{		
-alert(i);
-axsWiki.axsObj.goTo(axsWiki.linksArray[i])
+ 
+		
+	
+axsWiki.axsObj.goTo(axsWiki.linksArray[axsWiki.resultIndex]);
 }
 	
 		
 
-}
 
 
+axsWiki.toc = document.getElementById('toc');
+axsWiki.linksArray = new Array();	
+axsWiki.linksArray = axsWiki.toc.getElementsByTagName('li');
+axsWiki.linksNameArray = new Array();
+var temp = axsWiki.toc.getElementsByTagName('a');
+for(var i=0;i<temp.length;i++) axsWiki.linksNameArray[i]= temp[i].getAttribute('href');
 document.addEventListener('keypress', axsJb_keyboardHandler, true);
