@@ -33,6 +33,7 @@ function keyboardHandler(evt) {
          }
       }
   }
+}
 
 function readParagraph(number) {
     alert(Paras[number].textContent);
