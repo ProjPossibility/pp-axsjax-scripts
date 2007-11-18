@@ -17,9 +17,9 @@ function axsJb_keyboardHandler(event){
   feedResultsArray = new Array();
   var inputArray = event.target.getElementsByTagName("p");
   for (var i = 0, result; result = divArray[i]; i++) {
-    if (result.className == 'row'){
+   // if (result.className == 'row'){
       feedResultsArray.push(result);
-    }
+  //  }
   }
     if (feedResultsArray.length > 0){
      axsJb_axsJaxObj.speakText(RESULTS_LOADED_STRING);
