@@ -43,8 +43,8 @@ axsWiki.readParagraphClass = function(class) {
 
 axsWiki.readParagraphNumber = function(number) {
 //    alert(Paras[number].textContent);
-    axsJaxObj.goTo(Paras[number]);
-//    axsJaxObj.speakText(Paras[number].textContent);
+    axsObj.goTo(Paras[number]);
+//    axsObj.speakText(Paras[number].textContent);
 };
 
 axsWiki.init = function() {
