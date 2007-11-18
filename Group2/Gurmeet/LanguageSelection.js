@@ -30,7 +30,6 @@ axsLangWiki.keyboardHandler = function(evt) {
             axsLangWiki.readLanguage(axsLangWikicurrentPara);
          }
       }
-  }
 };
 
 axsLangWiki.readParagraphNumber = function(number) {

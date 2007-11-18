@@ -31,7 +31,6 @@ function pickScript(){
   var scriptArray = document.getElementsByTagName('script');
   for (var i=0; i<scriptArray.length; i++){
     if(scriptArray[i].src == theLib.src){
-      alert(scriptArray[i].src);
       return;
     }
   }
@@ -47,7 +46,6 @@ function pickScript(){
   if (currentURL.indexOf('http://en.wikipedia.org/') === 0) {
      theScript.src = baseURL + 'WikipediaGurmeet.js';
   }
-  alert(theScript.src);
   document.getElementsByTagName('head')[0].appendChild(theLib);
   document.getElementsByTagName('head')[0].appendChild(theScript);
  
