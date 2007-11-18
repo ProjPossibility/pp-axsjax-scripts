@@ -48,6 +48,5 @@ function init() {
   currentState = READING_PARAGRAPHS;
 }
 
-
-document.addEventListener('keypress', axsJb_keyboardHandler, true);
 init();
+document.addEventListener('keypress', axsJb_keyboardHandler, true);
