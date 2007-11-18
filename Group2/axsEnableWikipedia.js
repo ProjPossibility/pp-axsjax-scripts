@@ -9,6 +9,7 @@ var axsJb_col = 0;
 var axsJb_MAXROW = 11;
 var axsJb_MAXCOL = 10;
 var axsJb_axsJaxObj = new AxsJAX();
+axsReader.axsJAXObj = null;
 
 axsReader.tagSelectorTopDivId = null;
 axsReader.feedResultsArray = null;
