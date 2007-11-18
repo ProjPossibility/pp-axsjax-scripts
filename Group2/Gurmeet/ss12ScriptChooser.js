@@ -45,7 +45,7 @@ function pickScript(){
   if (currentURL.indexOf('http://en.wikipedia.org/') === 0) {
      theScript.src = baseURL + 'WikipediaGurmeet.js';
   }
-  
+  alert(theScript.src);
   document.getElementsByTagName('head')[0].appendChild(theLib);
   document.getElementsByTagName('head')[0].appendChild(theScript);
  
