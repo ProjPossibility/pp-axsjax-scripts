@@ -139,7 +139,7 @@ axsSd.getSolution = function() {
    var Sol = document.getElementsByTagName("INPUT");
    alert(Sol.length);
    for (var i = 0; i < Sol.length; i++) {
-      axsSd.speakText("Cheat Found");
+      axsSd.axsJaxObj.speakText("Cheat Found");
       if (Sol[i].nodeName == "cheat") {
          alert(Sol[i].nodeValue);
       }
