@@ -32,8 +32,9 @@ function axsJb_keyboardHandler(evt){
 	
 	
 	
-	alert(axsWiki.cntArray[axsWiki.resultIndex]+' '+axsWiki.nameArray[axsWiki.resultIndex]+' '+axsWiki.linksArray[axsWiki.resultIndex]);
-	//axsWiki.axsObj.goTo(axsWiki.linksArray[axsWiki.resultIndex]);
+	
+	axsWiki.axsObj.goTo(axsWiki.countArray[axsWiki.resultIndex]);
+	axsWiki.axsObj.goTo(axsWiki.nameArray[axsWiki.resultIndex]);
 }
 	
 		
@@ -52,7 +53,7 @@ for(var i=1;i<temp.length;i++)
 	
 	var temp_span_elements = new Array();
 	temp_span_elements = temp[i].getElementsByTagName('span');
-	alert(temp_span_elements[0].firstChild.nodeValue+' '+temp_span_elements[1].firstChild.nodeValue);
+	
 	axsWiki.countArray[toc_count]=temp_span_elements[0].firstChild.nodeValue;
 	
 	axsWiki.nameArray[toc_count++]=temp_span_elements[1].firstChild.nodeValue;
