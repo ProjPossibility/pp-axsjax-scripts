@@ -22,7 +22,7 @@ function axsJb_keyboardHandler(evt){
 		else
 			axsWiki.resultIndex=0;
 	}
-	alert(axsWiki.linksNameArray[resultIndex];
+	alert(axsWiki.linksNameArray[resultIndex]);
 
  
 		
