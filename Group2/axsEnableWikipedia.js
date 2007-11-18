@@ -7,7 +7,6 @@ var axsJb_col = 0;
 var axsJb_MAXROW = 11;
 var axsJb_MAXCOL = 10;
 var axsJb_axsJaxObj = new AxsJAX();
-axsReader.axsJAXObj = null;
 
 feedResultsArray = null;
 RESULTS_LOADED_STRING = 'Results loaded.';
@@ -38,7 +37,7 @@ function axsJb_keyboardHandler(evt){
 /**
  * Initializes the scripts for Google Reader
  */
-axsReader.init = function(){
+/*axsReader.init = function(){
   axsReader.feedResultsArray = new Array();
   axsReader.feedBundlesArray = new Array();
   axsReader.axsJAXObj = new AxsJAX();
@@ -75,7 +74,7 @@ axsReader.findFeedResults = function(){
   }
   axsReader.currentFeedResult = -1;
 };
-
+*/
 
 document.addEventListener('keypress', axsJb_keyboardHandler, true);
 //axsReader.init();
