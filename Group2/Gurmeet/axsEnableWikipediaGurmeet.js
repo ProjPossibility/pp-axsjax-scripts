@@ -13,6 +13,7 @@ var axsJb_axsJaxObj = new AxsJAX();
  * 
  */
 function axsJb_keyboardHandler(evt){
+  alert(evt.keyCode);
   if (currentState == READING_PARAGRAPHS) {
 	if (evt.keyCode == 110) {  // n
          if (currentPara < maxParas - 1) {
