@@ -12,11 +12,11 @@ axsSd.solution = null;
 axsSd.type = null;
 
 
-axsSd.getCurrentPosition function(){
+axsSd.getCurrentPosition function() {
   var value = axsSd.getCurrentCellValue(axsSd.row, axsSd.col);
   var message = axsSd.row + ', ' + axsSd.col + '.'+ 'value '+value;
   axsSd.axsJaxObj.speakText(message);
-}
+};
 
 function axsJb_getColorOfBallImg(ballImg){
   var color = '';
@@ -56,7 +56,7 @@ axsSd.speakRow function(){
   }
   speechString = speechString + axsSd.getCurrentCellValue(axsJb_row,axsJb_MAXCOL));
   axsSd.axsJaxObj.speakThroughPixel(speechString);
-}
+};
 
 axsSd.speakCol function(){
   var speechString = "Col " +  axsSd.col + ": ";
@@ -65,11 +65,11 @@ axsSd.speakCol function(){
   }
   speechString = speechString + axsSd.getCurrentCellValue(axsSd.MAXROW,axsSd.col));
   axsSd.axsJaxObj.speakThroughPixel(speechString);
-}
+};
 
 axsSd.keyboardHandler function(evt) {
    axsSd.getSolution();
-}
+};
 
 axsSd.keyboardHandler2 function(evt) {
   if (evt.charCode == 97){      //a
@@ -133,16 +133,16 @@ axsSd.keyboardHandler2 function(evt) {
     axsJb_axsJaxObj.clickElem(document.getElementById('menu-start'));
     axsJb_getCurrentPosition();
   }  
-}
+};
 
 axsSd.getSolution function() {
    var Sol = document.getElementsbyTagName("cheat");
    axsSd.axsJaxObj.speakNode(Sol[0]);
-}
+};
 
 axsSd.init = function() {
    axsSd.axsJaxObj = new AxsJAX(true);
    document.addEventListener('keypress', axsSd.keyboardHandler, true);
-}
+};
 
 axsSd.init();
