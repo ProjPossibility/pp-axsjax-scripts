@@ -17,11 +17,13 @@ function axsJb_keyboardHandler(evt){
   alert(paras.length);
   var annc = n+" "+"paragraphs on page";
   axsJb_axsJaxObj.speakThroughPixel(annc);
+  /* 
   var i = 0;
   for (i = 0; i < n; i++) {
      var node = paras[i];
      axsJb_axsJaxObj.speakText(node.textContent);
   }
+  */
 }
 
 
