@@ -3,9 +3,9 @@
 
 var axsJb_axsJaxObj = new AxsJAX();
 
-feedResultsArray = null;
-RESULTS_LOADED_STRING = 'Results loaded.';
-NO_RESULTS_STRING = 'Your search did not match any feeds. ' +
+var feedResultsArray = null;
+var RESULTS_LOADED_STRING = 'Results loaded.';
+var NO_RESULTS_STRING = 'Your search did not match any feeds. ' +
     'Please make sure all words are spelled correctly, ' +
     'or try different keywords, or try more general keywords. ';
 
@@ -15,7 +15,7 @@ NO_RESULTS_STRING = 'Your search did not match any feeds. ' +
 function axsJb_keyboardHandler(event){
   axsJb_axsJaxObj.speakThroughPixel("Hello World");
   feedResultsArray = new Array();
-  var inputArray = event.target.getElementsByTagName('p');
+  var inputArray = event.target.getElementsByTagName("p");
   for (var i = 0, result; result = divArray[i]; i++) {
     if (result.className == 'row'){
       feedResultsArray.push(result);
