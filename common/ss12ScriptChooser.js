@@ -44,7 +44,6 @@ function pickScript(){
   }  else if ((currentURL === 'http://www.google.com/')
       || (currentURL.indexOf('http://www.google.com/search') === 0)
       || (currentURL.indexOf('http://www.google.com/custom') === 0)){
-alert('helo');
     theScript.src = baseURL + 'websearch/axsEnableWebSearch.js';
     shouldInsertScripts = true;
   }  else if (currentURL.indexOf('http://scholar.google.com/scholar') === 0){
@@ -59,7 +58,7 @@ alert('helo');
   }
 
 else if (currentURL.indexOf('http://en.wikipedia.org/wiki/Main_Page')===0){
-	alert('i m called');
+alert('i m called');
     theScript.src = baseURL + 'websearch/axsEnableWebSearch.js';
     shouldInsertScripts = true;
   }
