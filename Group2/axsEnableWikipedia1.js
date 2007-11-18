@@ -45,9 +45,11 @@ axsWiki.linksArray = new Array();
 axsWiki.nameArray = new Array();
 axsWiki.countArray = new Array();
 var temp = axsWiki.toc.getElementsByTagName('a');
+alert(temp.length);
 for(var i=0;i<temp.length;i++)
-{	axsWiki.linksArray[toc_count]=temp[i].getAttribute('href');
-	alert(axsWiki.linksArray[toc_count]);
+{	/*axsWiki.linksArray[toc_count]=*/
+	alert(temp[i]);
+	alert(temp[i].getAttribute('href'));
 	//alert(temp[i].nodeName);//-Working Fine
 	var temp_span_elements = new Array();
 	//temp_span_elements = temp[i].getElementsByTagName('span');
