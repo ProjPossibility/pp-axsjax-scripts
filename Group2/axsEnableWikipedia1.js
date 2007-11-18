@@ -13,7 +13,7 @@ axsWiki.toc=null;
 
 function axsJb_keyboardHandler(evt){
 	
-	alert(evt.keyCode);
+	
 	if(evt.keyCode == 38) //Up Arrow
 	{	if(axsWiki.resultIndex > 1)
 		{	axsWiki.resultIndex--;
@@ -24,7 +24,6 @@ function axsJb_keyboardHandler(evt){
 	}
 	else if(evt.keyCode == 40)
 	{
-		alert('40pressed');
 		if(axsWiki.resultIndex < axsWiki.linksArray.length)
 		{	axsWiki.resultIndex++;
 		
@@ -51,7 +50,6 @@ axsWiki.countArray = new Array();
 //var temp = axsWiki.toc.getElementsByTagName('a');
 axsWiki.nodeArray = new Array();
 axsWiki.nodeArray = axsWiki.toc.getElementsByTagName('a');
-alert(axsWiki.nodeArray.length);
 /*for(var i=0;i<temp.length;i++)
 {	axsWiki.linksArray[toc_count]=temp[i].getAttribute('href');
 	var temp_span_elements = new Array();
