@@ -54,8 +54,8 @@ var i=1;
 	temp_span_elements = temp[i].childNodes;
 	
 	alert(temp_span_elements.length);
+	alert(temp_span_elements[0].firstChild.nodeValue);
 	alert(temp_span_elements[1].firstChild.nodeValue);
-	alert(temp_span_elements[3].firstChild.nodeValue);
 	/*axsWiki.countArray[toc_count]=temp_span_elements[1].nodeValue;
 	axsWiki.nameArray[toc_count++]=temp[i].childNodes[3].childNodes[0].nodeValue;*/
 }
