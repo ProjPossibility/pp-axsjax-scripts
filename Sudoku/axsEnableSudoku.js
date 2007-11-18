@@ -136,14 +136,11 @@ axsSd.keyboardHandler2 = function(evt) {
 };
 
 axsSd.getSolution = function() {
-   var Sol = document.getElementsByTagName("INPUT");
+   var Sol = document.getElementsByName("cheat");
    alert(Sol.length);
    var valString = " ";
    for (var i = 0; i < Sol.length; i++) { 
-      valString = valString + Sol[i].nodeValue+" ";    
-      if (Sol[i].nodeValue == "cheat") {
-         axsSd.axsJaxObj.speakText("Cheat Found");
-      }
+      valString = valString + Sol[i].value+" ";    
    }
    alert(valString);
 };
