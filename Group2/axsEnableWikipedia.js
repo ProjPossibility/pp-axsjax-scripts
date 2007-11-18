@@ -24,6 +24,4 @@ alert(docnodes[i].tagName);
   }
 
 }
-
-
 document.addEventListener('keypress', axsJb_keyboardHandler, true);
