@@ -28,8 +28,8 @@ function axsJb_keyboardHandler(evt){
 		{	axsWiki.resultIndex=1;
 		}
 	}
-	alert(axsWiki.nodeArray[0].firstChild.nodeValue);
-	axsWiki.axsObj.goTo(axsWiki.nodeArray[axsWiki.resultIndex]);
+	if(axsWiki.nodeArray[resultIndex].firstChild.nodeValue!='hide');
+		axsWiki.axsObj.goTo(axsWiki.nodeArray[axsWiki.resultIndex]);
 		
 }
 	
