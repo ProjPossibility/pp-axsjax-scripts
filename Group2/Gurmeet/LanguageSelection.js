@@ -39,7 +39,7 @@ axsLangWiki.keyboardHandler = function(evt) {
 axsLangWiki.readLanguage = function(number) {
 //    alert(axsLangWiki.Paras[number].textContent);
     alert(axsLangWiki.languages[number].textContent);
-    axsLangWiki.axsObj.speakText(axsLangWiki.languages[number].textContent);
+    axsLangWiki.axsObj.goTo(axsLangWiki.languages[number]);
 //    axsObj.speakText(axsLangWiki.Paras[number].textContent);
 };
 
