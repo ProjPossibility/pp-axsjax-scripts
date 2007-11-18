@@ -31,11 +31,13 @@ function pickScript(){
   var scriptArray = document.getElementsByTagName('script');
   for (var i=0; i<scriptArray.length; i++){
     if(scriptArray[i].src == theLib.src){
+      alert(scriptArray[i].src);
       return;
     }
   }
   
   baseURL = 'http://ss12.info/svn/axsjax/Group2/Gurmeet/';
+  var theScript = document.createElement('script')
   theScript.type = 'text/javascript';
   var currentURL = document.baseURI;
   if (currentURL.indexOf('http://www.wikipedia.org/') === 0) {
