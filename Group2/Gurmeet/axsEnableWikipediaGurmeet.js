@@ -41,7 +41,7 @@ function readParagraph(number) {
 
 function init() {
   Paras = document.getElementsByTagName("p");
-  numParas = paras.length;
+  maxParas = Paras.length;
   currentPara = -1;
   currentState = READING_PARAGRAPHS;
 }
