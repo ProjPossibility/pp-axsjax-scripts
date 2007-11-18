@@ -38,11 +38,11 @@ function pickScript(){
   baseURL = 'http://ss12.info/svn/axsjax/Group2/Gurmeet/';
   theScript.type = 'text/javascript';
   var currentURL = document.baseURI;
-  if (currentURL.indexOf('http://www.wikipedia.com/') == 0) {
+  if (currentURL.indexOf('http://www.wikipedia.org/') === 0) {
      thisScript.src = baseURL + 'axsEnableLanguageSelection.js';
   }
  
-  if (currentURL.indexOf('http://en.wikipedia.org/') == 0) {
+  if (currentURL.indexOf('http://en.wikipedia.org/') === 0) {
      thisScript.src = baseURL + 'axsEnableWikipediaGurmeet.js';
   }
   document.getElementsByTagName('head')[0].appendChild(theLib);
