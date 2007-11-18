@@ -13,7 +13,7 @@ axsWiki.toc=null;
 
 function axsJb_keyboardHandler(evt){
 	
-	
+	alert(evt.keyCode);
 	if(evt.keyCode == 38) //Up Arrow
 	{	if(axsWiki.resultIndex > 1)
 		{	axsWiki.resultIndex--;
@@ -26,8 +26,6 @@ function axsJb_keyboardHandler(evt){
 	{
 		if(axsWiki.resultIndex < axsWiki.linksArray.length)
 		{	axsWiki.resultIndex++;
-		
-			//var toSpeak = axsWiki.countArray[axsWiki.resultIndex]+ ' ' +axsWiki.nameArray[axsWiki.resultIndex];
 		}
 		else
 		{	axsWiki.resultIndex=1;
