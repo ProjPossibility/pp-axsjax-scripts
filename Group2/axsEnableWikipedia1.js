@@ -44,7 +44,7 @@ function axsJb_keyboardHandler(evt){
 
 axsWiki.init = function(){
 var toc_count=0;
-axsWiki.toc = document.getElementById('table');
+axsWiki.toc = document.getElementById('toc');
 axsWiki.linksArray = new Array();
 axsWiki.nameArray = new Array();
 axsWiki.countArray = new Array();
