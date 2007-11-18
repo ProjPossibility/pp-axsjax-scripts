@@ -47,6 +47,7 @@ axsWiki.countArray = new Array();
 var temp = axsWiki.toc.getElementsByTagName('a');
 for(var i=0;i<temp.length;i++)
 {	axsWiki.linksArray[toc_count]=temp[i].getAttribute('href');
+	alert(axsWiki.linksArray[toc_count]);
 	//alert(temp[i].nodeName);//-Working Fine
 	var temp_span_elements = new Array();
 	//temp_span_elements = temp[i].getElementsByTagName('span');
