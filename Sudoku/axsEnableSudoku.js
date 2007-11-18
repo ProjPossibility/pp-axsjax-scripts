@@ -119,10 +119,10 @@ axsSd.keyboardHandler = function(evt) {
     axsJb_sayStats();
   }
   if (evt.charCode == 99){ // c
-    axsJb_speakCol();
+    axsSd.speakCol();
   }
   if (evt.charCode == 114){ // r
-    axsJb_speakRow();
+    axsSd.speakRow();
   }
   if (evt.charCode == 110){ // n
     axsJb_row = 0;
