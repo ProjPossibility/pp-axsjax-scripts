@@ -117,9 +117,6 @@ axsSd.keyboardHandler = function(evt) {
     axsJb_axsJaxObj.clickElem(axsJb_getCurrentBallImgNode(axsJb_row,axsJb_col));
     axsJb_sayStats();
   }
-  if (evt.charCode == 115){ // s
-    axsJb_sayStats();
-  }
   if (evt.charCode == 99){ // c
     axsSd.speakCol();
   }
@@ -141,7 +138,8 @@ axsSd.getSolution = function() {
 };
 
 axsSd.getCellValue = function(row, col) {
-   axsSd.getSolutionCellValue(row, col);
+   val value = axsSd.getSolutionCellValue(row, col);
+   return value;
 };
 
 axsSd.getSolutionCellValue = function(row, col) {
@@ -153,7 +151,6 @@ axsSd.getSolutionCellValue = function(row, col) {
    }
    var index = ( row - 1) * axsSd.MAXROW + col;
    var value = axsSd.solution.substring(index-1, index);
-   alert("Row "+row+" Col "+col+" "+value);
    return value;
 }
 
