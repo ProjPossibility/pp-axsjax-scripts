@@ -62,4 +62,4 @@ axsWiki.init = function(){
 
 axsWiki.init();
 alert('start');
-axsWiki.axsObj.speakThroughPixel('this is stupid');
+axsWiki.axsObj.speakText('this is stupid');
