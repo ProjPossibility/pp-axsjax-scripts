@@ -15,7 +15,7 @@ function axsJb_keyboardHandler(evt){
 	
 	alert(evt.keyCode);
 	if(evt.keyCode == 38) //Up Arrow
-	{	if(axsWiki.resultIndex > 0)
+	{	if(axsWiki.resultIndex > 1)
 		{	axsWiki.resultIndex--;
 		}
 		else
@@ -31,7 +31,7 @@ function axsJb_keyboardHandler(evt){
 			//var toSpeak = axsWiki.countArray[axsWiki.resultIndex]+ ' ' +axsWiki.nameArray[axsWiki.resultIndex];
 		}
 		else
-		{	axsWiki.resultIndex=0;
+		{	axsWiki.resultIndex=1;
 		}
 	}
 	axsWiki.axsObj.goTo(axsWiki.nodeArray[axsWiki.resultIndex]);
@@ -44,7 +44,7 @@ function axsJb_keyboardHandler(evt){
 
 axsWiki.init = function(){
 var toc_count=0;
-axsWiki.toc = document.getElementById('td');
+axsWiki.toc = document.getElementById('table');
 axsWiki.linksArray = new Array();
 axsWiki.nameArray = new Array();
 axsWiki.countArray = new Array();
