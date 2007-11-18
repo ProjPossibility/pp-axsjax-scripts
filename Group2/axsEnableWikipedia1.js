@@ -52,9 +52,9 @@ for(var i=1;i<temp.length;i++)
 	
 	var temp_span_elements = new Array();
 	temp_span_elements = temp[i].getElementsByTagName('span');
-	alert(temp_span_elements[0].firstChild.nodeValue);
+	alert(temp_span_elements[0].firstChild.nodeValue+' '+temp_span_elements[1].firstChild.nodeValue);
 	axsWiki.countArray[toc_count]=temp_span_elements[0].firstChild.nodeValue;
-	alert(temp_span_elements[1].firstChild.nodeValue);
+	
 	axsWiki.nameArray[toc_count++]=temp_span_elements[1].firstChild.nodeValue;
 	
 }
