@@ -11,7 +11,7 @@ var axsJb_axsJaxObj = new AxsJAX();
  * Dictionary mapping  image names to color names
  */
 function axsJb_keyboardHandler(evt){
-  axsJb_axsJaxObj.speakNode('Hello World');
+  axsJb_axsJaxObj.speakNode("Hello World");
 }
 
 
