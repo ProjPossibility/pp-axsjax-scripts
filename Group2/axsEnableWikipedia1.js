@@ -37,6 +37,7 @@ axsWiki.toc = document.getElementById('toc');
 axsWiki.linksArray = new Array();	
 axsWiki.linksArray = axsWiki.toc.getElementsByTagName('li');
 axsWiki.linksNameArray = new Array();
-var temp = axsWiki.toc.getElementsByTagName('a');
+var temp = new Array()
+temp = axsWiki.toc.getElementsByTagName('a');
 for(var i=0;i<temp.length;i++) axsWiki.linksNameArray[i]= temp[i].getAttribute('href');
 document.addEventListener('keypress', axsJb_keyboardHandler, true);
