@@ -51,7 +51,7 @@ var i=1;
 	alert(temp[i].getAttribute('href'));
 	//alert(temp[i].nodeName);//-Working Fine
 	var temp_span_elements = new Array();
-	temp_span_elements = temp[i].childNodes;
+	temp_span_elements = temp[i].getElementsByTagName('span');
 	
 	alert(temp_span_elements.length);
 	alert(temp_span_elements[0].firstChild.nodeValue);
