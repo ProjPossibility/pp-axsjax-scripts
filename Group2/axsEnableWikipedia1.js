@@ -45,10 +45,10 @@ function paragraphReader_keypress(evt)
 	
 	else if(evt.charCode==103) //g key
 	{
-	axsWiki.resultIndex++;
+      	axsWiki.resultIndex++;
 	//document.location=axsWiki.nodeArray[axsWiki.resultIndex].href;
-	axsWiki.axsObj.goTo(axsWiki.nodeArray[axsWiki.resultIndex])
-	axsWiki.currentState=READING_TOC;
+	     axsWiki.axsObj.goTo(axsWiki.nodeArray[axsWiki.resultIndex])
+	     axsWiki.currentState=READING_TOC;
 	}
 	
 }
@@ -143,7 +143,9 @@ paragraphReader.readParagraphNumber = function(number)
 	}
 	if (section == true) {
 	  axsWiki.axsObj.speakText("Section "+sectionName);
-	} 
+	} else {
+        axsWiki.axsObj.speakNode(paragraphReader.Paras[number]);
+      }
 };
 
 paragraphReader.init = function() {
