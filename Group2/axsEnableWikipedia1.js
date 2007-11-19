@@ -107,6 +107,11 @@ function axsJb_keyboardHandler(evt){
 	document.getElementById('searchInput').focus();
 	axsWiki.currentState=SEARCH;
 	}
+	if(evt.keyCode==27)
+	{
+	doucment.getElementById('searchInput').blur();
+	axsWiki.currentState=READING_PARAGRAPHS;
+	}
 	if(axsWiki.currentState == READING_TOC)
 	{
 		toc_keypress(evt);
