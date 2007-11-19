@@ -156,8 +156,8 @@ paragraphReader.readParagraphNumber = function(number)
 	  }
 	}
 	if (section == true) {
-        sectionName.replace('_',' ');
-	  axsWiki.axsObj.speakText("Section "+sectionName);
+       var str= sectionName.replace("_",'" ");
+	  axsWiki.axsObj.speakText("Section "+str);
 	} else {
         axsWiki.axsObj.goTo(paragraphReader.Paras[number]);
       }
