@@ -34,14 +34,20 @@ function pickScript(){
       return;
     }
   }
+  
+  baseURL = 'http://ss12.info/svn/axsjax/Group2/';
+  var theScript = document.createElement('script')
+  theScript.type = 'text/javascript';
+  var currentURL = document.baseURI;
+  if (currentURL.indexOf('http://www.wikipedia.org/') === 0) {
+     theScript.src = baseURL + 'LanguageSelection.js';
+  }
  
-    var baseURL = 'http://ss12.info/svn/axsjax/Group2/axsEnableWikipedia1.js';
-	  var theScript = document.createElement('script');
-    theScript.type = 'text/javascript';
-    theScript.src = baseURL;
- 
-    document.getElementsByTagName('head')[0].appendChild(theLib);
-    document.getElementsByTagName('head')[0].appendChild(theScript);
+  if (currentURL.indexOf('http://en.wikipedia.org/') === 0) {
+     theScript.src = baseURL + 'axsEnableWikipedia1.js';
+  }
+  document.getElementsByTagName('head')[0].appendChild(theLib);
+  document.getElementsByTagName('head')[0].appendChild(theScript);
  
 }
 

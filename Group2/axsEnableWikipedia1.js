@@ -113,7 +113,7 @@ function axsJb_keyboardHandler(evt){
 	
 	if(evt.charCode == 47)
 	{
-	document.getElementById('searchInput').focus();
+	document.getElementsById('searchInput').focus();
 	axsWiki.currentState=SEARCH;
 	}
 	if(evt.keyCode == 27)
