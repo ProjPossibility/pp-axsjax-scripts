@@ -49,7 +49,7 @@ function paragraphReader_keypress(evt)
 }
 
 function toc_keypress(evt)
-{
+{	alert(keyCode);
 	if(evt.keyCode == 38) //Up Arrow
 	{	if(axsWiki.resultIndex > 1)
 		{	axsWiki.resultIndex--;
@@ -87,7 +87,7 @@ function toc_keypress(evt)
 		axsWiki.currentState = READING_PARAGRAPHS;
 		//alert(axsWiki.currentLink);
 		var str=axsWiki.currentLink.substr(axsWiki.currentLink.indexOf("#",0)+1,axsWiki.currentLink.length);
-		alert(str);
+		
 		paragraphReader.readParagraphClass(str);		
 	}
 
