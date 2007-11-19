@@ -52,10 +52,7 @@ axsLangWiki.keyboardHandler = function(evt) {
 };
 
 axsLangWiki.readLanguage = function(number) {
-//    alert(axsLangWiki.Paras[number].textContent);
-//    alert(axsLangWiki.languages[number].textContent);
     axsLangWiki.axsObj.speakNode(axsLangWiki.languages[number]);
-//    axsObj.speakText(axsLangWiki.Paras[number].textContent);
 };
 
 axsLangWiki.init = function() {
@@ -65,13 +62,11 @@ axsLangWiki.init = function() {
   axsLangWiki.maxParas = nodes.length;
   for (var i = 0; i < nodes.length; i++) {
       var node = nodes[i].getElementsByTagName('a');
-      node[0].id = "Language"+i;
       axsLangWiki.languages.push(node[0]);
       var ref = node[0].href;
       axsLangWiki.addresses.push(ref);
   }
   axsLangWiki.axsObj = new AxsJAX(true);
-  document.getElementById("Language0").focus();
   document.addEventListener('keypress', axsLangWiki.keyboardHandler, true);
 };
 
