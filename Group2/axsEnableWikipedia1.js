@@ -20,7 +20,7 @@ axsWiki.helpString =
     'P, go to the previous element. ' +
     'Enter, open the current item. ' +
     'Slash, jump to search blank. ' +
-    'Escape, leave search blank. ' +
+    'Escape, leave search blank. ' ;
    
 
 paragraphReader.maxParas = 0;
