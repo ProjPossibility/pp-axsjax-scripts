@@ -13,7 +13,20 @@ axsWiki.nodeArray=null;
 axsWiki.toc=null;
 axsWiki.currentLink;
 axsWiki.currentState = READING_PARAGRAPHS;
-
+axsWiki.helpString =
+    'The following shortcut keys are available. ' +
+    'G, use guided mode. ' +   
+    'N, go to the next element. ' +
+    'P, go to the previous element. ' +
+    'Enter, open the current item. ' +
+    'Slash, jump to search blank. ' +
+    'Escape, leave search blank. ' +
+    
+axsWebSearch.GUIDE_MODE_END =
+    'You have reached the end of this page. ' +
+    'Press  page down  to go to the next page. ' +
+    'Or press G again' +
+    'to return to the start of this page.';
 
 
 paragraphReader.maxParas = 0;
@@ -46,10 +59,12 @@ function paragraphReader_keypress(evt)
 	
 	else if(evt.charCode==103) //g key
 	{
-      	axsWiki.resultIndex++;
+      	if(document.getElementById('toc'))
+		{axsWiki.resultIndex++;
 	//document.location=axsWiki.nodeArray[axsWiki.resultIndex].href;
 	     axsWiki.axsObj.goTo(axsWiki.nodeArray[axsWiki.resultIndex])
 	     axsWiki.currentState=READING_TOC;
+		}
 	}
 	
 }
@@ -102,16 +117,20 @@ function toc_keypress(evt)
 
 function axsJb_keyboardHandler(evt){
 	
-	if(evt.charCode==47)
+	if(evt.charCode == 47)
 	{
 	document.getElementById('searchInput').focus();
 	axsWiki.currentState=SEARCH;
 	}
-	if(evt.keyCode==27)
+	if(evt.keyCode == 27)
 	{
 	document.getElementById('searchInput').blur();
 	document.getElementById('searchInput').value="";
 	axsWiki.currentState=READING_PARAGRAPHS;
+	}
+	if(evt.charCode == 63) //? key
+	{
+	axsWiki.axsObj.speakThroughPixel(axsWiki.helpString);
 	}
 	if(axsWiki.currentState == READING_TOC)
 	{
@@ -175,8 +194,10 @@ axsWiki.init = function(){
 	var toc_count=0;
 	axsWiki.toc = document.getElementById('toc');
 	axsWiki.nodeArray = new Array();
-	axsWiki.nodeArray = axsWiki.toc.getElementsByTagName('a');
-
+	if(axsWiki.toc)
+	{
+		axsWiki.nodeArray = axsWiki.toc.getElementsByTagName('a');
+	}
 	document.addEventListener('keypress', axsJb_keyboardHandler, true);
 }
 
