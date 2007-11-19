@@ -111,7 +111,7 @@ function axsJb_keyboardHandler(evt){
 	{
 		toc_keypress(evt);
 	}
-	else  if(axsWiki.currentState=READING_PARAGRAPHS)
+	else  if(axsWiki.currentState==READING_PARAGRAPHS)
 		paragraphReader_keypress(evt);
 	
 	
