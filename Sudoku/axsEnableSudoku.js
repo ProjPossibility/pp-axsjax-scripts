@@ -122,7 +122,7 @@ axsSd.getSolution = function() {
 
 axsSd.getCellValue = function(row, col) {
    var id = "c"+col+row;
-   var nodes = document.getElementsbyId(id);
+   var nodes = document.getElementsById(id);
    var input = nodes.getElementsByTagName("INPUT");
    var value = nodes[0].getAttribute("READONLYVALUE");
    if (value == null) {
