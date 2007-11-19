@@ -53,7 +53,7 @@ function paragraphReader_keypress(evt)
 
 function toc_keypress(evt)
 {	alert(evt.keyCode);
-	if(evt.keyCode == 112) //p key
+	if(evt.keyCode == 38) //p key
 	{	if(axsWiki.resultIndex > 1)
 		{	axsWiki.resultIndex--;
 		}
@@ -68,7 +68,7 @@ function toc_keypress(evt)
 			//axsWiki.axsObj.goTo(axsWiki.nodeArray[axsWiki.resultIndex]);
 		}
 	}
-	else if(evt.keyCode == 110)	//n key
+	else if(evt.keyCode == 40)	//n key
 	{
 		if(axsWiki.resultIndex < axsWiki.nodeArray.length-1)
 		{	axsWiki.resultIndex++;
