@@ -111,9 +111,9 @@ function toc_keypress(evt)
 
 function axsJb_keyboardHandler(evt){
 	
-	if(evt.charCode == 47)
+	if(evt.charCode == 47) // for the / key
 	{
-	document.getElementsById('searchInput').focus();
+	document.getElementById('searchInput').focus();
 	axsWiki.currentState=SEARCH;
 	}
 	if(evt.keyCode == 27)
