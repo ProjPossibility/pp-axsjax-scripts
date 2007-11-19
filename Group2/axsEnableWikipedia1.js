@@ -5,13 +5,14 @@ var paragraphReader = {};
 
 READING_PARAGRAPHS = 1;
 READING_TOC = 2;
+SEARCH=3;
 
 axsWiki.axsObj=new AxsJAX();
 axsWiki.resultIndex=0;
 axsWiki.nodeArray=null;
 axsWiki.toc=null;
 axsWiki.currentLink;
-axsWiki.currentState = READING_TOC;
+axsWiki.currentState = READING_PARAGRAPHS;
 
 
 
@@ -95,17 +96,24 @@ function toc_keypress(evt)
 		
 		paragraphReader.readParagraphClass(str);		
 	}
+	
 
 }
 
 function axsJb_keyboardHandler(evt){
 	
+	if(evt.charCode==47)
+	{
+	document.getElementsById('searchInput').focus();
+	axsWiki.currentState=SEARCH;
+	}
 	if(axsWiki.currentState == READING_TOC)
 	{
 		toc_keypress(evt);
 	}
-	else
+	else  if(axsWiki.currentState=READING_PARAGRAPHS)
 		paragraphReader_keypress(evt);
+	
 	
 		
 		
