@@ -19,16 +19,6 @@ axsSd.getCurrentPosition = function() {
   axsSd.axsJaxObj.speakText(message);
 };
 
-function axsJb_getColorOfBallImg(ballImg){
-  var color = '';
-  var url = ballImg.src.toString();
-  var slashPos = url.lastIndexOf('/');
-  url = url.substring(slashPos+1);
-  color = AxsJBImg2ColorMap[url];
-  return color;
-}
-
-
 
 function axsJb_getCurrentBallImgNode(row,col){
   var rowString = row.toString();
@@ -41,13 +31,6 @@ function axsJb_getCurrentBallImgNode(row,col){
   }
   var targetId = 'r'+ rowString + 'c' + colString;
   return document.getElementById(targetId);
-}
-
-function axsJb_sayStats(){
-  var blockCount = document.getElementById('blockcount').textContent;
-  var blockScore = document.getElementById('blockscore').textContent;
-  var totalScore = document.getElementById('userscore').textContent;
-  axsJb_axsJaxObj.speakThroughPixel('Block count: ' + blockCount + '. Block score: ' + blockScore + '. Total score: ' + totalScore + '.');
 }
 
 axsSd.speakRow = function(){
@@ -72,20 +55,20 @@ axsSd.speakCol = function(){
 
 axsSd.keyboardHandler = function(evt) {
   if (evt.charCode == 97){      //a
-    axsJb_col = 0;
-    axsJb_getCurrentPosition();
+    axsSd.col = 0;
+    axsSd.getCurrentPostion();
   }
   if (evt.charCode == 101){       //e
-    axsJb_col = axsJb_MAXCOL;
-    axsJb_getCurrentPosition();
+    axsSd.col = axsSd.MAXCOL;
+    axsSd.getCurrentPosition();
   }
   if (evt.charCode == 116){      //t
-    axsJb_row = 0;
-    axsJb_getCurrentPosition();
+    axsSd.row = 0;
+    axsSd.getCurrentPosition();
   }
   if (evt.charCode == 98){       //b
-    axsJb_row = axsJb_MAXROW;
-    axsJb_getCurrentPosition();
+    axsSd.row = axsSd.MAXROW;
+    axsSd.getCurrentPosition();
   }
 
 
