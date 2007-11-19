@@ -21,13 +21,7 @@ axsWiki.helpString =
     'Enter, open the current item. ' +
     'Slash, jump to search blank. ' +
     'Escape, leave search blank. ' +
-    
-axsWebSearch.GUIDE_MODE_END =
-    'You have reached the end of this page. ' +
-    'Press  page down  to go to the next page. ' +
-    'Or press G again' +
-    'to return to the start of this page.';
-
+   
 
 paragraphReader.maxParas = 0;
 paragraphReader.Paras = null;
