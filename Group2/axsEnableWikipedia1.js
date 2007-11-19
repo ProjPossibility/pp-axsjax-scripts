@@ -52,7 +52,7 @@ function paragraphReader_keypress(evt)
 }
 
 function toc_keypress(evt)
-{	
+{	alert("inside tockepress");
 	if(evt.keyCode == 112) //p key
 	{	if(axsWiki.resultIndex > 1)
 		{	axsWiki.resultIndex--;
