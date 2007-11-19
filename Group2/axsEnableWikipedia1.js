@@ -14,6 +14,7 @@ axsWiki.currentLink;
 axsWiki.currentState = READING_TOC;
 
 
+
 paragraphReader.maxParas = 0;
 paragraphReader.Paras = null;
 paragraphReader.currentPara = 0;
@@ -42,13 +43,14 @@ function paragraphReader_keypress(evt)
          }
       }
 	
-	else if(evt.keyCode==103) //g key
+	else if(evt.charCode==103) //g key
 	{
 	axsWiki.resultIndex++;
-	document.location=axsWiki.nodeArray[axsWiki.resultIndex].href;
+	//document.location=axsWiki.nodeArray[axsWiki.resultIndex].href;
 	axsWiki.axsObj.goTo(axsWiki.nodeArray[axsWiki.resultIndex])
 	axsWiki.currentState=READING_TOC;
 	}
+	
 }
 
 function toc_keypress(evt)
