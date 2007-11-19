@@ -104,7 +104,7 @@ function axsJb_keyboardHandler(evt){
 	
 	if(evt.charCode==47)
 	{
-	document.getElementsById('searchInput').focus();
+	document.getElementById('searchInput').focus();
 	axsWiki.currentState=SEARCH;
 	}
 	if(axsWiki.currentState == READING_TOC)
