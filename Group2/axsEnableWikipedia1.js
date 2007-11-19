@@ -49,7 +49,7 @@ function paragraphReader_keypress(evt)
 }
 
 function toc_keypress(evt)
-{	alert(evt.keyCode);
+{	
 	if(evt.keyCode == 38) //Up Arrow
 	{	if(axsWiki.resultIndex > 1)
 		{	axsWiki.resultIndex--;
@@ -125,7 +125,21 @@ paragraphReader.readParagraphClass = function(class) {
 
 paragraphReader.readParagraphNumber = function(number) 
 {
-    axsWiki.axsObj.goTo(paragraphReader.Paras[number]);
+    var section = false;
+	var sectionName = null;
+	var node = paragraphReader.Paras[number].getElementsByTagName('a');
+	for (var i = 0; i < node.length; i++) {
+	  var id = node[i].getAttribute('id');
+	  if (id != null) {
+	    section = true;
+		sectionName = id;
+		break;
+	  }
+	}
+	axsWiki.axsObj.goTo(paragraphReader.Paras[number]);
+	if (section == true) {
+	  axsWiki.axsObj.speakText("Section "+sectionName);
+	} 
 };
 
 paragraphReader.init = function() {
