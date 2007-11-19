@@ -32,7 +32,7 @@ function paragraphReader_keypress(evt)
             paragraphReader.readParagraphNumber(paragraphReader.currentPara);
          }
         }
-      if (evt.charCode == 112) {  // p
+      else if (evt.charCode == 112) {  // p
          if (paragraphReader.currentPara > 0) {
             paragraphReader.currentPara--;
             paragraphReader.readParagraphNumber(paragraphReader.currentPara);
@@ -41,16 +41,19 @@ function paragraphReader_keypress(evt)
             paragraphReader.readParagraphNumber(paragraphReadercurrentPara);
          }
       }
-	else if(evt.keyCode==13)	//Enter Key
-	{	
-		document.location = axsWiki.currentLink;
-		axsWiki.currentState = READING_TOC;		
+	
+	else if(evt.keyCode==103) //g key
+	{
+	axsWiki.resultIndex++;
+	document.location=axsWiki.nodeArray[axsWiki.resultIndex].href;
+	axsWiki.axsObj.goTo(axsWiki.nodeArray[axsWiki.resultIndex])
+	axsWiki.currentState=READING_TOC;
 	}
 }
 
 function toc_keypress(evt)
 {	
-	if(evt.keyCode == 38) //Up Arrow
+	if(evt.keyCode == 112) //p key
 	{	if(axsWiki.resultIndex > 1)
 		{	axsWiki.resultIndex--;
 		}
@@ -65,7 +68,7 @@ function toc_keypress(evt)
 			//axsWiki.axsObj.goTo(axsWiki.nodeArray[axsWiki.resultIndex]);
 		}
 	}
-	else if(evt.keyCode == 40)	//Down Arrow
+	else if(evt.keyCode == 110)	//n key
 	{
 		if(axsWiki.resultIndex < axsWiki.nodeArray.length-1)
 		{	axsWiki.resultIndex++;
@@ -136,7 +139,6 @@ paragraphReader.readParagraphNumber = function(number)
 		break;
 	  }
 	}
-	axsWiki.axsObj.goTo(paragraphReader.Paras[number]);
 	if (section == true) {
 	  axsWiki.axsObj.speakText("Section "+sectionName);
 	} 
