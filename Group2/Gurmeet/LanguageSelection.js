@@ -50,13 +50,13 @@ axsLangWiki.init = function() {
   axsLangWiki.maxParas = nodes.length;
   for (var i = 0; i < nodes.length; i++) {
       var node = nodes[i].getElementsByTagName('a');
+      node[0].id = "Language"+i;
       axsLangWiki.languages.push(node[0]);
-      axs
       var ref = node[0].href;
       axsLangWiki.addresses.push(ref);
   }
   axsLangWiki.axsObj = new AxsJAX(true);
-  document.getElementById("searchInput").blur();
+  document.getElementById("Language0").focus();
   document.addEventListener('keypress', axsLangWiki.keyboardHandler, true);
 };
 
