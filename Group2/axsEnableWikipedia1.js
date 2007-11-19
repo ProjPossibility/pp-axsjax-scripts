@@ -15,7 +15,7 @@ axsWiki.currentLink;
 axsWiki.currentState = READING_PARAGRAPHS;
 axsWiki.helpString =
     'The following shortcut keys are available. ' +
-    'G, use guided mode. ' +   
+    'G, Return to Contents. ' +   
     'N, go to the next element. ' +
     'P, go to the previous element. ' +
     'Enter, open the current item. ' +
