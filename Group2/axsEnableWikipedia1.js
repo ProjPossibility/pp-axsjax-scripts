@@ -150,7 +150,7 @@ paragraphReader.readParagraphNumber = function(number)
 	  }
 	}
 	if (section == true) {
-        sectionName.replace("_"," ");
+        sectionName.replace('_',' ');
 	  axsWiki.axsObj.speakText("Section "+sectionName);
 	} else {
         axsWiki.axsObj.goTo(paragraphReader.Paras[number]);
