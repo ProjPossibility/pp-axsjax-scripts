@@ -34,6 +34,9 @@ axsLangWiki.keyboardHandler = function(evt) {
             axsLangWiki.readLanguage(axsLangWiki.currentPara);
          }
       } 
+      if (evt.keyCode == 13) {   // Enter
+         document.location = axsLangWiki.addresses[axsLangWiki.currentPara];
+      }
 };
 
 axsLangWiki.readLanguage = function(number) {
