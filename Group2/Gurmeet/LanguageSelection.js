@@ -3,15 +3,27 @@
 
 axsLangWiki = {};
 
+INPUTMODE = 0;
+HELPMODE = 1;
+
 axsLangWiki.languages = null;
 axsLangWiki.addresses = null;
 axsLangWiki.currentPara = -1;
 axsLangWiki.maxParas = 0;
+axsLangWiki.currentState = INPUTMODE;
 
 /*
  * 
  */
 axsLangWiki.keyboardHandler = function(evt) {
+      if (axsLangWiki.currentState == INPUTMODE) {
+         if (evt.keyCode == 27) {
+            axsLangWiki.currentState == HELPMODE;
+            axsLangWiki.currentPara = 0;
+            axsLangWiki.readLanguage(axsLangWiki.currentPara);
+         }
+         return;
+      }
 //    alert(evt.charCode+"  "+axsLangWiki.currentPara);
   	if (evt.charCode == 110) {  // n
          if (axsLangWiki.currentPara < axsLangWiki.maxParas - 1) {
