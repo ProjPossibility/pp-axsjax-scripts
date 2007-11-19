@@ -109,7 +109,7 @@ function axsJb_keyboardHandler(evt){
 	}
 	if(evt.keyCode==27)
 	{
-	doucment.getElementById('searchInput').blur();
+	document.getElementById('searchInput').blur();
 	axsWiki.currentState=READING_PARAGRAPHS;
 	}
 	if(axsWiki.currentState == READING_TOC)
