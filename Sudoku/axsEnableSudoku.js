@@ -3,10 +3,10 @@
 
 var axsSd = {};
 
-axsSd.row = 1;
-axsSd.col = 1;
-axsSd.MAXROW = 9;
-axsSd.MAXCOL = 9;
+axsSd.row = 0;
+axsSd.col = 0;
+axsSd.MAXROW = 8;
+axsSd.MAXCOL = 8;
 axsSd.axsJaxObj = null;
 axsSd.solution = null;
 axsSd.type = null;
@@ -14,9 +14,9 @@ axsSd.type = null;
 
 axsSd.getCurrentPosition = function() {
   var value = axsSd.getCellValue(axsSd.row, axsSd.col);
-  var message = axsSd.row + ', ' + axsSd.col + '.';
-  message = message + 'value '+ axsSd.getCellValue(axsSd.row, axsSd.col);
-  axsSd.axsJaxObj.speakText(message);
+  var message = "row "+axsSd.row + " column " + axsSd.col;
+  message = message + " value "+ axsSd.getCellValue(axsSd.row, axsSd.col);
+  axsSd.axsJaxObj.speakThroughPixel(message);
 };
 
 
@@ -121,7 +121,14 @@ axsSd.getSolution = function() {
 };
 
 axsSd.getCellValue = function(row, col) {
-   var value = axsSd.getSolutionCellValue(row, col);
+   var id = "c"+col+row;
+   var nodes = document.getElementsbyId(id);
+   var input = nodes.getElementsByTagName("INPUT");
+   var value = nodes[0].getAttribute("READONLYVALUE");
+   if (value == null) {
+      value = "blank";
+   }
+   alert(value);
    return value;
 };
 
