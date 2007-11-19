@@ -144,7 +144,7 @@ paragraphReader.readParagraphNumber = function(number)
 	if (section == true) {
 	  axsWiki.axsObj.speakText("Section "+sectionName);
 	} else {
-        axsWiki.axsObj.speakNode(paragraphReader.Paras[number]);
+        axsWiki.axsObj.goTo(paragraphReader.Paras[number]);
       }
 };
 
