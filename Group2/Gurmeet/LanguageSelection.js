@@ -18,7 +18,7 @@ axsLangWiki.currentState = INPUTMODE;
 axsLangWiki.keyboardHandler = function(evt) {
       if (axsLangWiki.currentState == INPUTMODE) {
          if (evt.keyCode == 27) {
-            axsLangWiki.currentState == HELPMODE;
+            axsLangWiki.currentState = HELPMODE;
             axsLangWiki.currentPara = 0;
             axsLangWiki.readLanguage(axsLangWiki.currentPara);
          }
