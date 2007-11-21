@@ -33,10 +33,11 @@ axsLangWiki.currentState = INPUTMODE;
  */
 axsLangWiki.keyboardHandler = function(evt) {
 
+      alert(axsLangWiki.currentState+"  "+evt.charCode)
 // If the user is shifting from the input mode to the help mode
 // read out the first language
       if (axsLangWiki.currentState == INPUTMODE) {
-	   if (evt.keyCode == QUESTIONMARK_KEY) {
+	   if (evt.charCode == QUESTIONMARK_KEY) {
          	axsLangWiki.currentState = HELPMODE;
 	   }
          return;
@@ -44,7 +45,7 @@ axsLangWiki.keyboardHandler = function(evt) {
 
 // If the user is shifting from the help mode to the input mode
 // redirect focus to the search input box
-      if (axsLangWiki.currentState == HELPMODE && evt.keyCode == QUESTIONMARK_KEY) {
+      if (axsLangWiki.currentState == HELPMODE && evt.charCode == QUESTIONMARK_KEY) {
          axsLangWiki.currentState = INPUTMODE;
 	   document.getElementById("searchInput").focus();
          return;
