@@ -41,8 +41,7 @@ axsLangWiki.keyboardHandler = function(evt) {
          	axsLangWiki.currentState = HELPMODE;
             var message = "Use n and p for language selection";
             axsLangWiki.axsObj.speakThroughPixel(message);
-            alert(axsLangWiki.currentState+"  "+evt.charCode);
-	   }
+         }
          return;
       }
 
@@ -98,6 +97,8 @@ axsLangWiki.init = function() {
   }
   axsLangWiki.axsObj = new AxsJAX(true);
   document.getElementById('searchInput').value = "";
+  var message = "Use ? for language menu";
+  axsLangWiki.axsObj.speakThroughPixel(message);
   document.addEventListener('keypress', axsLangWiki.keyboardHandler, true);
 };
 
