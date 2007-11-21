@@ -93,6 +93,7 @@ axsLangWiki.init = function() {
       axsLangWiki.addresses.push(ref);
   }
   axsLangWiki.axsObj = new AxsJAX(true);
+  document.getElementById('searchInput').value = "";
   document.addEventListener('keypress', axsLangWiki.keyboardHandler, true);
 };
 
