@@ -54,6 +54,7 @@ axsLangWiki.keyboardHandler = function(evt) {
          return;
       }
 
+	alert(axsLangWiki.currentState+"  "+evt.charCode);
   	if (evt.charCode == N_KEY) {  // n
          if (axsLangWiki.currentPara < axsLangWiki.maxParas - 1) {
             axsLangWiki.currentPara++;
