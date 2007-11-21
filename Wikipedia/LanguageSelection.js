@@ -39,7 +39,7 @@ axsLangWiki.keyboardHandler = function(evt) {
       if (axsLangWiki.currentState == INPUTMODE) {
 	   if (evt.charCode == QUESTIONMARK_KEY) {
          	axsLangWiki.currentState = HELPMODE;
-            var message = "Use n and p for language selection");
+            var message = "Use n and p for language selection";
             axsLangWiki.axsObj.speakThroughPixel(message);
             alert(axsLangWiki.currentState+"  "+evt.charCode);
 	   }
