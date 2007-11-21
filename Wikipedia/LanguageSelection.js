@@ -53,7 +53,6 @@ axsLangWiki.keyboardHandler = function(evt) {
          return;
       }
 
-	alert(axsLangWiki.currentState+"  "+evt.charCode);
   	if (evt.charCode == N_KEY) {  // n
          if (axsLangWiki.currentPara < axsLangWiki.maxParas - 1) {
             axsLangWiki.currentPara++;
@@ -97,8 +96,6 @@ axsLangWiki.init = function() {
   }
   axsLangWiki.axsObj = new AxsJAX(true);
   document.getElementById('searchInput').value = "";
-  var message = "Use ? for language menu";
-  axsLangWiki.axsObj.speakThroughPixel(message);
   document.addEventListener('keypress', axsLangWiki.keyboardHandler, true);
 };
 
