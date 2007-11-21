@@ -19,8 +19,8 @@ HELPMODE = 1;
 // Key characters
 QUESTIONMARK_KEY = 63;
 ENTER_KEY = 13;
-N_KEY = 112;
-P_KEY = 114;
+N_KEY = 110;
+P_KEY = 112;
 
 axsLangWiki.languages = null;
 axsLangWiki.addresses = null;
