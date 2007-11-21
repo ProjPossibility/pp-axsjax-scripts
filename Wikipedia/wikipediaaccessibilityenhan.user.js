@@ -3,7 +3,8 @@
 // @name          Wikipedia Accessibility Enhancements
 // @namespace     http://www.google.com/accessible/
 // @description   Uses WAI-ARIA to enhance accessibility for Wikipedia
-// @include       http://www.wikipedia.org/*, http://en.wikipedia.org/*
+// @include       http://www.wikipedia.org/*
+// @include		http://en.wikipedia.org/*
 // ==/UserScript==
 
 function loadScript(){
