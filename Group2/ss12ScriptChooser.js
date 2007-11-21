@@ -1,23 +1,16 @@
-// Copyright 2007 Google Inc.
+// Copyright 2007 
 // 
-// Licensed under the Apache License, Version 2.0 (the "License");
-// you may not use this file except in compliance with the License.
-// You may obtain a copy of the License at
-// 
-//      http://www.apache.org/licenses/LICENSE-2.0
-// 
-// Unless required by applicable law or agreed to in writing, software
-// distributed under the License is distributed on an "AS IS" BASIS,
-// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-// See the License for the specific language governing permissions and
-// limitations under the License.
+// Licensed under GPL
 
 
 /**
- * @fileoverview The Google Script Loader Greasemonkey script will load
+ * @fileoverview The Greasemonkey script wikipediaaccessibilityenhan.user.js will load
  * this script which will pick the appropriate scripts to load
- * for the Google app that the user is currently using.
- * @author clchen@google.com (Charles L. Chen)
+ * for the Wikipedia web page.
+ * There is a separate script for processing the main wikipedia page for doing the 
+ * language selection and another script for processing the english version of the
+ * wikipedia page
+ * @author gurmeets@usc.edu (Gurmeet Singh)
  */
 
 
@@ -35,7 +28,7 @@ function pickScript(){
     }
   }
   
-  baseURL = 'http://ss12.info/svn/axsjax/Group2/';
+  baseURL = 'http://ss12.info/svn/axsjax/Wikipedia/';
   var theScript = document.createElement('script')
   theScript.type = 'text/javascript';
   var currentURL = document.baseURI;
@@ -44,7 +37,7 @@ function pickScript(){
   }
  
   if (currentURL.indexOf('http://en.wikipedia.org/') === 0) {
-     theScript.src = baseURL + 'axsEnableWikipedia1.js';
+     theScript.src = baseURL + 'axsEnableWikipedia.js';
   }
   document.getElementsByTagName('head')[0].appendChild(theLib);
   document.getElementsByTagName('head')[0].appendChild(theScript);
