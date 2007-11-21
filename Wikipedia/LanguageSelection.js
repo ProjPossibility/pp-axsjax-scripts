@@ -33,12 +33,15 @@ axsLangWiki.currentState = INPUTMODE;
  */
 axsLangWiki.keyboardHandler = function(evt) {
 
-//      alert(axsLangWiki.currentState+"  "+evt.charCode)
+//      alert(axsLangWiki.currentState+"  "+evt.charCode);
 // If the user is shifting from the input mode to the help mode
 // read out the first language
       if (axsLangWiki.currentState == INPUTMODE) {
 	   if (evt.charCode == QUESTIONMARK_KEY) {
          	axsLangWiki.currentState = HELPMODE;
+            var message = "Use n and p for language selection");
+            axsLangWiki.axsObj.speakThroughPixel(message);
+            alert(axsLangWiki.currentState+"  "+evt.charCode);
 	   }
          return;
       }
