@@ -118,7 +118,7 @@ axsSd.getCellValue = function(row, col) {
    var input = document.getElementById(id);
 //   var value = input.getAttribute("VALUE");
    var value = input.value;
-   alert(value);
+   alert("'"+value+"'");
    if (value == null) {
       value = "blank";
    }
