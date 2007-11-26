@@ -124,7 +124,7 @@ axsSd.getCellValue = function(row, col) {
    var id = "c"+col+row;
    var nodes = document.getElementById(id);
    var input = nodes.getElementsByTagName("INPUT");
-   var value = nodes[0].getAttribute("READONLYVALUE");
+   var value = input[0].getAttribute("READONLYVALUE");
    if (value == null) {
       value = "blank";
    }
