@@ -21,36 +21,23 @@ axsSd.getCurrentPosition = function() {
 };
 
 
-function axsJb_getCurrentBallImgNode(row,col){
-  var rowString = row.toString();
-  var colString = col.toString();
-  if (rowString.length < 2){
-    rowString = '0' + rowString;
-  }
-  if (colString.length < 2){
-    colString = '0' + colString;
-  }
-  var targetId = 'r'+ rowString + 'c' + colString;
-  return document.getElementById(targetId);
-}
-
 axsSd.speakRow = function(){
   var speechString = "Row " +  axsSd.row + ": ";
-  for (var col = 1; col < axsSd.MAXCOL; col++){
-    speechString = speechString + axsSd.getCellValue(axsSd.row,col);
+  for (var col = 0; col < axsSd.MAXCOL; col++){
+    speechString = speechString + axsSd.getCellValue(axsSd.row,col)+". ";
   }
   speechString = speechString + axsSd.getCellValue(axsSd.row,axsSd.MAXCOL);
-  alert("Row "+axsSd.row+" "+speechString);
+  alert(speechString);
   axsSd.axsJaxObj.speakThroughPixel(speechString);
 };
 
 axsSd.speakCol = function(){
   var speechString = "Col " +  axsSd.col + ": ";
-  for (var row = 1; row < axsSd.MAXROW; row++){
-    speechString = speechString + axsSd.getCellValue(row,axsSd.col);
+  for (var row = 0; row < axsSd.MAXROW; row++){
+    speechString = speechString + axsSd.getCellValue(row,axsSd.col)+". ";
   }
   speechString = speechString + axsSd.getCellValue(axsSd.MAXROW,axsSd.col);
-  alert("Col "+axsSd.col+" "+speechString);
+  alert(speechString);
   axsSd.axsJaxObj.speakThroughPixel(speechString);
 };
 
