@@ -32,11 +32,11 @@ axsLangWiki.currentPara = -1;
 axsLangWiki.maxParas = 0;
 axsLangWiki.currentState = 0;
 axsLangWiki.helpString = 
-'The following shortcut keys are available ' +
-'Use escape to go to audio language selection ' +
-'Use / to come back to search box '+
-'Use n to go to next language '+
-'Use p to come back to previous language '+
+'The following shortcut keys are available. ' +
+'Use escape to go to audio language selection. ' +
+'Use / to come back to search box. '+
+'Use n to go to next language. '+
+'Use p to come back to previous language. '+
 'Use enter to select a language. ';
 
 /*
