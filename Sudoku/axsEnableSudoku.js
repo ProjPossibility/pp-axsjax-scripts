@@ -40,7 +40,6 @@ axsSd.speakCol = function(){
 };
 
 axsSd.keyboardHandler = function(evt) {
-  alert(evt.charCode);
   if (evt.charCode == 97){      //a
     axsSd.col = 0;
     axsSd.getCurrentPosition();
@@ -93,8 +92,20 @@ axsSd.keyboardHandler = function(evt) {
     axsSd.row = 0;
     axsSd.col = 0;
     axsSd.getCurrentPosition();
-  }  
+  }
+  if (evt.charCode >= 49 && evt.charCode <= 57) {
+	if (axsSd.getCellValue(axsSd.row, axsSd.col) == "blank") {
+	    axsSd.putValue(evt.charCode, axsSd.row, axsSd.col);
+	}
+	axsSd.getCurrentPosition();
+  }
 };
+
+axsSd.putValue(charCode, row, col) {
+   var id = "f"+col+row;
+   var input = document.getElementById(id);
+   input.addAttribute("VALUE", charCode - 48);
+}
 
 axsSd.getSolution = function() {
    var Sol = document.getElementsByName("cheat");
