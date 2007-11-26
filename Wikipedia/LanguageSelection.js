@@ -3,7 +3,7 @@
 
 // The following keys are available
 // '?' to listen to key shortcuts available
-// '/' to go to audio language selection
+// 'ESC' to go to audio language selection
 // '/' to exit the audio language selection and put focus back on search box
 // 'n' to go to next language while in audio selection
 // 'p' to go to previous language while in audio selection
@@ -21,6 +21,7 @@ HELPMODE = 1;
 SLASH_KEY = 47;
 QUESTIONMARK_KEY = 63;
 ENTER_KEY = 13;
+ESCAPE_KEY = 27;
 N_KEY = 110;
 P_KEY = 112;
 G_KEY = 103;
@@ -32,7 +33,7 @@ axsLangWiki.maxParas = 0;
 axsLangWiki.currentState = 0;
 axsLangWiki.helpString = 
 'The following shortcut keys are available ' +
-'Use / to go to audio language selection ' +
+'Use escape to go to audio language selection ' +
 'Use / to come back to search box '+
 'Use n to go to next language '+
 'Use p to come back to previous language '+
@@ -52,7 +53,7 @@ axsLangWiki.keyboardHandler = function(evt) {
 // If the user is shifting from the input mode to the help mode
 // read out the first language
       if (axsLangWiki.currentState == INPUTMODE) {
-	   if (evt.charCode == SLASH_KEY) {
+	   if (evt.keyCode == ESCAPE_KEY) {
          	axsLangWiki.currentState = HELPMODE;
             var message = "Use n and p for language selection";
             axsLangWiki.axsObj.speakThroughPixel(message);
