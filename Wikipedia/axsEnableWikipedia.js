@@ -172,7 +172,7 @@ paragraphReader.readParagraphClass = function(class) {
 paragraphReader.readParagraphNumber = function(number) 
 {
     var section = false;
-	var sectionName = null;
+    var sectionName = null;
 	var node = paragraphReader.Paras[number].getElementsByTagName('a');
 	for (var i = 0; i < node.length; i++) {
 	  var id = node[i].getAttribute('id');
@@ -182,10 +182,15 @@ paragraphReader.readParagraphNumber = function(number)
 		break;
 	  }
 	}
+      
+	// If this is a section heading rather than a paragraph
 	if (section == true) {
-       var str= sectionName.replace("_"," ");
-	  axsWiki.axsObj.speakText("Section "+str);
+        while (sectionName.indexOf("_") != -1) {
+            sectionName = sectionName.replace("_"," ");
+        }
+	  axsWiki.axsObj.speakText("Section "+sectionName);
 	} else {
+      // Otherwise if it is a paragraph read as it is
         axsWiki.axsObj.goTo(paragraphReader.Paras[number]);
       }
 };
