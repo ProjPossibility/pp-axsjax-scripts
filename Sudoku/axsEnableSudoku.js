@@ -105,7 +105,7 @@ axsSd.putValue(charCode, row, col) {
    var id = "f"+col+row;
    var input = document.getElementById(id);
    input.addAttribute("VALUE", charCode - 48);
-}
+};
 
 axsSd.getSolution = function() {
    var Sol = document.getElementsByName("cheat");
