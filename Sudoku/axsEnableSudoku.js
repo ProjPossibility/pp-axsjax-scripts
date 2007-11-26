@@ -40,6 +40,7 @@ axsSd.speakCol = function(){
 };
 
 axsSd.keyboardHandler = function(evt) {
+  alert(evt.charCode);
   if (evt.charCode == 97){      //a
     axsSd.col = 0;
     axsSd.getCurrentPosition();
