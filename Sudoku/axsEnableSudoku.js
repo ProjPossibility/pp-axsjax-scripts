@@ -123,11 +123,14 @@ axsSd.getSolution = function() {
 axsSd.getCellValue = function(row, col) {
    var id = "f"+col+row;
    var input = document.getElementById(id);
+   if (input == null) {
+	alert("No input element found");
+   }
    var value = input.getAttribute("READONLY VALUE");
    if (value == null) {
       value = "blank";
    }
-   alert(input);
+   alert(input.getAttribute("ID");
    return value;
 };
 
