@@ -1,5 +1,6 @@
 //AxsJAX script for Sudoku game at:
 //http://view.websudoku.com/
+// Author Gurmeet Singh, gurmeets@usc.edu
 
 var axsSd = {};
 
@@ -107,10 +108,9 @@ axsSd.keyboardHandler = function(evt) {
     axsSd.speakRow();
   }
   if (evt.charCode == 110){ // n
-    axsJb_row = 0;
-    axsJb_col = 0;
-    axsJb_axsJaxObj.clickElem(document.getElementById('menu-start'));
-    axsJb_getCurrentPosition();
+    axsSd.row = 0;
+    axsSd.col = 0;
+    axsSd.getCurrentPosition();
   }  
 };
 
