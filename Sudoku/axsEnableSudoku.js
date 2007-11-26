@@ -27,7 +27,6 @@ axsSd.speakRow = function(){
     speechString = speechString + axsSd.getCellValue(axsSd.row,col)+". ";
   }
   speechString = speechString + axsSd.getCellValue(axsSd.row,axsSd.MAXCOL);
-  alert(speechString);
   axsSd.axsJaxObj.speakThroughPixel(speechString);
 };
 
@@ -37,7 +36,6 @@ axsSd.speakCol = function(){
     speechString = speechString + axsSd.getCellValue(row,axsSd.col)+". ";
   }
   speechString = speechString + axsSd.getCellValue(axsSd.MAXROW,axsSd.col);
-  alert(speechString);
   axsSd.axsJaxObj.speakThroughPixel(speechString);
 };
 
@@ -104,7 +102,7 @@ axsSd.keyboardHandler = function(evt) {
 axsSd.getSolution = function() {
    var Sol = document.getElementsByName("cheat");
    axsSd.solution = Sol[0].value;
-   alert(axsSd.solution);
+//   alert(axsSd.solution);
 };
 
 axsSd.getCellValue = function(row, col) {
@@ -119,15 +117,15 @@ axsSd.getCellValue = function(row, col) {
 };
 
 axsSd.getSolutionCellValue = function(row, col) {
-   if (row < 1 || row > axsSd.MAXROW) {
+   if (row < 0 || row > axsSd.MAXROW) {
        alert("Row "+row+" Col "+col+" Invalid Row");
        return "Invalid Row";
    }
-   if (col < 1 || col > axsSd.MAXCOL) {
+   if (col < 0 || col > axsSd.MAXCOL) {
        alert("Row "+row+" Col "+col+" Invalid Column");
        return "Invalid Column";
    }
-   var index = ( row - 1) * axsSd.MAXROW + col;
+   var index = row * axsSd.MAXROW + col;
    var value = axsSd.solution.substring(index-1, index);
    return value;
 };
