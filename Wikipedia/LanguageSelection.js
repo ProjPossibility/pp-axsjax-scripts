@@ -1,12 +1,13 @@
 //Java script for language selection at http://www.wikipedia.org
 //Author gurmeets@usc.edu   (Gurmeet Singh)
 
-// When the page is loaded the user is asked to user the
-// ? mark key to get into audio language selection
-// ? can also be used to escape the language selection and put focus on search text box
-// During language selection mode, pressing the enter key would 
-// take the user to the page for that language
-// 'n' and 'p' can be used to scroll through the languages on the page
+// The following keys are available
+// '?' to listen to key shortcuts available
+// '/' to go to audio language selection
+// '/' to exit the audio language selection and put focus back on search box
+// 'n' to go to next language while in audio selection
+// 'p' to go to previous language while in audio selection
+// 'enter' to select a particular language while in audio language selection
 
 axsLangWiki = {};
 
@@ -17,16 +18,25 @@ INPUTMODE = 0;
 HELPMODE = 1;
 
 // Key characters
+SLASH_KEY = 47;
 QUESTIONMARK_KEY = 63;
 ENTER_KEY = 13;
 N_KEY = 110;
 P_KEY = 112;
+G_KEY = 103;
 
 axsLangWiki.languages = null;
 axsLangWiki.addresses = null;
 axsLangWiki.currentPara = -1;
 axsLangWiki.maxParas = 0;
-axsLangWiki.currentState = INPUTMODE;
+axsLangWiki.currentState = 0;
+axsLangWiki.helpString = 
+'The following shortcut keys are available ' +
+'Use / to go to audio language selection ' +
+'Use / to come back to search box '+
+'Use n to go to next language '+
+'Use p to come back to previous language '+
+'Use enter to select a language. ';
 
 /*
  * 
@@ -34,10 +44,15 @@ axsLangWiki.currentState = INPUTMODE;
 axsLangWiki.keyboardHandler = function(evt) {
 
 //      alert(axsLangWiki.currentState+"  "+evt.charCode);
+      if (evt.charCode == QUESTIONMARK_KEY) {
+         axsLangWiki.axsObj.speakThroughPixel(axsLangWiki.helpString);
+	   return;
+      }
+
 // If the user is shifting from the input mode to the help mode
 // read out the first language
       if (axsLangWiki.currentState == INPUTMODE) {
-	   if (evt.charCode == QUESTIONMARK_KEY) {
+	   if (evt.charCode == SLASH_KEY) {
          	axsLangWiki.currentState = HELPMODE;
             var message = "Use n and p for language selection";
             axsLangWiki.axsObj.speakThroughPixel(message);
@@ -47,8 +62,9 @@ axsLangWiki.keyboardHandler = function(evt) {
 
 // If the user is shifting from the help mode to the input mode
 // redirect focus to the search input box
-      if (axsLangWiki.currentState == HELPMODE && evt.charCode == QUESTIONMARK_KEY) {
+      if (axsLangWiki.currentState == HELPMODE && evt.charCode == SLASH_KEY) {
          axsLangWiki.currentState = INPUTMODE;
+	   document.getElementById('searchInput').value = "";
 	   document.getElementById("searchInput").focus();
          return;
       }
@@ -95,6 +111,7 @@ axsLangWiki.init = function() {
       axsLangWiki.addresses.push(ref);
   }
   axsLangWiki.axsObj = new AxsJAX(true);
+  axsLangWiki.currentState = INPUTMODE;
   document.getElementById('searchInput').value = "";
   document.addEventListener('keypress', axsLangWiki.keyboardHandler, true);
 };
