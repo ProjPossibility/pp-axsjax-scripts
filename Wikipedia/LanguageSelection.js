@@ -57,6 +57,7 @@ axsLangWiki.keyboardHandler = function(evt) {
          	axsLangWiki.currentState = HELPMODE;
             var message = "Use n and p for language selection";
             axsLangWiki.axsObj.speakThroughPixel(message);
+		axsLangWiki.currentPara = -1;
          }
          return;
       }
