@@ -16,7 +16,7 @@ axsSd.type = null;
 axsSd.getCurrentPosition = function() {
   var value = axsSd.getCellValue(axsSd.row, axsSd.col);
   var message = "row "+axsSd.row + " column " + axsSd.col;
-  message = message + " value "+ axsSd.getCellValue(axsSd.row, axsSd.col);
+  message = message + " value "+ value;
   axsSd.axsJaxObj.speakThroughPixel(message);
 };
 
@@ -121,10 +121,9 @@ axsSd.getSolution = function() {
 };
 
 axsSd.getCellValue = function(row, col) {
-   var id = "c"+col+row;
-   var nodes = document.getElementById(id);
-   var input = nodes.getElementsByTagName("INPUT");
-   var value = input[0].getAttribute("READONLYVALUE");
+   var id = "f"+col+row;
+   var input = document.getElementById(id);
+   var value = input.getAttribute("READONLY VALUE");
    if (value == null) {
       value = "blank";
    }
