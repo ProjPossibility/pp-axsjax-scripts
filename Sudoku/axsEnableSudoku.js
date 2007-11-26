@@ -127,7 +127,7 @@ axsSd.getCellValue = function(row, col) {
    if (value == null) {
       value = "blank";
    }
-   alert(value);
+   alert(input);
    return value;
 };
 
