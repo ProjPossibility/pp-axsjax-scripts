@@ -42,7 +42,7 @@ axsSd.speakCol = function(){
 axsSd.keyboardHandler = function(evt) {
   if (evt.charCode == 97){      //a
     axsSd.col = 0;
-    axsSd.getCurrentPostion();
+    axsSd.getCurrentPosition();
   }
   if (evt.charCode == 101){       //e
     axsSd.col = axsSd.MAXCOL;
@@ -61,13 +61,13 @@ axsSd.keyboardHandler = function(evt) {
   if (evt.keyCode == 38 ||
       evt.charCode == 107){ // Up arrow or k
     axsSd.row--;
-    if (axsSd.row < 1){ axsSd.row = 0; }
+    if (axsSd.row < 0){ axsSd.row = 0; }
     axsSd.getCurrentPosition();
   }
   if (evt.keyCode == 37 ||
       evt.charCode == 104){ // Left arrow  or h
     axsSd.col--;
-    if (axsSd.col < 1){ axsSd.col = 0; }
+    if (axsSd.col < 0){ axsSd.col = 0; }
     axsSd.getCurrentPosition();
   }
   if (evt.keyCode == 40 ||
@@ -81,10 +81,6 @@ axsSd.keyboardHandler = function(evt) {
     axsSd.col++;
     if (axsSd.col > axsSd.MAXCOL){ axsSd.col = axsSd.MAXCOL; }
     axsSd.getCurrentPosition();
-  }
-  if (evt.charCode == 32){ // Space
-    axsJb_axsJaxObj.clickElem(axsJb_getCurrentBallImgNode(axsJb_row,axsJb_col));
-    axsJb_sayStats();
   }
   if (evt.charCode == 99){ // c
     axsSd.speakCol();
