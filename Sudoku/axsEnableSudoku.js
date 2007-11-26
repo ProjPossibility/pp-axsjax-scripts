@@ -130,7 +130,7 @@ axsSd.getCellValue = function(row, col) {
    if (value == null) {
       value = "blank";
    }
-   alert(input.getAttribute("ID");
+   alert(input.getAttribute("ID"));
    return value;
 };
 
