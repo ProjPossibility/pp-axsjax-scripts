@@ -101,7 +101,7 @@ axsSd.keyboardHandler = function(evt) {
   }
 };
 
-axsSd.putValue(charCode, row, col) {
+axsSd.putValue = function(charCode, row, col) {
    var id = "f"+col+row;
    var input = document.getElementById(id);
    input.addAttribute("VALUE", charCode - 48);
