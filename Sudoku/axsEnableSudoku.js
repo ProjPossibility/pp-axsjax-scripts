@@ -76,13 +76,13 @@ axsSd.keyboardHandler = function(evt) {
   if (evt.keyCode == 38 ||
       evt.charCode == 107){ // Up arrow or k
     axsSd.row--;
-    if (axsSd.row < 1){ axsSd.row = 1; }
+    if (axsSd.row < 1){ axsSd.row = 0; }
     axsSd.getCurrentPosition();
   }
   if (evt.keyCode == 37 ||
       evt.charCode == 104){ // Left arrow  or h
     axsSd.col--;
-    if (axsSd.col < 1){ axsSd.col = 1; }
+    if (axsSd.col < 1){ axsSd.col = 0; }
     axsSd.getCurrentPosition();
   }
   if (evt.keyCode == 40 ||
@@ -127,7 +127,7 @@ axsSd.getCellValue = function(row, col) {
    if (value == null) {
       value = "blank";
    }
-   alert(input.getAttribute("ID"));
+//   alert(input.getAttribute("ID"));
    return value;
 };
 
