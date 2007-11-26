@@ -1,3 +1,15 @@
+//Java script for accessibility at http://en.wikipedia.org
+//Author gurmeets@usc.edu (Gurmeet Singh)
+//Author arvindve@usc.edu (Arvind Venkataraman)
+//Author kbhatt@usc.edu (Kushal Bhatt)
+
+// The following keys are available
+// '?' to listen to key shortcuts available
+// 'ESC' to go to audio language selection
+// '/' to exit the audio language selection and put focus back on search box
+// 'n' to go to next language while in audio selection
+// 'p' to go to previous language while in audio selection
+// 'enter' to select a particular language while in audio language selection
 
 var axsWiki={};
 var paragraphReader = {};
@@ -27,6 +39,8 @@ paragraphReader.maxParas = 0;
 paragraphReader.Paras = null;
 paragraphReader.currentPara = 0;
 
+
+// Key press event handler when the paragraphs are being read
 
 function paragraphReader_keypress(evt)
 {
@@ -62,6 +76,8 @@ function paragraphReader_keypress(evt)
 	}
 	
 }
+
+// Keypress event handler when the Table of Contents is being read 
 
 function toc_keypress(evt)
 {	//alert(evt.keyCode);
@@ -131,11 +147,9 @@ function axsJb_keyboardHandler(evt){
 		toc_keypress(evt);
 	}
 	else  if(axsWiki.currentState==READING_PARAGRAPHS)
+      {
 		paragraphReader_keypress(evt);
-	
-	
-		
-		
+      }
 }
 
 
