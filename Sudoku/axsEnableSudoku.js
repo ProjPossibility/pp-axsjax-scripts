@@ -170,12 +170,10 @@ axsSd.howAmIDoing = function() {
    }
    if (errors > 0) {
 	axsSd.axsJaxObj.speakThroughPixel(errors+" errors. ");
- 	alert(message);
    } else {
 	if (done == 81) {
 	   axsSd.axsJaxObj.speakThroughPixel("Great, You are done. Congratulations. ");
       } else {
-	   axsSd.axsJaxObj.speakThroughPixel("No Errors till now. ");
          axsSd.axsJaxObj.speakThroughPixel((81 - done)+" more to go. ");
 	}
    }
