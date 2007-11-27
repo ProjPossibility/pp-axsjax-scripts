@@ -159,8 +159,7 @@ axsSd.howAmIDoing = function() {
 	   var value = axsSd.getCellValue(i, j);
 	   if (value != "blank") {
 		if (value != axsSd.getSolutionCellValue(i, j)) {
- message = message + "Row "+i+" Col "+j+" value "+value+" sol "+axsSd.getSolutionCellValue(i,j)+"\n ";
-		   axsSd.axsJaxObj.speakThroughPixel("Error in Row "+i+" Column "+j+". ");
+ 		   message = message + "Error in Row "+i+" Column "+j+". ");
 		   errors++;
 		} else {
 		   done++;
@@ -169,7 +168,7 @@ axsSd.howAmIDoing = function() {
 	}
    }
    if (errors > 0) {
-	axsSd.axsJaxObj.speakThroughPixel(errors+" errors. ");
+	axsSd.axsJaxObj.speakThroughPixel(errors+" errors. "+message);
    } else {
 	if (done == 81) {
 	   axsSd.axsJaxObj.speakThroughPixel("Great, You are done. Congratulations. ");
