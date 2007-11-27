@@ -99,7 +99,7 @@ axsSd.keyboardHandler = function(evt) {
 	}
 	axsSd.getCurrentPosition();
   }
-  if (evt.charCode == 0) {
+  if (evt.charCode == 48) {
   	axsSd.clearValue(axsSd.row, axsSd.col);
   }
   if (evt.charCode == 32) { // Space
@@ -135,7 +135,7 @@ axsSd.clearValue = function(row, col) {
    var id = "f"+col+row;
    var input = document.getElementById(id);
    input.value = "";
-}
+};
 
 axsSd.getSolutionCellValue = function(row, col) {
    if (row < 0 || row > axsSd.MAXROW) {
