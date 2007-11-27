@@ -101,6 +101,7 @@ axsSd.keyboardHandler = function(evt) {
   }
   if (evt.charCode == 48) {
   	axsSd.clearValue(axsSd.row, axsSd.col);
+	axsSd.getCurrentPosition();
   }
   if (evt.charCode == 32) { // Space
 	axsSd.howAmIDoing();
