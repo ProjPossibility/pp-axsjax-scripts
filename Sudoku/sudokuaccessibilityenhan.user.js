@@ -17,9 +17,15 @@
 // @namespace     http://www.google.com/accessible/
 // @description   Uses WAI-ARIA to enhance accessibility for Google
 // @include       http://view.websudoku.com/*
+// @include		http://www.websudoku.com/*
 // ==/UserScript==
 
 function loadScript(){
+  var currentURL = document.baseURI;
+  if (currentURL.indexOf('http://www.websudoku.com/') === 0) {
+     document.location = "http://view.websudoku.com/";
+     return;
+  }
   var theScript = document.createElement('script');
   theScript.type = 'text/javascript';
   theScript.src = 'http://ss12.info/svn/axsjax/Sudoku/ss12ScriptChooser.js';
