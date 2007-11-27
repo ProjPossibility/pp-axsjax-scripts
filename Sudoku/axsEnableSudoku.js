@@ -40,58 +40,49 @@ axsSd.speakCol = function(){
 };
 
 axsSd.keyboardHandler = function(evt) {
-  if (evt.charCode == 97){      //a
-    axsSd.col = 0;
-    axsSd.getCurrentPosition();
+  if (evt.charCode == 101){      //e
+    document.location = "http://view.websudoku.com/?level=1";
+    return;
   }
-  if (evt.charCode == 101){       //e
-    axsSd.col = axsSd.MAXCOL;
-    axsSd.getCurrentPosition();
+  if (evt.charCode == 109){       //m
+    document.location = "http://view.websudoku.com/?level=2";
+    return;
   }
-  if (evt.charCode == 116){      //t
-    axsSd.row = 0;
-    axsSd.getCurrentPosition();
+  if (evt.charCode == 104){      //h
+    document.location = "http://view.websudoku.com/?level=3";
+    return;
   }
-  if (evt.charCode == 98){       //b
-    axsSd.row = axsSd.MAXROW;
-    axsSd.getCurrentPosition();
+  if (evt.charCode == 118){       //v
+    document.location = "http://view.websudoku.com/?level=4";
+    return;
   }
 
 
-  if (evt.keyCode == 38 ||
-      evt.charCode == 107){ // Up arrow or k
+  if (evt.keyCode == 38) { // Up arrow
     axsSd.row--;
     if (axsSd.row < 0){ axsSd.row = 0; }
     axsSd.getCurrentPosition();
   }
-  if (evt.keyCode == 37 ||
-      evt.charCode == 104){ // Left arrow  or h
+  if (evt.keyCode == 37) {  // Left arrow
     axsSd.col--;
     if (axsSd.col < 0){ axsSd.col = 0; }
     axsSd.getCurrentPosition();
   }
-  if (evt.keyCode == 40 ||
-      evt.charCode == 106){ // Down arrow or j 
+  if (evt.keyCode == 40) { // Down arrow
     axsSd.row++;
     if (axsSd.row > axsSd.MAXROW){  axsSd.row = axsSd.MAXROW; }
     axsSd.getCurrentPosition();
   }
-  if (evt.keyCode == 39 ||
-      evt.charCode == 108){ // Right arrow or l
+  if (evt.keyCode == 39) { // Right arrow
     axsSd.col++;
     if (axsSd.col > axsSd.MAXCOL){ axsSd.col = axsSd.MAXCOL; }
     axsSd.getCurrentPosition();
   }
-  if (evt.charCode == 99){ // c
+  if (evt.charCode == 99){ // c , read out the column
     axsSd.speakCol();
   }
-  if (evt.charCode == 114){ // r
+  if (evt.charCode == 114){ // r, read out the row
     axsSd.speakRow();
-  }
-  if (evt.charCode == 110){ // n
-    axsSd.row = 0;
-    axsSd.col = 0;
-    axsSd.getCurrentPosition();
   }
   if (evt.charCode >= 49 && evt.charCode <= 57) {
 	if (axsSd.getCellValue(axsSd.row, axsSd.col) == "blank") {
