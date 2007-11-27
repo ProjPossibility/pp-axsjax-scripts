@@ -123,12 +123,10 @@ axsSd.getSolution = function() {
 axsSd.getCellValue = function(row, col) {
    var id = "f"+col+row;
    var input = document.getElementById(id);
-//   var value = input.getAttribute("VALUE");
    var value = input.value;
    if (value == "") {
       value = "blank";
    }
-//   alert(input.getAttribute("ID"));
    return value;
 };
 
@@ -153,6 +151,31 @@ axsSd.getSolutionCellValue = function(row, col) {
 };
 
 axsSd.howAmIDoing = function() {
+   var errors = 0;
+   var done = 0;
+   for (var i = 0; i <= axsSd.MAXROW; i++) {
+	for (var j = 0; j <= axsSd.MAXCOL; j++) {
+	   var value = axsSd.getCellValue(i, j);
+	   if (value != "blank") {
+		if (value != axsSd.getSolutionCellValue()) {
+		   axsSd.axsJaxObj.speakThroughPixel("Error in Row "+i+" Column "+j+". ";
+		   errors++;
+		} else {
+		   done++;
+		}
+	   }
+	}
+   }
+   if (errors > 0) {
+	axsSd.axsJaxObj.speakThroughPixel(errors+" errors. ");
+   } else {
+	if (done == 81) {
+	   axsSd.axsJaxObj.speakThroughPixel("Great, You are done. Congratulations. ");
+      }
+   }
+}
+
+axsSd.clickHowAmIDoing = function() {
    var nodes = document.getElementsByTagName("INPUT");
    for(var i = 0; i < nodes.length; i++) {
      if (nodes[i].value == " How am I doing? ") {
