@@ -157,7 +157,7 @@ axsSd.howAmIDoing = function() {
 	for (var j = 0; j <= axsSd.MAXCOL; j++) {
 	   var value = axsSd.getCellValue(i, j);
 	   if (value != "blank") {
-		if (value != axsSd.getSolutionCellValue()) {
+		if (value != axsSd.getSolutionCellValue(i, j)) {
 		   axsSd.axsJaxObj.speakThroughPixel("Error in Row "+i+" Column "+j+". ");
 		   errors++;
 		} else {
