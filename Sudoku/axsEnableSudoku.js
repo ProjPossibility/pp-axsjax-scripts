@@ -191,6 +191,9 @@ axsSd.clickHowAmIDoing = function() {
 axsSd.init = function() {
    axsSd.axsJaxObj = new AxsJAX(true);
    axsSd.getSolution();
+   axsSd.row = 0;
+   axsSd.col = 0;
+   axsSd.getCurrentPosition();
    document.addEventListener('keypress', axsSd.keyboardHandler, true);
 };
 
