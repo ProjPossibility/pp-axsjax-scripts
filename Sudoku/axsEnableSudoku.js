@@ -117,7 +117,7 @@ axsSd.putValue = function(charCode, row, col) {
 axsSd.getSolution = function() {
    var Sol = document.getElementsByName("cheat");
    axsSd.solution = Sol[0].value;
-//   alert(axsSd.solution);
+   alert(axsSd.solution);
 };
 
 axsSd.getCellValue = function(row, col) {
@@ -176,7 +176,7 @@ axsSd.howAmIDoing = function() {
 	   axsSd.axsJaxObj.speakThroughPixel("Great, You are done. Congratulations. ");
       }
    }
-}
+};
 
 axsSd.clickHowAmIDoing = function() {
    var nodes = document.getElementsByTagName("INPUT");
