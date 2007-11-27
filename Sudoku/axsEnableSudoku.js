@@ -100,7 +100,7 @@ axsSd.keyboardHandler = function(evt) {
 	axsSd.getCurrentPosition();
   }
   if (evt.charCode == 32) { // Space
-	axsSd.axsJaxObj.clickElem(axsSd.getHowAmIDoingNode());
+	axsSd.howAmIDoing();
   }
 };
 
@@ -142,15 +142,14 @@ axsSd.getSolutionCellValue = function(row, col) {
    return value;
 };
 
-axsSd.getHowAmIDoingNode = function() {
+axsSd.howAmIDoing = function() {
    var nodes = document.getElementsByTagName("INPUT");
    for(var i = 0; i < nodes.length; i++) {
      if (nodes[i].value == " How am I doing? ") {
-        alert("Found How am I doing node");
-        return nodes[i];
+        axsSd.axsJaxObj.clickElem(nodes[i]);
+        break;
      }
    }
-   return null;
 };
 
 axsSd.init = function() {
