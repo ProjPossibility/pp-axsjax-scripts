@@ -146,7 +146,7 @@ axsSd.getSolutionCellValue = function(row, col) {
        return "Invalid Column";
    }
    var index = row * axsSd.MAXROW + col;
-   var value = axsSd.solution.substring(index-1, index);
+   var value = axsSd.solution.substring(index, index+1);
    return value;
 };
 
@@ -174,7 +174,10 @@ axsSd.howAmIDoing = function() {
    } else {
 	if (done == 81) {
 	   axsSd.axsJaxObj.speakThroughPixel("Great, You are done. Congratulations. ");
-      }
+      } else {
+	   axsSd.axsJaxObj.speakThroughPixel("No Errors till now. ");
+         axsSd.axsJaxObj.speakThroughPixel((81 - done)+" more to go. ");
+	}
    }
 };
 
