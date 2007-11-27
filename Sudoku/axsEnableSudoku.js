@@ -99,6 +99,9 @@ axsSd.keyboardHandler = function(evt) {
 	}
 	axsSd.getCurrentPosition();
   }
+  if (evt.charCode == 0) {
+  	axsSd.clearValue(axsSd.row, axsSd.col);
+  }
   if (evt.charCode == 32) { // Space
 	axsSd.howAmIDoing();
   }
@@ -128,6 +131,12 @@ axsSd.getCellValue = function(row, col) {
    return value;
 };
 
+axsSd.clearValue = function(row, col) {
+   var id = "f"+col+row;
+   var input = document.getElementById(id);
+   input.value = "";
+}
+
 axsSd.getSolutionCellValue = function(row, col) {
    if (row < 0 || row > axsSd.MAXROW) {
        alert("Row "+row+" Col "+col+" Invalid Row");
@@ -147,7 +156,6 @@ axsSd.howAmIDoing = function() {
    for(var i = 0; i < nodes.length; i++) {
      if (nodes[i].value == " How am I doing? ") {
         axsSd.axsJaxObj.clickElem(nodes[i]);
-        alert(nodes[i].value);
         break;
      }
    }
