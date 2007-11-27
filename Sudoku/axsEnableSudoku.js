@@ -153,11 +153,13 @@ axsSd.getSolutionCellValue = function(row, col) {
 axsSd.howAmIDoing = function() {
    var errors = 0;
    var done = 0;
+   var message = "";
    for (var i = 0; i <= axsSd.MAXROW; i++) {
 	for (var j = 0; j <= axsSd.MAXCOL; j++) {
 	   var value = axsSd.getCellValue(i, j);
 	   if (value != "blank") {
 		if (value != axsSd.getSolutionCellValue(i, j)) {
+ message = message + "Row "+i+" Col "+j+" value "+value+" sol "+axsSd.getSolutionCellValue(i,j)+"\n ";
 		   axsSd.axsJaxObj.speakThroughPixel("Error in Row "+i+" Column "+j+". ");
 		   errors++;
 		} else {
@@ -168,6 +170,7 @@ axsSd.howAmIDoing = function() {
    }
    if (errors > 0) {
 	axsSd.axsJaxObj.speakThroughPixel(errors+" errors. ");
+ 	alert(message);
    } else {
 	if (done == 81) {
 	   axsSd.axsJaxObj.speakThroughPixel("Great, You are done. Congratulations. ");
