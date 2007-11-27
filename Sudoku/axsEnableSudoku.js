@@ -99,6 +99,9 @@ axsSd.keyboardHandler = function(evt) {
 	}
 	axsSd.getCurrentPosition();
   }
+  if (evt.charCode == 32) { // Space
+	axsSd.axsJaxObj.clickElem(axsSd.getHowAmIDoingNode());
+  }
 };
 
 axsSd.putValue = function(charCode, row, col) {
@@ -137,6 +140,16 @@ axsSd.getSolutionCellValue = function(row, col) {
    var index = row * axsSd.MAXROW + col;
    var value = axsSd.solution.substring(index-1, index);
    return value;
+};
+
+axsSd.getHowAmIDoingNode = function() {
+   var nodes = document.getElementsByTagName("INPUT");
+   for(var i = 0; i < nodes.length; i++) {
+     if (nodes[i].value == " How am I doing? ") {
+        return nodes[i];
+     }
+   }
+   return null;
 };
 
 axsSd.init = function() {
