@@ -147,6 +147,7 @@ axsSd.howAmIDoing = function() {
    for(var i = 0; i < nodes.length; i++) {
      if (nodes[i].value == " How am I doing? ") {
         axsSd.axsJaxObj.clickElem(nodes[i]);
+        alert(nodes[i].value);
         break;
      }
    }
