@@ -146,6 +146,7 @@ axsSd.getHowAmIDoingNode = function() {
    var nodes = document.getElementsByTagName("INPUT");
    for(var i = 0; i < nodes.length; i++) {
      if (nodes[i].value == " How am I doing? ") {
+        alert("Found How am I doing node");
         return nodes[i];
      }
    }
