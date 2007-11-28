@@ -117,7 +117,6 @@ function toc_keypress(evt)
 	}
 	else if(evt.keyCode==13)	//Enter Key
 	{	
-		alert(axsWiki.currentLink);
 		document.location = axsWiki.currentLink;
 		axsWiki.currentState = READING_PARAGRAPHS;
 		//alert(axsWiki.currentLink);
