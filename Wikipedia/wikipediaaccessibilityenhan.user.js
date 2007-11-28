@@ -1,7 +1,7 @@
 
 // ==UserScript==
 // @name          Wikipedia Accessibility Enhancements
-// @namespace     http://www.google.com/accessible/
+// @namespace     
 // @description   Uses WAI-ARIA to enhance accessibility for Wikipedia
 // @include       http://www.wikipedia.org/*
 // @include		http://en.wikipedia.org/*

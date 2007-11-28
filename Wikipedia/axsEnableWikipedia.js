@@ -5,11 +5,12 @@
 
 // The following keys are available
 // '?' to listen to key shortcuts available
-// 'ESC' to go to audio language selection
-// '/' to exit the audio language selection and put focus back on search box
-// 'n' to go to next language while in audio selection
-// 'p' to go to previous language while in audio selection
-// 'enter' to select a particular language while in audio language selection
+// '/' to direct focus on the search box. Anything the user enters after this is considered search text
+// 'esc' to leave the search box
+// 'g' to go to the table of contents (TOC)
+// 'n' to go to next item while reading the TOC or the paragraphs
+// 'p' to go to the previous item while reading the TOC or the paragraphs
+// 'enter' to start reading the paragraphs in a particular section of the document (only effective while reading the TOC)
 
 var axsWiki={};
 var paragraphReader = {};
@@ -25,6 +26,7 @@ axsWiki.nodeArray=null;
 axsWiki.toc=null;
 axsWiki.currentLink;
 axsWiki.currentState = READING_PARAGRAPHS;
+axsWiki.oldState = READING_PARAGRAPHS;
 axsWiki.helpString =
     'The following shortcut keys are available. ' +
     'G, Return to Contents. ' +   
@@ -130,13 +132,15 @@ function axsJb_keyboardHandler(evt){
 	if(evt.charCode == 47) // for the / key
 	{
 	document.getElementById('searchInput').focus();
+      document.getElementById('searchInput').value = "";
+	axsWiki.oldState = axsWiki.currentState;
 	axsWiki.currentState=SEARCH;
 	}
-	if(evt.keyCode == 27)
+	if(evt.keyCode == 27) // escape key
 	{
 	document.getElementById('searchInput').blur();
 	document.getElementById('searchInput').value="";
-	axsWiki.currentState=READING_PARAGRAPHS;
+	axsWiki.currentState = axsWiki.oldState;
 	}
 	if(evt.charCode == 63) //? key
 	{
