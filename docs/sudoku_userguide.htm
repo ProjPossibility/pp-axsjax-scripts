@@ -1,0 +1,157 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Language" content="en-us">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>AxsJAX Enhanced Sudoku User Guide</title>
+</head>
+
+<body>
+
+<p align="center"><font size="6">AxsJAX - Enhanced Sudoku User Guide</font></p>
+<p align="left"><font size="5">Table of Contents</font></p>
+<ol>
+	<li>
+	<p align="left"><font size="4"><a href="#1">What is AxsJAX Enhanced Sudoku</a></font></li>
+	<li>
+	<p align="left"><font size="4"><a href="#2">What are the new features</a></font></li>
+	<li>
+	<p align="left"><font size="4"><a href="#3">How to start using the AxsJAX 
+	enhanced sudoku</a></font></li>
+	<li>
+	<p align="left"><font size="4"><a href="#4">Future work</a></font></li>
+</ol>
+<p align="left"><b><font size="4"><a name="1"></a>1. What is AxsJAX Enhanced 
+Sudoku</font></b></p>
+<p align="left"><a href="http://code.google.com/p/google-axsjax">AxsJAX</a> is a 
+Google project for injecting accessibility enhancements as defined by
+<a href="http://www.w3.org/TR/aria-roadmap">W3C ARIA</a> (Accessible Rich 
+Internet Applications). AxsJAX Enhanced Sudoku is a regular
+<a href="http://view.sudoku.com/">sudoku game</a> that was AxsJAXed. Sudoku is 
+number puzzle consisting of a 9x9 Grid where each row should contain the numbers 
+from 1 to 9 without duplication. Similarly each column should contain the 
+numbers from 1 to 9 without duplication. Moreover, the 9x9 Grid is divided into 
+9 3x3 Grids and each such Grid should contain the numbers between 1 to 9 without 
+duplication. For more details, please see
+<a href="http://en.wikipedia.org/wiki/Sudoku">the wikipedia article on sudoku</a>.
+</p>
+<p align="left"><b><font size="4"><a name="2"></a>2. What are the new features</font></b></p>
+<p align="left">The AxsJAX enhancements provide keyboard navigation for the 
+game. When on the <a href="http://view.sudoku.com/">game page</a>, the 
+following keys are available. </p>
+<table width="100%" id="table1">
+	<tr>
+		<td align="center" style="border-style: solid; border-width: 1px; padding-left: 4px; padding-right: 4px" bordercolor="#C0C0C0">
+		<p align="left" style="margin-top: 0; margin-bottom: 0">
+		<font face="Palatino Linotype">Arrow keys </font></td>
+		<td style="border-style: solid; border-width: 1px; padding-left: 4px; padding-right: 4px" bordercolor="#C0C0C0">
+		<p align="left" style="margin-top: 0; margin-bottom: 0">
+		<font face="Palatino Linotype">&nbsp;</font>When the game page loads, we 
+		announce the contents of row 0, column 0 of the grid. After that the 
+		arrow keys can be used to navigate the grid. The contents and 
+		coordinates of the cell would be announced. </td>
+	</tr>
+	<tr>
+		<td align="center" style="border-style: solid; border-width: 1px; padding-left: 4px; padding-right: 4px" bordercolor="#C0C0C0">
+		<p align="left" style="margin-top: 0; margin-bottom: 0">1-9 </td>
+		<td style="border-style: solid; border-width: 1px; padding-left: 4px; padding-right: 4px" bordercolor="#C0C0C0">
+		<p align="left" style="margin-top: 0; margin-bottom: 0">&nbsp;Use the 
+		keys from 1 to 9 to enter a value into a cell that is currently blank. 
+		You have to first navigate to the cell using arrow keys before entering 
+		a value into it. </td>
+	</tr>
+	<tr>
+		<td align="center" style="border-style: solid; border-width: 1px; padding-left: 4px; padding-right: 4px" bordercolor="#C0C0C0">
+		<p align="left" style="margin-top: 0; margin-bottom: 0">0 </td>
+		<td style="border-style: solid; border-width: 1px; padding-left: 4px; padding-right: 4px" bordercolor="#C0C0C0">
+		<p align="left" style="margin-top: 0; margin-bottom: 0">&nbsp;Use 0 to 
+		clear the contents of the current cell</td>
+	</tr>
+	<tr>
+		<td align="center" style="border-style: solid; border-width: 1px; padding-left: 4px; padding-right: 4px" bordercolor="#C0C0C0">
+		<p align="left" style="margin-top: 0; margin-bottom: 0">r </td>
+		<td style="border-style: solid; border-width: 1px; padding-left: 4px; padding-right: 4px" bordercolor="#C0C0C0">
+		<p align="left" style="margin-top: 0; margin-bottom: 0">&nbsp;reads the 
+		contents of the current row that you are on</td>
+	</tr>
+	<tr>
+		<td align="center" style="border-style: solid; border-width: 1px; padding-left: 4px; padding-right: 4px" bordercolor="#C0C0C0">
+		<p align="left" style="margin-top: 0; margin-bottom: 0">c </td>
+		<td style="border-style: solid; border-width: 1px; padding-left: 4px; padding-right: 4px" bordercolor="#C0C0C0">
+		<p align="left" style="margin-top: 0; margin-bottom: 0">&nbsp;reads the 
+		contents of the current column that you are on</td>
+	</tr>
+	<tr>
+		<td align="center" style="border-style: solid; border-width: 1px; padding-left: 4px; padding-right: 4px" bordercolor="#C0C0C0">
+		<p align="left" style="margin-top: 0; margin-bottom: 0">Space </td>
+		<td style="border-style: solid; border-width: 1px; padding-left: 4px; padding-right: 4px" bordercolor="#C0C0C0">
+		<p align="left" style="margin-top: 0; margin-bottom: 0">&nbsp;The space 
+		bar can be used to check the current status of the Grid. If there are 
+		errors in the Grid, we would announce how many errors are there and the 
+		coordinates of each error cell. If there are no errors then we would 
+		announce how many cells are remaining to be completed. If the Grid is 
+		successfully completed, we would make a announcement to that effect.
+		</td>
+	</tr>
+	<tr>
+		<td align="center" style="border-style: solid; border-width: 1px; padding-left: 4px; padding-right: 4px" bordercolor="#C0C0C0">
+		<p align="left" style="margin-top: 0; margin-bottom: 0">e </td>
+		<td style="border-style: solid; border-width: 1px; padding-left: 4px; padding-right: 4px" bordercolor="#C0C0C0">
+		<p align="left" style="margin-top: 0; margin-bottom: 0">&nbsp;to start a 
+		new 'easy' game</td>
+	</tr>
+	<tr>
+		<td align="center" style="border-style: solid; border-width: 1px; padding-left: 4px; padding-right: 4px" bordercolor="#C0C0C0">
+		<p align="left" style="margin-top: 0; margin-bottom: 0">m </td>
+		<td style="border-style: solid; border-width: 1px; padding-left: 4px; padding-right: 4px" bordercolor="#C0C0C0">
+		<p align="left" style="margin-top: 0; margin-bottom: 0">&nbsp;to start a 
+		new 'medium' game</td>
+	</tr>
+	<tr>
+		<td align="center" style="border-style: solid; border-width: 1px; padding-left: 4px; padding-right: 4px" bordercolor="#C0C0C0">
+		<p align="left" style="margin-top: 0; margin-bottom: 0">h </td>
+		<td style="border-style: solid; border-width: 1px; padding-left: 4px; padding-right: 4px" bordercolor="#C0C0C0">
+		<p align="left" style="margin-top: 0; margin-bottom: 0">&nbsp;to start a 
+		new 'hard' game</td>
+	</tr>
+	<tr>
+		<td align="center" style="border-style: solid; border-width: 1px; padding-left: 4px; padding-right: 4px" bordercolor="#C0C0C0">
+		<p align="left" style="margin-top: 0; margin-bottom: 0">v </td>
+		<td style="border-style: solid; border-width: 1px; padding-left: 4px; padding-right: 4px" bordercolor="#C0C0C0">
+		<p align="left" style="margin-top: 0; margin-bottom: 0">&nbsp;to start a 
+		new 'evil' (very hard) game</td>
+	</tr>
+</table>
+<p align="left"><b><font size="4"><a name="3"></a>3. How to start using the 
+AxsJAX enhanced Sudoku</font></b></p>
+<p>All you need to do is make sure that you have the following: </p>
+<ol>
+	<li>A modern Web browser like Firefox 2.0 or later that supports W3C ARIA. 
+	</li>
+	<li>An adaptive technology that will respond correctly to the accessibility 
+	enhancements introduced by W3C ARIA. In particular, many of the enhancements 
+	injected by AxsJAX depend on support for <i>live regions</i> a feature that 
+	enables adaptive technologies like screen readers and self-voicing browsers 
+	deal correctly with asynchronous updates to portions of a Web page. </li>
+</ol>
+If your setup meets these requirements, you would need to install
+<a href="http://addons.mozilla.org/firefox/748">GreaseMonkey</a> and then 
+install the
+<a href="http://ss12.info/svn/axsjax/Sudoku/sudokuaccessibilityenhan.user.js">
+GreaseMonkey script for AxsJAX enhancements for sudoku</a> . Restart the 
+browser. Open the <a href="http://view.sudoku.com/">sudoku web site</a> and 
+start playing. Please note that while there are numerous sudoku web sites on the 
+internet, the enhancements were developed only for
+<a href="http://view.websudoku.com/">http://view.websudoku.com/</a> as a proof 
+of concept. The implementation files for the project can be found at
+<a href="http://ss12.info/svn/axsjax/Sudoku">http://ss12.info/svn/axsjax/Sudoku</a>.<p><b><font size="4"><a name="4"></a>4. Future Direction</font></b></p>
+<p>We can add error checking when the user is inputting value to a cell to the 
+Grid. I thought it would be too intrusive and left it out. Also, it would be 
+good to combine the assistive and non-assistive navigation techniques so that 
+when the user clicks on a particular cell, the assistive navigation would be 
+updated to be at the clicked cell.</p>
+<p>Author: <a href="http://www.isi.edu/~gurmeet/index.html">Gurmeet Singh</a> &lt;gurmeets@usc.edu&gt;</p>
+
+</body>
+
+</html>
