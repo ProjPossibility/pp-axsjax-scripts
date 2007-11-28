@@ -72,6 +72,7 @@ function paragraphReader_keypress(evt)
       	if(document.getElementById('toc'))
 		{axsWiki.resultIndex++;
 	//document.location=axsWiki.nodeArray[axsWiki.resultIndex].href;
+	     axsWiki.currentLink = axsWiki.nodeArray[axsWiki.resultIndex].href;
 	     axsWiki.axsObj.goTo(axsWiki.nodeArray[axsWiki.resultIndex])
 	     axsWiki.currentState=READING_TOC;
 		}
