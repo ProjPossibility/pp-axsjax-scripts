@@ -140,7 +140,8 @@ following key functions are available</p><span LANG="EN">
 		</td>
 		<td>
 		<p style="margin-top: 0; margin-bottom: 0"><span LANG="EN">&nbsp;to go 
-		to next item while reading the TOC or the paragraphs</span></td>
+		to next item while reading the TOC or to the next paragraph while 
+		reading the paragraphs or the citations.</span></td>
 	</tr>
 	<tr>
 		<td>
@@ -148,7 +149,24 @@ following key functions are available</p><span LANG="EN">
 		</td>
 		<td>
 		<p style="margin-top: 0; margin-bottom: 0"><span LANG="EN">&nbsp;to go 
-		to the previous item while reading the TOC or the paragraphs</span></td>
+		to the previous item while reading the TOC or to the previous paragraph 
+		while reading the paragraphs or the citations.</span></td>
+	</tr>
+	<tr>
+		<td>
+		r</td>
+		<td>
+		&nbsp;to read out the number of links and citations in the current 
+		paragraph.</td>
+	</tr>
+	<tr>
+		<td>
+		t</td>
+		<td>
+		&nbsp;to start reading the citations in the paragraph. To move to next 
+		citation, the user has to press t again. When the current citation is 
+		read out, the user can press enter to open a new page that is the 
+		reference of the citation just read out. </td>
 	</tr>
 	<tr>
 		<td>
@@ -156,8 +174,9 @@ following key functions are available</p><span LANG="EN">
 		</td>
 		<td>
 		<p style="margin-top: 0; margin-bottom: 0"><span LANG="EN">&nbsp;to 
-		start reading the paragraphs in a particular section of the document 
-		(only effective while reading the TOC)</span></td>
+		start reading the paragraphs in a particular section of the document&nbsp; while reading the TOC 
+		or to open a new page while reading the citations (the new page is the 
+		reference of the citation).</span></td>
 	</tr>
 </table>
 </span>
@@ -168,7 +187,12 @@ http://en.wikipedia.org</a> web site, the user can be in one of the three states
 	<p align="left">Reading the paragraphs on the page (default mode). In this 
 	case the navigation is using the n and p keys. In this state, user can use 
 	the g key to go to the table to contents (TOC) or the / key to go to the 
-	search box. </p></li>
+	search box.</p></li>
+	<li>
+	<p align="left">Reading the citations in a particular paragraph. This state 
+	is reached by pressing t when reading a paragraph. To move to next citation 
+	press t again. Use n and p keys to go back to reading the paragraphs or the 
+	g key to go back to reading the table of contents. </p></li>
 	<li>
 	<p align="left">Reading the table of contents. In this case, the navigation 
 	is using the n and p keys. In this state, doing an enter will start reading 
@@ -209,12 +233,13 @@ start searching. Please note that while there are language versions of wikipedia
 the <a href="http://en.wikipedia.org/">English language version</a> as a proof 
 of concept. The implementation files for the project can be found at
 <a href="http://ss12.info/svn/axsjax/Wikipedia">http://ss12.info/svn/axsjax/Wikipedia</a>.<p><b><font size="4"><a name="4"></a>4. Future Direction</font></b></p>
-<p>We still need to add a key to allow the user to read the links and citation 
-in a paragraphs while reading the paragraph. Also we need to add handling for 
+<p>We need to add handling for 
 web pages that have no defined paragraphs or table of contents. </p>
 <p>Authors: <a href="http://www.isi.edu/~gurmeet/index.html">Gurmeet Singh</a> &lt;<a href="mailto:gurmeets@usc.edu">gurmeets@usc.edu</a>&gt;, 
 Arvind Venkataraman &lt;<a href="mailto:arvindve@usc.edu">arvindve@usc.edu</a>&gt;, 
-Kushal Bhatt &lt;<a href="mailto:kbhatt@usc.edu">kbhatt@usc.edu</a>&gt;</p>
+Kushal Bhatt &lt;<a href="mailto:kbhatt@usc.edu">kbhatt@usc.edu</a>&gt;, 
+Christopher Leung &lt;<a href="mailto:christopher.leung@projectpossibility.org">christopher.leung@projectpossibility.org</a>&gt;</p>
+<p>&nbsp;</p>
 <p>&nbsp;</p>
 
 </body>

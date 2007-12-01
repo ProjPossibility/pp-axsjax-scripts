@@ -33,7 +33,9 @@ axsWiki.helpString =
     'G, Return to Contents. ' +   
     'N, go to the next element. ' +
     'P, go to the previous element. ' +
-    'Enter, open the current item. ' +
+    'R, to get the number of citations and links in the paragraph. '+
+    'T, to traverse the citations in the paragraph. '+
+    'Enter, open the current item or citation. ' +
     'Slash, jump to search blank. ' +
     'Escape, leave search blank. ' ;
    
