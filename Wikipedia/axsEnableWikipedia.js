@@ -201,13 +201,17 @@ paragraphReader.readParagraphNumber = function(number)
 paragraphReader.countLinksAndCitations = function() {
   var node = paragraphReader.Paras[paragraphReader.currentPara].getElementsByTagName('a');
   var links = 0;
+  var citations = 0;
   for (var i = 0; i < node.length; i++) {
   	var title = node[i].getAttribute("title");
       if (title != "") {
 	   links++;
-      }
+      } else {
+	   citations++;
+	}
   }
-  axsWiki.axsObj.speakThroughPixel("There are "+links+" links in this paragraph. ");
+  str = "There are "+links+" links and "+citations+" citations in this paragraph. ";
+  axsWiki.axsObj.speakThroughPixel(str);
 };
 
 paragraphReader.init = function() {
