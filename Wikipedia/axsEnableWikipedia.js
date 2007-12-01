@@ -66,7 +66,7 @@ function paragraphReader_keypress(evt)
          }
 
       } else if (evt.charCode == 114) { //r
-	   paragraphReader.countLinksAndCitation();
+	   paragraphReader.countLinksAndCitations();
 
 	} else if(evt.charCode==103) { //g key
          if(document.getElementById('toc')) {
