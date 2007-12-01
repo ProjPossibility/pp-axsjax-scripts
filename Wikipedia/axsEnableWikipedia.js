@@ -47,8 +47,7 @@ paragraphReader.currentPara = 0;
 function paragraphReader_keypress(evt)
 {
 
-	if (evt.charCode == 110) 
-	{  // n
+	if (evt.charCode == 110) { // n
          if (paragraphReader.currentPara < paragraphReader.maxParas - 1) {
             paragraphReader.currentPara++;
             paragraphReader.readParagraphNumber(paragraphReader.currentPara);
@@ -56,28 +55,27 @@ function paragraphReader_keypress(evt)
             paragraphReader.currentPara = 0;
             paragraphReader.readParagraphNumber(paragraphReader.currentPara);
          }
-        }
-      else if (evt.charCode == 112) {  // p
+
+      } else if (evt.charCode == 112) {  // p
          if (paragraphReader.currentPara > 0) {
             paragraphReader.currentPara--;
             paragraphReader.readParagraphNumber(paragraphReader.currentPara);
          } else if (paragraphReader.currentPara == 0) {
             paragraphReader.currentPara = paragraphReader.maxParas - 1;
-            paragraphReader.readParagraphNumber(paragraphReadercurrentPara);
+            paragraphReader.readParagraphNumber(paragraphReader.currentPara);
          }
-      }
-	
-	else if(evt.charCode==103) //g key
-	{
-      	if(document.getElementById('toc'))
-		{axsWiki.resultIndex++;
-	//document.location=axsWiki.nodeArray[axsWiki.resultIndex].href;
-	     axsWiki.currentLink = axsWiki.nodeArray[axsWiki.resultIndex].href;
-	     axsWiki.axsObj.goTo(axsWiki.nodeArray[axsWiki.resultIndex])
-	     axsWiki.currentState=READING_TOC;
-		}
+
+      } else if (evt.charCode == 114) { //r
+	   paragraphReader.countLinksAndCitation();
+
+	} else if(evt.charCode==103) { //g key
+         if(document.getElementById('toc')) {
+		axsWiki.resultIndex++;
+	     	axsWiki.currentLink = axsWiki.nodeArray[axsWiki.resultIndex].href;
+	     	axsWiki.axsObj.goTo(axsWiki.nodeArray[axsWiki.resultIndex])
+	     	axsWiki.currentState=READING_TOC;
+	   }
 	}
-	
 }
 
 // Keypress event handler when the Table of Contents is being read 
@@ -198,6 +196,18 @@ paragraphReader.readParagraphNumber = function(number)
       // Otherwise if it is a paragraph read as it is
         axsWiki.axsObj.goTo(paragraphReader.Paras[number]);
       }
+};
+
+paragraphReader.countLinksAndCitations = function() {
+  var node = paragraphReader.Paras[paragraphReader.currentPara].getElementsByTagName('a');
+  var links = 0;
+  for (var i = 0; i < node.length; i++) {
+  	var href = node[i].href;
+      if (href != null) {
+	   links++;
+      }
+  }
+  axsWiki.axsObj.speakThroughPixel("There are "+links+" links in this paragraph. ");
 };
 
 paragraphReader.init = function() {
