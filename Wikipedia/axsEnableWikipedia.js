@@ -257,6 +257,7 @@ paragraphReader.goToCurrentLink = function() {
   	var title = node[i].getAttribute("title");
       if (title != "") {
 	   if (links == paragraphReader.currentLink) {
+		alert(node[i].href);
 		document.location = node[i].href;
 	   } else {
 	   	links++;
