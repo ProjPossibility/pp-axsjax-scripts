@@ -1,6 +1,7 @@
 //AxsJAX script for Sudoku game at:
 //http://view.websudoku.com/
 // Author Gurmeet Singh, gurmeets@usc.edu
+// Author Christopher Leung, christopher.leung@projectpossiblity.org
 
 var axsSd = {};
 
@@ -94,13 +95,13 @@ axsSd.keyboardHandler = function(evt) {
   if (evt.charCode == 114){ // r, read out the row
     axsSd.speakRow();
   }
-  if (evt.charCode >= 49 && evt.charCode <= 57) {
+  if (evt.charCode >= 49 && evt.charCode <= 57) { // from 1 to 9
 	if (axsSd.getCellValue(axsSd.row, axsSd.col) == "blank") {
 	    axsSd.putValue(evt.charCode, axsSd.row, axsSd.col);
 	}
 	axsSd.getCurrentPosition();
   }
-  if (evt.charCode == 48) {
+  if (evt.charCode == 48) { // 0
   	axsSd.clearValue(axsSd.row, axsSd.col);
 	axsSd.getCurrentPosition();
   }
@@ -138,7 +139,10 @@ axsSd.getCellValue = function(row, col) {
 axsSd.clearValue = function(row, col) {
    var id = "f"+col+row;
    var input = document.getElementById(id);
-   input.value = "";
+   var initValue = input.getAttribute("InitialValue");
+   if (initValue == "") {
+   	input.value = "";
+   }
 };
 
 axsSd.getSolutionCellValue = function(row, col) {
@@ -193,9 +197,21 @@ axsSd.clickHowAmIDoing = function() {
    }
 };
 
+axsSd.setInitialValueAttributes = function() {
+   for (var row = 0; row <= axsSd.MAXROW; row++) {
+	for (var col = 0; col <= axsSd.MAXCOL; col++) {
+	   var id = "f"+col+row;
+ 	   var input = document.getElementById(id);
+	   var value = input.value;
+	   input.setAttribute("InitialValue", value);
+      }
+   }
+};
+
 axsSd.init = function() {
    axsSd.axsJaxObj = new AxsJAX(true);
    axsSd.getSolution();
+   axsSd.setInitialValueAttributes();
    axsSd.row = 0;
    axsSd.col = 0;
    axsSd.getCurrentPosition();
