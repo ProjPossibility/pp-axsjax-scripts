@@ -84,13 +84,9 @@ function paragraphReader_keypress(evt)
 	     	axsWiki.currentState=READING_TOC;
 	   }
 	} else if(evt.keyCode==13) {	//Enter Key
-		if (paragraphReader.currentLink != -1) {
-		document.location = axsWiki.currentLink;
-		axsWiki.currentState = READING_PARAGRAPHS;
-		//alert(axsWiki.currentLink);
-		var str=axsWiki.currentLink.substr(axsWiki.currentLink.indexOf("#",0)+1,axsWiki.currentLink.length);
-		paragraphReader.readParagraphClass(str);
- 		}		
+	   if (paragraphReader.currentLink != -1) {
+		paragraphReader.goToCurrentLink();   
+ 	   }		
 	}
 
 }
@@ -252,6 +248,21 @@ paragraphReader.traverseLinks = function() {
   }
   message = "Link "+paragraphReader.currentLink+" "+titleArray[paragraphReader.currentLink]+". ";
   axsWiki.axsObj.speakThroughPixel(message);
+};
+
+paragraphReader.goToCurrentLink = function() {
+  var node = paragraphReader.Paras[paragraphReader.currentPara].getElementsByTagName('a');
+  var links = 0;
+  for (var i = 0; i < node.length; i++) {
+  	var title = node[i].getAttribute("title");
+      if (title != "") {
+	   if (links == paragraphReader.currentLink) {
+		document.location = node[i].href;
+	   } else {
+	   	links++;
+	   }
+	}
+  }
 };
 
 paragraphReader.readLinks = function() {
