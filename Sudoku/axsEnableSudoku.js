@@ -11,7 +11,17 @@ axsSd.MAXCOL = 8;
 axsSd.axsJaxObj = null;
 axsSd.solution = null;
 axsSd.type = null;
-
+axsSd.helpString =
+    'The following shortcut keys are available. ' +
+    '0, clear the contents of the current cell. ' +   
+    '1 through 9, enter value into a blank cell. ' +
+    'r, read the contents of the current row. ' +
+    'c, read the contents of the current column. ' +
+    'space, check current status of the grid. ' +
+    'e, start a new easy game. ' +
+    'm, start a new medium game. ' +
+    'h, start a new hard game. ' +
+    'v, start a new evil (very hard) game. ';
 
 axsSd.getCurrentPosition = function() {
   var value = axsSd.getCellValue(axsSd.row, axsSd.col);
@@ -96,6 +106,10 @@ axsSd.keyboardHandler = function(evt) {
   }
   if (evt.charCode == 32) { // Space
 	axsSd.howAmIDoing();
+  }
+  if(evt.charCode == 63) //? key
+  {
+	axsSd.axsJaxObj.speakThroughPixel(axsSd.helpString);
   }
 };
 
