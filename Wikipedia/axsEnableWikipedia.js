@@ -202,8 +202,8 @@ paragraphReader.countLinksAndCitations = function() {
   var node = paragraphReader.Paras[paragraphReader.currentPara].getElementsByTagName('a');
   var links = 0;
   for (var i = 0; i < node.length; i++) {
-  	var href = node[i].href;
-      if (href != null) {
+  	var title = node[i].getAttribute("title");
+      if (title != "") {
 	   links++;
       }
   }
