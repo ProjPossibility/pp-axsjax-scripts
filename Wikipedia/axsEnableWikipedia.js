@@ -234,7 +234,7 @@ paragraphReader.countLinksAndCitations = function() {
 paragraphReader.traverseLinks = function() {
   var node = paragraphReader.Paras[paragraphReader.currentPara].getElementsByTagName('a');
   var links = 0;
-  Array titleArray = new Array();
+  var titleArray = new Array();
   for (var i = 0; i < node.length; i++) {
   	var title = node[i].getAttribute("title");
       if (title != "") {
@@ -248,7 +248,7 @@ paragraphReader.traverseLinks = function() {
   }
   paragraphReader.currentLink++;
   if (paragraphReader.currentLink >= links ) {
-	paragraphReader.curentLink = 0;
+	paragraphReader.currentLink = 0;
   }
   message = "Link "+paragraphReader.currentLink+" "+titleArray[paragraphReader.currentLink]+". ";
   axsWiki.axsObj.speakThroughPixel(message);
