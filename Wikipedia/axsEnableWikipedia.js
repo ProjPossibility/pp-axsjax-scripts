@@ -19,6 +19,7 @@ var paragraphReader = {};
 READING_PARAGRAPHS = 1;
 READING_TOC = 2;
 SEARCH=3;
+READING_LINKS = 4;
 
 axsWiki.axsObj=new AxsJAX();
 axsWiki.resultIndex=0;
@@ -40,6 +41,7 @@ axsWiki.helpString =
 paragraphReader.maxParas = 0;
 paragraphReader.Paras = null;
 paragraphReader.currentPara = 0;
+paragraphReader.currentLink = -1;
 
 
 // Key press event handler when the paragraphs are being read
@@ -48,6 +50,7 @@ function paragraphReader_keypress(evt)
 {
 
 	if (evt.charCode == 110) { // n
+	   paragraphReader.currentLink = -1;
          if (paragraphReader.currentPara < paragraphReader.maxParas - 1) {
             paragraphReader.currentPara++;
             paragraphReader.readParagraphNumber(paragraphReader.currentPara);
@@ -57,6 +60,7 @@ function paragraphReader_keypress(evt)
          }
 
       } else if (evt.charCode == 112) {  // p
+	   paragraphReader.currentLink = -1;
          if (paragraphReader.currentPara > 0) {
             paragraphReader.currentPara--;
             paragraphReader.readParagraphNumber(paragraphReader.currentPara);
@@ -68,14 +72,27 @@ function paragraphReader_keypress(evt)
       } else if (evt.charCode == 114) { //r
 	   paragraphReader.countLinksAndCitations();
 
+	} else if (evt.charCode == 116) { // t
+	   paragraphReader.traverseLinks();
+
 	} else if(evt.charCode==103) { //g key
+	   paragraphReader.currentLink = -1;
          if(document.getElementById('toc')) {
 		axsWiki.resultIndex++;
 	     	axsWiki.currentLink = axsWiki.nodeArray[axsWiki.resultIndex].href;
 	     	axsWiki.axsObj.goTo(axsWiki.nodeArray[axsWiki.resultIndex])
 	     	axsWiki.currentState=READING_TOC;
 	   }
+	} else if(evt.keyCode==13) {	//Enter Key
+		if (paragraphReader.currentLink != -1) {
+		document.location = axsWiki.currentLink;
+		axsWiki.currentState = READING_PARAGRAPHS;
+		//alert(axsWiki.currentLink);
+		var str=axsWiki.currentLink.substr(axsWiki.currentLink.indexOf("#",0)+1,axsWiki.currentLink.length);
+		paragraphReader.readParagraphClass(str);
+ 		}		
 	}
+
 }
 
 // Keypress event handler when the Table of Contents is being read 
@@ -212,6 +229,33 @@ paragraphReader.countLinksAndCitations = function() {
   }
   str = "There are "+links+" links and "+citations+" citations in this paragraph. ";
   axsWiki.axsObj.speakThroughPixel(str);
+};
+
+paragraphReader.traverseLinks = function() {
+  var node = paragraphReader.Paras[paragraphReader.currentPara].getElementsByTagName('a');
+  var links = 0;
+  Array titleArray = new Array();
+  for (var i = 0; i < node.length; i++) {
+  	var title = node[i].getAttribute("title");
+      if (title != "") {
+	   links++;
+	   titleArray.push(title);
+	}
+  }
+  if (links == 0) {
+	axsWiki.axsObj.speakThroughPixel("There are no links in this paragraph. ");
+	return;
+  }
+  paragraphReader.currentLink++;
+  if (paragraphReader.currentLink >= links ) {
+	paragraphReader.curentLink = 0;
+  }
+  message = "Link "+paragraphReader.currentLink+" "+titleArray[paragraphReader.currentLink]+". ";
+  axsWiki.axsObj.speakThroughPixel(message);
+};
+
+paragraphReader.readLinks = function() {
+  var node = paragraphReader.Paras[paragraphReader.currentPara].getElementsByTagName('a')
 };
 
 paragraphReader.init = function() {
