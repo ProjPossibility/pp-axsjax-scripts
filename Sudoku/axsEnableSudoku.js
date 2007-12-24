@@ -60,10 +60,10 @@ axsSd.speakSubGrid = function() {
 	
 	speechString = "Current subgrid values";
 	
-	// For each col
-	for(curCol = 0; curCol < 3; curCol++) {
-		// For each row
-		for(curRow = 0; curRow<3; curRow++) {
+	// For each row
+	for(curRow = 0; curRow<3; curRow++) {
+		// For each col
+		for(curCol = 0; curCol < 3; curCol++) {
 			row = startRow + curRow;
 			col = startCol + curCol;
 			speechString = speechString + ", " + axsSd.getCellValue(row,col);
