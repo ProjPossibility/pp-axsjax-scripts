@@ -71,7 +71,7 @@ axsSd.speakSubGrid = function() {
 	}
 	
 	speechString += ".";
-	axsSd.axsJaxObj.speachThroughPixel(speechString);
+	axsSd.axsJaxObj.speakThroughPixel(speechString);
 }
 
 axsSd.keyboardHandler = function(evt) {
