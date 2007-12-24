@@ -52,8 +52,8 @@ axsSd.speakCol = function(){
 
 axsSd.speakSubGrid = function() {
 	// Get the current grid
-	gridh = axsSd.row / 3;
-	gridv = axsSd.col / 3;
+	gridh = Integer(axsSd.row / 3);
+	gridv = Integer(axsSd.col / 3);
 	alert(gridh);
 	alert(gridv);
 }
