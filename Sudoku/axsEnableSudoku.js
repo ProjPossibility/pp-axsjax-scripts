@@ -51,11 +51,27 @@ axsSd.speakCol = function(){
 };
 
 axsSd.speakSubGrid = function() {
-	// Get the current grid
-	gridh = Integer(axsSd.row / 3);
-	gridv = Integer(axsSd.col / 3);
-	alert(gridh);
-	alert(gridv);
+	// Get the current 3x3 grid
+	gridh = Math.floor(axsSd.row / 3);
+	gridv = Math.floor(axsSd.col / 3);
+
+	startRow = gridh * 3;
+	startCol = gridv * 3;
+	
+	speechString = "Current subgrid values";
+	
+	// For each col
+	for(curCol = 0; curCol < 3; curCol++) {
+		// For each row
+		for(curRow = 0; curRow<3; curRow++) {
+			row = startRow + curRow;
+			col = startCol + curCol;
+			speechString = speechString + ", " + axsSd.getCellValue(row,col);
+		}
+	}
+	
+	speechString += ".";
+	axsSd.axsJaxObj.speachThroughPixel(speechString);
 }
 
 axsSd.keyboardHandler = function(evt) {
