@@ -54,27 +54,38 @@ axsSd.speakCol = function(){
 axsSd.speakSubGrid = function(dir) {
 
 	// Get the current 3x3 grid
-	gridh = Math.floor(axsSd.row / 3);
-	gridv = Math.floor(axsSd.col / 3);
+	var gridh = Math.floor(axsSd.row / 3);
+	var gridv = Math.floor(axsSd.col / 3);
 
-	startRow = gridh * 3;
-	startCol = gridv * 3;
+	var startRow = gridh * 3;
+	var startCol = gridv * 3;
 	
+	var speechString = "Current subgrid values";
 	var row;
 	var col;
 	
-	speechString = "Current subgrid values";
+	// Set the direction
+	if(dir == "leftToRight") {
+		dir = 1;
+		speechString += " left to right";
+	}
 	
+	// dir == "topToBottom"
+	else {
+		dir = 2;
+		speechString += " top to bottom";
+	}
+
 	// For each row, column
 	for(i = 0; i<3; i++) {
 		for(j = 0; j < 3; j++) {
 			
-			if(dir == "leftToRight") {
+			if(dir == 1) {
 				row = startRow + j;
 				col = startCol + i;
 			}
 			
-			// dir == "topToBottom"
+			// dir == 2
 			else {
 				col = startCol + i;
 				row = startRow + j;
