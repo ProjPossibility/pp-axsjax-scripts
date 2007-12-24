@@ -103,6 +103,9 @@ axsSd.keyboardHandler = function(evt) {
   if (evt.charCode == 114){ // r, read out the row
     axsSd.speakRow();
   }
+  if (evt.charCode == 103){ // g, read current 3x3 subgrid
+  	axsSd.speakSubGrid();
+  }
   if (evt.charCode >= 49 && evt.charCode <= 57) { // from 1 to 9
 	if (axsSd.getCellValue(axsSd.row, axsSd.col) == "blank") {
 	    axsSd.putValue(evt.charCode, axsSd.row, axsSd.col);
