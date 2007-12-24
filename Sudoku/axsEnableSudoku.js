@@ -19,6 +19,7 @@ axsSd.helpString =
     'r, read the contents of the current row. ' +
     'c, read the contents of the current column. ' +
 	'g, read the current 3 by 3 grid left to right, top to bottom. ' +
+	't, read the current 3 by 3 grid top to bottom, left to right. ' +
     'space, check current status of the entire grid. ' +
     'e, start a new easy game. ' +
     'm, start a new medium game. ' +
@@ -50,7 +51,8 @@ axsSd.speakCol = function(){
   axsSd.axsJaxObj.speakThroughPixel(speechString);
 };
 
-axsSd.speakSubGrid = function() {
+axsSd.speakSubGrid = function(dir) {
+
 	// Get the current 3x3 grid
 	gridh = Math.floor(axsSd.row / 3);
 	gridv = Math.floor(axsSd.col / 3);
@@ -58,14 +60,26 @@ axsSd.speakSubGrid = function() {
 	startRow = gridh * 3;
 	startCol = gridv * 3;
 	
+	var row;
+	var col;
+	
 	speechString = "Current subgrid values";
 	
-	// For each row
-	for(curRow = 0; curRow<3; curRow++) {
-		// For each col
-		for(curCol = 0; curCol < 3; curCol++) {
-			row = startRow + curRow;
-			col = startCol + curCol;
+	// For each row, column
+	for(i = 0; i<3; i++) {
+		for(j = 0; j < 3; j++) {
+			
+			if(dir == "leftToRight") {
+				row = startRow + j;
+				col = startCol + i;
+			}
+			
+			// dir == "topToBottom"
+			else {
+				col = startCol + i;
+				row = startRow + j;
+			}
+			
 			speechString = speechString + ", " + axsSd.getCellValue(row,col);
 		}
 	}
@@ -119,8 +133,11 @@ axsSd.keyboardHandler = function(evt) {
   if (evt.charCode == 114){ // r, read out the row
     axsSd.speakRow();
   }
-  if (evt.charCode == 103){ // g, read current 3x3 subgrid
-  	axsSd.speakSubGrid();
+  if (evt.charCode == 103){ // g, read current 3x3 subgrid left to right
+  	axsSd.speakSubGrid("leftToRight");
+  }
+  if (evt.charCode == 116) { // t, read current 3x3 subgrid top to bottom
+	axsSd.speakSubGrid("topToBottom");
   }
   if (evt.charCode >= 49 && evt.charCode <= 57) { // from 1 to 9
 	if (axsSd.getCellValue(axsSd.row, axsSd.col) == "blank") {
