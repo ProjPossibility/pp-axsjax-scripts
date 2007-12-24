@@ -18,7 +18,8 @@ axsSd.helpString =
     '1 through 9, enter value into a blank cell. ' +
     'r, read the contents of the current row. ' +
     'c, read the contents of the current column. ' +
-    'space, check current status of the grid. ' +
+	'g, read the current 3 by 3 grid left to right, top to bottom. ' +
+    'space, check current status of the entire grid. ' +
     'e, start a new easy game. ' +
     'm, start a new medium game. ' +
     'h, start a new hard game. ' +
@@ -30,7 +31,6 @@ axsSd.getCurrentPosition = function() {
   message = message + " value "+ value;
   axsSd.axsJaxObj.speakThroughPixel(message);
 };
-
 
 axsSd.speakRow = function(){
   var speechString = "Row " +  axsSd.row + ": ";
@@ -49,6 +49,14 @@ axsSd.speakCol = function(){
   speechString = speechString + axsSd.getCellValue(axsSd.MAXROW,axsSd.col);
   axsSd.axsJaxObj.speakThroughPixel(speechString);
 };
+
+axsSd.speakSubGrid = function() {
+	// Get the current grid
+	gridh = axsSd.row / 3;
+	gridv = axsSd.col / 3;
+	alert(gridh);
+	alert(gridv);
+}
 
 axsSd.keyboardHandler = function(evt) {
   if (evt.charCode == 101){      //e
