@@ -81,14 +81,14 @@ axsSd.speakSubGrid = function(dir) {
 		for(j = 0; j < 3; j++) {
 			
 			if(dir == 1) {
-				row = startRow + j;
-				col = startCol + i;
+				row = startRow + i;
+				col = startCol + j;
 			}
 			
 			// dir == 2
 			else {
-				row = startRow + i;
-				col = startCol + j;
+				row = startRow + j;
+				col = startCol + i;
 			}
 			
 			speechString = speechString + ", " + axsSd.getCellValue(row,col);
