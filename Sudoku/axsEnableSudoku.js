@@ -65,12 +65,12 @@ axsSd.speakSubGrid = function(dir) {
 	var col;
 	
 	// Set the direction
-	if(dir == "leftToRight") {
+	if(dir == "rowmajor") {
 		dir = 1;
 		speechString += " left to right";
 	}
 	
-	// dir == "topToBottom"
+	// dir == "columnmajor"
 	else {
 		dir = 2;
 		speechString += " top to bottom";
@@ -144,11 +144,11 @@ axsSd.keyboardHandler = function(evt) {
   if (evt.charCode == 114){ // r, read out the row
     axsSd.speakRow();
   }
-  if (evt.charCode == 103){ // g, read current 3x3 subgrid left to right
-  	axsSd.speakSubGrid("leftToRight");
+  if (evt.charCode == 103){ // g, read current 3x3 subgrid row major
+  	axsSd.speakSubGrid("rowmajor");
   }
-  if (evt.charCode == 116) { // t, read current 3x3 subgrid top to bottom
-	axsSd.speakSubGrid("topToBottom");
+  if (evt.charCode == 116) { // t, read current 3x3 subgrid column major
+	axsSd.speakSubGrid("columnmajor");
   }
   if (evt.charCode >= 49 && evt.charCode <= 57) { // from 1 to 9
 	if (axsSd.getCellValue(axsSd.row, axsSd.col) == "blank") {
