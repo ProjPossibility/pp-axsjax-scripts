@@ -28,13 +28,13 @@ axsSd.helpString =
 
 axsSd.getCurrentPosition = function() {
   var value = axsSd.getCellValue(axsSd.row, axsSd.col);
-  var message = "row "+axsSd.row + " column " + axsSd.col;
+  var message = "row "+ (axsSd.row+1) + " column " + (axsSd.col+1);
   message = message + " value "+ value;
   axsSd.axsJaxObj.speakThroughPixel(message);
 };
 
 axsSd.speakRow = function(){
-  var speechString = "Row " +  axsSd.row + ": ";
+  var speechString = "Row " +  (axsSd.row+1) + ": ";
   for (var col = 0; col < axsSd.MAXCOL; col++){
     speechString = speechString + axsSd.getCellValue(axsSd.row,col)+". ";
   }
@@ -43,7 +43,7 @@ axsSd.speakRow = function(){
 };
 
 axsSd.speakCol = function(){
-  var speechString = "Col " +  axsSd.col + ": ";
+  var speechString = "Col " +  (axsSd.col+1) + ": ";
   for (var row = 0; row < axsSd.MAXROW; row++){
     speechString = speechString + axsSd.getCellValue(row,axsSd.col)+". ";
   }
@@ -60,20 +60,21 @@ axsSd.speakSubGrid = function(dir) {
 	var startRow = gridh * 3;
 	var startCol = gridv * 3;
 	
-	var speechString = "Current subgrid values";
+	var speechString = "Current subgrid values for ";
+	
 	var row;
 	var col;
 	
 	// Set the direction
 	if(dir == "rowmajor") {
 		dir = 1;
-		speechString += " left to right";
+		speechString += " rows " + (startRow+1) + " through " + (startRow + 4) + " and columns " + (startCol + 1) + " through " + (startCol + 4);
 	}
 	
 	// dir == "columnmajor"
 	else {
 		dir = 2;
-		speechString += " top to bottom";
+		speechString += " columns " + (startCol + 1) + " through " + (startCol + 4) + " and rows " + (startRow+1) + " through " + (startRow + 4);
 	}
 
 	// For each row, column
@@ -202,11 +203,11 @@ axsSd.clearValue = function(row, col) {
 
 axsSd.getSolutionCellValue = function(row, col) {
    if (row < 0 || row > axsSd.MAXROW) {
-       alert("Row "+row+" Col "+col+" Invalid Row");
+       alert("Row "+ (row+1) +" Col "+ (col+1) +" Invalid Row");
        return "Invalid Row";
    }
    if (col < 0 || col > axsSd.MAXCOL) {
-       alert("Row "+row+" Col "+col+" Invalid Column");
+       alert("Row "+ (row+1) +" Col "+ (col+1) +" Invalid Column");
        return "Invalid Column";
    }
    var index = row * (axsSd.MAXROW +1) + col;
