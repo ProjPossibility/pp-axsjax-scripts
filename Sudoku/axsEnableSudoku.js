@@ -245,7 +245,7 @@ axsSd.howAmIDoing = function() {
 	   var value = axsSd.getCellValue(i, j);
 	   if (value != "blank") {
 		if (value != axsSd.getSolutionCellValue(i, j)) {
- 		   message = message + "Error in Row "+i+" Column "+j+". ";
+ 		   message = message + "Error in Row "+ (i+1) +" Column "+ (j+1) +". ";
 		   errors++;
 		} else {
 		   done++;
