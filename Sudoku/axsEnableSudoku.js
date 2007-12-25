@@ -68,17 +68,21 @@ axsSd.speakSubGrid = function(dir) {
 	// Set the direction
 	if(dir == "rowmajor") {
 		dir = 1;
-		speechString = "Columns " + (startCol+1) + " through " + (startCol+3) + ". ";
+		speechString = "Columns " + (startCol+1) + " through " + (startCol+3) + " and rows " + (startRow+1) + " through " + (startRow+3)  + ". ";
 	}
 	
 	// dir == "columnmajor"
 	else {
 		dir = 2;
-		speechString = "Rows " + (startRow+1) + " through " + (startRow+3)  + ". ";
+		speechString = "Rows " + (startRow+1) + " through " + (startRow+3)  + " and columns " + (startCol+1) + " through " + (startCol+3) + ". ";
 	}
 
 	// For each row, column
 	for(i = 0; i<3; i++) {
+		
+		/* 
+		
+		// For announcing each row as we're reading it:
 		
 		if(dir == 1) {
 			speechString += "Row " + (i+1) + ": ";
@@ -87,6 +91,8 @@ axsSd.speakSubGrid = function(dir) {
 		else {
 			speechString += "Column " + (i+1) + ": ";
 		}
+		
+		*/
 		
 		for(j = 0; j < 3; j++) {
 			
@@ -104,7 +110,11 @@ axsSd.speakSubGrid = function(dir) {
 			speechString = speechString + ", " + axsSd.getCellValue(row,col);
 		}
 		
+		/*
+		
 		speechString += ". ";
+		
+		*/
 	}
 	
 	speechString += ".";
