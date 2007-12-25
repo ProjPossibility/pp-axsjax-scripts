@@ -68,13 +68,13 @@ axsSd.speakSubGrid = function(dir) {
 	// Set the direction
 	if(dir == "rowmajor") {
 		dir = 1;
-		speechString = "Columns " + (startCol+1) + " through " + (startCol+3) + " and rows " + (startRow+1) + " through " + (startRow+3)  + ". ";
+		speechString = "Columns " + (startCol+1) + " through " + (startCol+3) + ", rows " + (startRow+1) + " through " + (startRow+3)  + ". ";
 	}
 	
 	// dir == "columnmajor"
 	else {
 		dir = 2;
-		speechString = "Rows " + (startRow+1) + " through " + (startRow+3)  + " and columns " + (startCol+1) + " through " + (startCol+3) + ". ";
+		speechString = "Rows " + (startRow+1) + " through " + (startRow+3)  + ", columns " + (startCol+1) + " through " + (startCol+3) + ". ";
 	}
 
 	// For each row, column
