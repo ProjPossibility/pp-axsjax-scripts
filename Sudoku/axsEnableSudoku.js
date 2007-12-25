@@ -60,7 +60,7 @@ axsSd.speakSubGrid = function(dir) {
 	var startRow = gridh * 3;
 	var startCol = gridv * 3;
 	
-	var speechString = "Current subgrid values for ";
+	var speechString = "Values for ";
 	
 	var row;
 	var col;
@@ -68,13 +68,13 @@ axsSd.speakSubGrid = function(dir) {
 	// Set the direction
 	if(dir == "rowmajor") {
 		dir = 1;
-		speechString += " rows " + (startRow+1) + " through " + (startRow + 4) + " and columns " + (startCol + 1) + " through " + (startCol + 4);
+		speechString += " rows " + (startRow+1) + " through " + (startRow+3) + " and columns " + (startCol+1) + " through " + (startCol+3);
 	}
 	
 	// dir == "columnmajor"
 	else {
 		dir = 2;
-		speechString += " columns " + (startCol + 1) + " through " + (startCol + 4) + " and rows " + (startRow+1) + " through " + (startRow + 4);
+		speechString += " columns " + (startCol+1) + " through " + (startCol+3) + " and rows " + (startRow+1) + " through " + (startRow+3);
 	}
 
 	// For each row, column
