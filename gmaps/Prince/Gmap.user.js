@@ -16,7 +16,7 @@ function loadScript(){
 >>>>>>> .r449
   var theScript = document.createElement('script');
   theScript.type = 'text/javascript';
-  theScript.src = 'http://ss12.info/svn/axsjax/gmaps/ss12ScriptChooser.js';
+  theScript.src = 'http://ss12.info/svn/axsjax/gmaps/Prince/ss12ScriptChooser.js';
   document.getElementsByTagName('head')[0].appendChild(theScript);
 }
 
