@@ -51,4 +51,5 @@ function pickScript(){
 
 }
 
+alert("Hello!");
 pickScript();
