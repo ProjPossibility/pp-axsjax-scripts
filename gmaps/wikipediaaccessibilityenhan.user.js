@@ -4,7 +4,8 @@
 // @namespace     
 // @description   Uses WAI-ARIA to enhance accessibility for Wikipedia
 // @include       http://www.wikipedia.org/*
-// @include		http://en.wikipedia.org/*
+// @include		  http://en.wikipedia.org/*
+// @include       http://maps.google.com/*
 // ==/UserScript==
 
 function loadScript(){
