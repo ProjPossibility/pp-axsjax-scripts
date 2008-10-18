@@ -1,6 +1,6 @@
 alert("HELOOOOOOOOOOO");
 //This will redirect from maps.google.com to the following URL
-window.location="http://maps.google.com/maps?f=d&output=html&hl=en&saddr=&daddr=";
+//window.location="http://maps.google.com/maps?f=d&output=html&hl=en&saddr=&daddr=";
 
 // Copyright 2007 
 // 
@@ -17,7 +17,6 @@ window.location="http://maps.google.com/maps?f=d&output=html&hl=en&saddr=&daddr=
  * @author gurmeets@usc.edu (Gurmeet Singh)
  */
 
-/*
 
 function pickScript(){
   var baseURL = 'http://google-axsjax.googlecode.com/svn/trunk/';
