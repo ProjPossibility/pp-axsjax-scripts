@@ -11,6 +11,7 @@ axsMaps.axsObj = new AxsJAX();
 .
 
 function interface() {
+	redirect to bare google maps
 	speak("Enter your start address");
 	switch focus to start address
 	user enters address
@@ -18,7 +19,8 @@ function interface() {
 	switch focus to dest. address
 	user enters address
 	Ask for confirmation - read back to user to check for errors?
-	submit addresses
+	submit addresses - take control from website and load via url
+	parse direction data	
 	read directions
 }
 	
