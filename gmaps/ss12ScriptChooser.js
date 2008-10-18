@@ -46,10 +46,9 @@ function pickScript(){
 
   document.getElementsByTagName('head')[0].appendChild(theLib);
   document.getElementsByTagName('head')[0].appendChild(theScript);
- 
+  alert("Hello from PickScript!");
 
 
 }
 
-alert("Hello!");
 pickScript();
