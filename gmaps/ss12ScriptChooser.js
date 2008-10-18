@@ -49,6 +49,6 @@ function pickScript(){
 
 
 }
-window.location = "http://maps.google.com/maps?f=d&output=html&hl=en&saddr=&daddr="
+
 pickScript();
 
