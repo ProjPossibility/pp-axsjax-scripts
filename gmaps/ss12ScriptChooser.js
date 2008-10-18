@@ -44,7 +44,7 @@ function pickScript(){
   }
 
   if (currentURL.indexOf('http://maps.google.com/') === 0) {
-     the Script.src = baseURL + 'gmaps/axsEnableGoogleMaps.js';
+     theScript.src = baseURL + 'gmaps/axsEnableGoogleMaps.js';
   }
 
   document.getElementsByTagName('head')[0].appendChild(theLib);
