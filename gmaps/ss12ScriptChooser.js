@@ -2,6 +2,9 @@
 
 
 alert("HELOOOOOOOOOOO");
+//This will redirect from maps.google.com to the following URL
+window.location="http://maps.google.com/maps?f=d&output=html&hl=en&saddr=&daddr=";
+
 //window.location="http://someplace.com";
 
 
