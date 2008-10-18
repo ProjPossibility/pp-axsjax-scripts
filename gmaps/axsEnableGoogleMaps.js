@@ -9,12 +9,10 @@ axsMaps.axsObj = new AxsJAX();
 window.location = "http://maps.google.com/maps?f=d&output=html&hl=en&saddr=&daddr="
 
 //Prompt user for address
-
-
+axsMaps.axsObj.speakTextViaNode("Please enter start address motherfucker");
 
 axsMaps.init = function() {
 
-	axsMaps.axsObj.speakTextViaNode("Please enter start address motherfucker");
 	//document.addEventListener('keypress', axsJb_keyboardHandler, true);
 }
 
