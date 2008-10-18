@@ -14,7 +14,7 @@ axsMaps.axsObj.speakThroughPixel("Please enter start address motherfucker");
 
 axsMaps.init = function() {
 
-	axsMaps.axsObj.speakThroughPixel("Please enter start address motherfucker");
+	axsMaps.axsObj.speakTextViaNode("Please enter start address motherfucker");
 	//document.addEventListener('keypress', axsJb_keyboardHandler, true);
 }
 
