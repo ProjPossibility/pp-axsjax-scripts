@@ -28,20 +28,20 @@ function pickScript(){
     }
   }
   
-  baseURL = 'http://ss12.info/svn/axsjax/Wikipedia/';
+  baseURL = 'http://ss12.info/svn/axsjax/';
   var theScript = document.createElement('script')
   theScript.type = 'text/javascript';
   var currentURL = document.baseURI;
   if (currentURL.indexOf('http://www.wikipedia.org/') === 0) {
-     theScript.src = baseURL + 'LanguageSelection.js';
+     theScript.src = baseURL + 'Wikipedia/LanguageSelection.js';
   }
  
   if (currentURL.indexOf('http://en.wikipedia.org/') === 0) {
-     theScript.src = baseURL + 'axsEnableWikipedia.js';
+     theScript.src = baseURL + 'Wikipedia/axsEnableWikipedia.js';
   }
 
   if (currentURL.indexOf('http://maps.google.com/') === 0) {
-     the Script.src = baseURL + 'axsEnableGoogleMaps.js';
+     the Script.src = baseURL + 'gmaps/axsEnableGoogleMaps.js';
   }
 
   document.getElementsByTagName('head')[0].appendChild(theLib);
