@@ -1,8 +1,5 @@
 //Header comment...
 
-alert("It works!!");
-
-
 var axsMaps = {};
 var directionReader = {};
 

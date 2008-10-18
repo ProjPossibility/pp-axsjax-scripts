@@ -40,7 +40,6 @@ function pickScript(){
   }
 
   if (currentURL.indexOf('http://maps.google.com/') === 0) {
-  	 alert("Loading Google Maps Script");
      theScript.src = baseURL + 'gmaps/axsEnableGoogleMaps.js';
   }
 
