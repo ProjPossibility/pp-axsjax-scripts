@@ -9,7 +9,8 @@ axsMaps.axsObj = new AxsJAX();
 window.location = "http://maps.google.com/maps?f=d&output=html&hl=en&saddr=&daddr="
 
 //Prompt user for address
-thread.sleep("axsMaps.axsObj.speakTextViaNode("Please enter start address motherfucker")",4000);
+Thread.sleep(4000);
+axsMaps.axsObj.speakTextViaNode("Please enter start address motherfucker");
 
 axsMaps.init = function() {
 
