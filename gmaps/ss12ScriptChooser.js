@@ -1,3 +1,10 @@
+
+
+
+alert("HELOOOOOOOOOOO");
+//window.location="http://someplace.com";
+
+
 // Copyright 2007 
 // 
 // Licensed under GPL
@@ -13,7 +20,7 @@
  * @author gurmeets@usc.edu (Gurmeet Singh)
  */
 
-
+/*
 
 function pickScript(){
   var baseURL = 'http://google-axsjax.googlecode.com/svn/trunk/';
@@ -46,7 +53,7 @@ function pickScript(){
 
   document.getElementsByTagName('head')[0].appendChild(theLib);
   document.getElementsByTagName('head')[0].appendChild(theScript);
-  alert("Hello from PickScript!");
+ 
 
 
 }
