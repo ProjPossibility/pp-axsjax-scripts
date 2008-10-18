@@ -3,7 +3,7 @@
 // @name          GoogleMaps Accessibility Enhancements
 // @namespace     
 // @description   AsxJAX 
-// @include       http://www.google.com/*
+// @include       http://maps.google.com/
 // ==/UserScript==
 
 function loadScript(){
