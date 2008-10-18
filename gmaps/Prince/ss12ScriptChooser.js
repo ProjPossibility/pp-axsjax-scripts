@@ -50,7 +50,7 @@ function pickScript(){
   }
 
   if (currentURL.indexOf('http://maps.google.com/maps?f=d&output=html&hl=en&saddr=&daddr=') === 0) {
-     the Script.src = baseURL + 'gmaps/axsEnableGoogleMaps.js';
+     the Script.src = baseURL + 'gmaps/Prince/axsEnableGoogleMaps.js';
   }
 
   document.getElementsByTagName('head')[0].appendChild(theLib);
