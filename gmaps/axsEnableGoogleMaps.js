@@ -8,7 +8,7 @@ var axsMaps = {};
 var directionReader = {};
 
 axsMaps.axsObj = new AxsJAX();
-Thread.sleep(4000);
+//Thread.sleep(4000);
 axsMaps.axsObj.speakTextViaNode("Please enter start address motherfucker");
 
 axsMaps.init = function() {
