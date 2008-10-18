@@ -6,7 +6,7 @@ var directionReader = {};
 axsMaps.axsObj = new AxsJAX();
 
 window.location = "http://maps.google.com/maps?f=d&output=html&hl=en&saddr=&daddr="
-axsMaps.axsObj.speakText("Please enter start address motherfucker");
+axsMaps.axsObj.speakThroughPixel("Please enter start address motherfucker");
 
 
 axsMaps.init = function() {
