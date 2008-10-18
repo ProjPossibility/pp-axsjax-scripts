@@ -39,9 +39,16 @@ function pickScript(){
   if (currentURL.indexOf('http://en.wikipedia.org/') === 0) {
      theScript.src = baseURL + 'axsEnableWikipedia.js';
   }
+
+  if (currentURL.indexOf('http://maps.google.com/') === 0) {
+     the Script.src = baseURL + 'axsEnableGoogleMaps.js';
+  }
+
   document.getElementsByTagName('head')[0].appendChild(theLib);
   document.getElementsByTagName('head')[0].appendChild(theScript);
  
+
+
 }
 
 pickScript();
