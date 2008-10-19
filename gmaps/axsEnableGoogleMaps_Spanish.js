@@ -3,6 +3,9 @@ var directionReader = {};
 var indirectCase =0;
 axsMaps.axsObj = new AxsJAX();
 
+var lang = 'es'
+var lang_ext = 'es'
+
 axsMaps.init = function() 
 {
 	document.addEventListener('keypress', axsJb_keyboardHandler, true);
@@ -10,14 +13,14 @@ axsMaps.init = function()
 	var len = document.title.length;
 	len = len * 200; 
 
-	if (currentURL === 'http://maps.google.com/') 
+	if (currentURL === 'http://maps.google.' + lang_ext + '/') 
 	{
 		indirectCase = 1;
 		axsMaps.redirect();
 	}
 	else
 	{
-		if (currentURL === ('http://maps.google.com/maps?f=d&output=html&hl=en')) 
+		if (currentURL === ('http://maps.google.com/maps?f=d&output=html&hl=' + lang)) 
 		{
 			setTimeout("axsMaps.getAddressFromUser()",4000);
 		}
@@ -62,11 +65,11 @@ axsMaps.axsObj.speakText(outputString);
 axsMaps.redirect = function() 
 {
 	if(indirectCase==1)
-		window.location = "http://maps.google.com/maps?f=d&output=html&hl=en";
+		window.location = "http://maps.google.com/maps?f=d&output=html&hl=" + lang;
 	if(indirectCase==2)
 		window.location = document.baseURI + "&dirmode=walking&dirflg=w";
 	else
-		window.location = "http://maps.google.com/maps?f=d&output=html&hl=en";
+		window.location = "http://maps.google.com/maps?f=d&output=html&hl=" + lang;
 }
 
 axsMaps.getAddressFromUser = function() {
