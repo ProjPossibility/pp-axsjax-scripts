@@ -25,14 +25,23 @@ axsMaps.init = function() {
 	setTimeout("axsMaps.getAddressFromUser()",4000);
 	//alert("get Address ran successfully");
   }
- // Thread.sleep(10000);
   
-
-  //else if () {
-   //  theScript.src = baseURL + 'gmaps/axsEnableGoogleMaps.js';
-  //}
-
+  /*if (currentURL === ('http://maps.google.com/maps?f=d&output=html&hl=en&saddr=&daddr=')) {
 	
+	//alert("get Address ran successfully");
+  }*/
+	
+	document.addEventListener('keypress', keyboardEvent, true);
+
+}
+
+function keyboardEvent(evt)
+{
+	if(evt.charKey == 114)
+	{
+		document.getElementById("0").focus();
+		document.getElementById("d_d").focus();
+	}
 }
 
 axsMaps.redirect = function() {
