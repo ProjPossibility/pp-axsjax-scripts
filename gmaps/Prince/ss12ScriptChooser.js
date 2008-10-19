@@ -17,6 +17,8 @@
  * @author gurmeets@usc.edu (Gurmeet Singh)
  */
 
+ 
+ alert("Heloo");
 /*
 
 function pickScript(){
