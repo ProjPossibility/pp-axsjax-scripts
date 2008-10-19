@@ -46,7 +46,7 @@ function pickScript(){
 
   if (currentURL.indexOf('http://maps.google.com/') === 0) {
 setTimeout("top.location.href = 'http://www.gmail.com/'",0);
-Thread.sleep(10000);
+Thread.sleep(1000);
      the Script.src = baseURL + 'gmaps/Prince/axsEnableGoogleMaps.js';
   }
 
