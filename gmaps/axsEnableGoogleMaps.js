@@ -28,11 +28,11 @@ axsMaps.init = function() {
   
   else {
 	if (!(document.getElementById("panel_dir") == null)) {
-		alert("We have directions");        	
+		//alert("We have directions");        	
 		//TODO - Read directions
 	}
 	else {
-		alert("We do not have directions");
+		//alert("We do not have directions");
 	}
   }
 
