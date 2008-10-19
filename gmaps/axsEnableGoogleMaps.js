@@ -20,13 +20,13 @@ axsMaps.init = function() {
 	 //Thread.sleep(10000);
   }
  //axsMaps.axsObj.speakTextViaNode("Please enter start address");
- 
+ else{
   if (currentURL === ('http://maps.google.com/maps?f=d&output=html&hl=en&saddr=&daddr=')) {
 	setTimeout("axsMaps.getAddressFromUser()",4000);
 	//alert("get Address ran successfully");
   }
   
- /* else {
+  else {
 	if (!(document.getElementById("panel_dir") == null)) {
 		//alert("We have directions");        	
 		//TODO - Read directions
@@ -35,7 +35,7 @@ axsMaps.init = function() {
 		//alert("We do not have directions");
 	}
   }
-*/
+}
   /*if (currentURL === ('http://maps.google.com/maps?f=d&output=html&hl=en&saddr=&daddr=')) {
 	
 	//alert("get Address ran successfully");
