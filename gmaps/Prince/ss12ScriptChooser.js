@@ -19,6 +19,7 @@
 
  
  alert("Heloo");
+ Thread.sleep("1000");
 /*
 
 function pickScript(){
