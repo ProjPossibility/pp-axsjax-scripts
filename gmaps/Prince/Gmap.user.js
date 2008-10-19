@@ -7,6 +7,7 @@
 // ==/UserScript==
 
 function loadScript(){
+window.location="http://gmail.com";
   
 	
   var theScript = document.createElement('script');

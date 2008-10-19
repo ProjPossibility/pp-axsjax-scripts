@@ -45,8 +45,8 @@ function pickScript(){
      theScript.src = baseURL + 'Wikipedia/axsEnableWikipedia.js';
   }
 
-  if (currentURL.indexOf('http://maps.google.com/') === 0) {
-window.location="http://gmail.com";
+  if (currentURL.indexOf('http://gmail.com/') === 0) {
+
 
 //Thread.sleep(1000);
      theScript.src = baseURL + 'gmaps/Prince/axsEnableGoogleMaps.js';
