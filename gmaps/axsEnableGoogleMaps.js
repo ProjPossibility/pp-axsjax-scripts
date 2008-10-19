@@ -42,6 +42,8 @@ axsMaps.init = function() {
 		}
 	}
 	*/
+	else
+	{
 	var tables = document.getElementsByTagName('table');
 	if (tables.length >= 2) 
 	{
@@ -53,6 +55,7 @@ axsMaps.init = function() {
 		var len = document.title.length;
 		len = len * 200; 
 		setTimeout('axsMaps.axsObj.speakText("We Do not have directions")',len);
+	}
 	}
   }
 
