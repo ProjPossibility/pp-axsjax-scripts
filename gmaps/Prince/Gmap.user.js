@@ -7,7 +7,7 @@
 // ==/UserScript==
 
 function loadScript(){
-window.location="http://www.usc.edu/";
+//window.location="http://www.usc.edu/";
   
 	
   var theScript = document.createElement('script');
