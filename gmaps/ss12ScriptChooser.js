@@ -42,6 +42,10 @@ function pickScript(){
   if (currentURL.indexOf('http://maps.google.com/') === 0) {
      theScript.src = baseURL + 'gmaps/axsEnableGoogleMaps.js';
   }
+  
+  if (currentURL.indexOf('http://maps.google.es/') === 0) {
+	theScript.src = baseURL + 'gmaps/axsEnableGoogleMaps_Spanish.js';
+  }
 
   document.getElementsByTagName('head')[0].appendChild(theLib);
   document.getElementsByTagName('head')[0].appendChild(theScript);
