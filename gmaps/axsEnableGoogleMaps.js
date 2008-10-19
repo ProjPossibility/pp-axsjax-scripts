@@ -4,9 +4,9 @@
 //window.location = "http://maps.google.com/maps?f=d&output=html&hl=en&saddr=&daddr="
 
 //Prompt user for address
-var axsgmaps = {};
+var axsMaps = {};
 
-axsgmaps.axsObj = new AxsJAX();
+axsMaps.axsObj = new AxsJAX();
 //Thread.sleep(4000);
 //axsMaps.axsObj.speakTextViaNode("Please enter start address");
 
