@@ -33,7 +33,7 @@ axsMaps.init = function() {
 		setTimeout('axsMaps.axsObj.speakText("We have directions")',10000);
 		//TODO - Read directions
 	}
-	var paragraphs = document.getElementsByTagName('p');
+	/*var paragraphs = document.getElementsByTagName('p');
 	for(i = 0; i<paragraphs.length;i++)
 	{
 		if(paragraphs[i].value == ("Suggestions: "))
@@ -41,10 +41,12 @@ axsMaps.init = function() {
 			axsMaps.errorCase();
 		}
 	}
+	*/
 	var tables = document.getElementsByTagName('table');
 	if (tables.length >= 2) 
 	{
 		axsMaps.suggestionCase(tables[2]);
+		alert("suggestion");
 	}
 	else
 	{
@@ -82,10 +84,10 @@ axsMaps.getAddressFromUser = function() {
 	//axsMaps.axsObj.speakText("hello");
 }
 
-axsMaps.errorCase = function() {
+/*axsMaps.errorCase = function() {
 
 }
-
+*/
 axsMaps.suggestionCase = function(table) {
 	axsMaps.axsObj.speakText("Did you mean      ");
 	var locations = table.getElementsByTagName('i');
