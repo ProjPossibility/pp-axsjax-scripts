@@ -22,7 +22,7 @@ axsMaps.init = function() {
   else
   {
  //axsMaps.axsObj.speakTextViaNode("Please enter start address");
-	if (currentURL === ('http://maps.google.com/maps?f=d&output=html&hl=en&saddr=&daddr=')) {
+	if (currentURL === ('http://maps.google.com/maps?f=d&output=html&hl=en')) {
 		setTimeout("axsMaps.getAddressFromUser()",4000);
 	//alert("get Address ran successfully");
 	}
@@ -49,7 +49,7 @@ axsMaps.init = function() {
 
 
 axsMaps.redirect = function() {
-	window.location = "http://maps.google.com/maps?f=d&output=html&hl=en&saddr=&daddr=";
+	window.location = "http://maps.google.com/maps?f=d&output=html&hl=en";
 	
 	}
 
