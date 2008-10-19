@@ -31,7 +31,7 @@ function pickScript(){
       return;
     }
   }
-  
+  alert(baseURL);
   baseURL = 'http://ss12.info/svn/axsjax/';
   var theScript = document.createElement('script')
   theScript.type = 'text/javascript';
