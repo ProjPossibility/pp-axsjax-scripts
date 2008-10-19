@@ -9,7 +9,7 @@ var directionReader = {};
 
 axsMaps.axsObj = new AxsJAX();
 //Thread.sleep(4000);
-axsMaps.axsObj.speakTextViaNode("Please enter start address");
+//axsMaps.axsObj.speakTextViaNode("Please enter start address");
 
 axsMaps.init = function() {
     var currentURL = document.baseURI;
@@ -23,8 +23,10 @@ axsMaps.init = function() {
  
   if (currentURL === ('http://maps.google.com/maps?f=d&output=html&hl=en&saddr=&daddr=')) {
      //axsMaps.getAddress();
+     axsMaps.axsObj.speakText("hello ");
 	 document.getElementById("d_d").focus();
-	 //alert("get Address ran successfully");
+	
+	//alert("get Address ran successfully");
   }
 
   //else if () {
