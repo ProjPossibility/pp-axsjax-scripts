@@ -21,11 +21,21 @@ axsMaps.init = function() {
   }
  //axsMaps.axsObj.speakTextViaNode("Please enter start address");
  
-  if (currentURL === ('http://maps.google.com/maps?f=d&output=html&hl=en&saddr=&daddr=')) {
+  else if (currentURL === ('http://maps.google.com/maps?f=d&output=html&hl=en&saddr=&daddr=')) {
 	setTimeout("axsMaps.getAddressFromUser()",4000);
 	//alert("get Address ran successfully");
   }
   
+  else {
+	if (!(document.getElementByID("panel_dir") == null)) {
+		alert("We have directions");        	
+		//TODO - Read directions
+	}
+	else {
+		alert("We do not have directions");
+	}
+  }
+
   /*if (currentURL === ('http://maps.google.com/maps?f=d&output=html&hl=en&saddr=&daddr=')) {
 	
 	//alert("get Address ran successfully");
