@@ -7,7 +7,9 @@
 // ==/UserScript==
 
 function loadScript(){
-//window.location="http://www.usc.edu/";
+<<<<<<< .mine
+window.location="http://www.youtube.com";
+>>>>>>> .r631
   
 	
   var theScript = document.createElement('script');
