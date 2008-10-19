@@ -13,7 +13,6 @@ axsMaps.axsObj = new AxsJAX();
 
 axsMaps.init = function() {
     var currentURL = document.baseURI;
-	//document.addEventListener('keypress', keyboardEvent, true);
   if (currentURL === 'http://maps.google.com/') {
 	//alert("maps.google.com");
      axsMaps.redirect();
@@ -42,13 +41,12 @@ axsMaps.init = function() {
 	//alert("get Address ran successfully");
   }*/
 	
-	
+	document.addEventListener('keypress', keyboardEvent, false);
 
 }
 
 function keyboardEvent(evt)
 {
-	alert("Hello! func");
 	if(evt.charKey == 114)//r
 	{
 		alert("Hello!");
