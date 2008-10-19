@@ -22,7 +22,7 @@ axsMaps.init = function() {
  //axsMaps.axsObj.speakTextViaNode("Please enter start address");
  
   if (currentURL === ('http://maps.google.com/maps?f=d&output=html&hl=en&saddr=&daddr=')) {
-	setTimeout("axsMaps.getAddressFromUser()",10000);
+	setTimeout("axsMaps.getAddressFromUser()",4000);
 	//alert("get Address ran successfully");
   }
  // Thread.sleep(10000);
