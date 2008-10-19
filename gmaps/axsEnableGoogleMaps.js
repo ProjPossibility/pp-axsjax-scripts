@@ -28,13 +28,13 @@ axsMaps.init = function() {
 	}
 	else if (!(document.getElementById("panel_dir") == null)) {
 		//alert("We have directions");        	
-		//setTimeout('axsMaps.axsObj.speakText("We have directions")',10000);
+		setTimeout('axsMaps.axsObj.speakText("We have directions")',10000);
 		//TODO - Read directions
 	}
 	else
 	{
 		var = currentURL.length
-		//setTimeout('axsMaps.axsObj.speakText("We Do not have directions")',10000);
+		setTimeout('axsMaps.axsObj.speakText("We Do not have directions")',10000);
 	}
   }
 
