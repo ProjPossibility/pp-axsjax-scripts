@@ -58,7 +58,7 @@ axsMaps.init = function()
 
 axsMaps.readBack = function() {
 var outputString = "Start Address is . " + document.getElementById("d_d").value + " . . . End Address is . " + document.getElementById("d_daddr").value;//the periods are added to indicate a pause in the speech synthesis
-axsMaps.axsObj.speakTextViaNodeViaNode(outputString);
+axsMaps.axsObj.speakTextViaNode(outputString);
 }
 
 
