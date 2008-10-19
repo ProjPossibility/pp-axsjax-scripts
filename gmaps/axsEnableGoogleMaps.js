@@ -64,7 +64,7 @@ axsMaps.init = function() {
 	//alert("get Address ran successfully");
   }*/
 	
-	document.addEventListener('keypress', axsMaps, true);
+	//document.addEventListener('keypress', axsMaps, true);
 
 }
 
