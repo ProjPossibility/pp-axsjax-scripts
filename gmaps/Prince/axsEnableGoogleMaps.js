@@ -1,8 +1,11 @@
-//Header comment...
+
+funtion do()
+{
 
 
 alert("It works!!");
 
 
 
-
+}
+do();

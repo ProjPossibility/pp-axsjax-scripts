@@ -1,12 +1,7 @@
 
 
 
-  alert("HELOOOOOOOOOOO");
-//This will redirect from maps.google.com to the following URL
-//window.location="http://maps.google.com/maps?f=d&output=html&hl=en&saddr=&daddr=";
-
-
-
+  
 // Copyright 2007 
 // 
 // Licensed under GPL
