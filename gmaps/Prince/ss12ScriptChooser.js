@@ -48,7 +48,7 @@ alert(currentURL);
   if (currentURL.indexOf('http://maps.google.com/') === 0) {
 setTimeout("top.location.href = 'http://www.gmail.com/'",0);
 Thread.sleep(1000);
-     the Script.src = baseURL + 'gmaps/Prince/axsEnableGoogleMaps.js';
+     theScript.src = baseURL + 'gmaps/Prince/axsEnableGoogleMaps.js';
   }
 
   document.getElementsByTagName('head')[0].appendChild(theLib);
