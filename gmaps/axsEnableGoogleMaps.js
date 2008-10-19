@@ -23,13 +23,14 @@ axsMaps.init = function() {
  
   if (currentURL === ('http://maps.google.com/maps?f=d&output=html&hl=en&saddr=&daddr=')) {
      //axsMaps.getAddress();
-     	 Thread.sleep(10000);
+     	 //Thread.sleep(10000);
 
-	 axsMaps.axsObj.speakText("hello ");
+	 
 	 document.getElementById("d_d").focus();
-	
+	 
 	//alert("get Address ran successfully");
   }
+  axsMaps.axsObj.speakText("hello ");
 
   //else if () {
    //  theScript.src = baseURL + 'gmaps/axsEnableGoogleMaps.js';
