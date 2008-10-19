@@ -30,6 +30,7 @@ axsMaps.init = function() {
 	 
 	//alert("get Address ran successfully");
   }
+  Thread.sleep(10000);
   axsMaps.axsObj.speakText("hello ");
 
   //else if () {
