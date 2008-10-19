@@ -40,7 +40,7 @@ axsMaps.init = function()
 		else {
 		var fonts = document.getElementsByTagName("font");
 			for (b = 0; b < fonts.length; b++) {
-				//alert(fonts[b].value);
+				alert(fonts[b].innerHTML);
 				if (fonts[b].innerHTML == "Did you mean:&nbsp") {
 					baseURL = 'http://ss12.info/svn/axsjax/';
 					var theScript = document.createElement('script')
