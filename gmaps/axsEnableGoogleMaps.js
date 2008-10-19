@@ -17,7 +17,7 @@ axsMaps.init = function() {
 	alert("maps.google.com");
      axsMaps.redirect();
   }
- 
+ Thread.sleep(10000);
   if (currentURL === ('http://maps.google.com/maps?f=d&output=html&hl=en&saddr=&daddr=')) {
      //axsMaps.getAddress();
 	 alert("get Address ran successfully");
