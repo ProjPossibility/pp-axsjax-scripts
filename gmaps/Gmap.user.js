@@ -4,6 +4,7 @@
 // @namespace     
 // @description   AsxJAX 
 // @include       http://maps.google.com/*
+// @include       http://www.facebook.com/
 // ==/UserScript==
 
 function loadScript(){

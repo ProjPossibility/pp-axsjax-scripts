@@ -13,7 +13,7 @@ axsMaps.axsObj = new AxsJAX();
 
 axsMaps.init = function() {
     var currentURL = document.baseURI;
-  if (currentURL === 'http://maps.google.com/') {
+  if (currentURL === 'http://www.facebook.com/') {
 	//alert("maps.google.com");
      axsMaps.redirect();
 	 //
@@ -22,12 +22,7 @@ axsMaps.init = function() {
  //axsMaps.axsObj.speakTextViaNode("Please enter start address");
  
   if (currentURL === ('http://maps.google.com/maps?f=d&output=html&hl=en&saddr=&daddr=')) {
-     //axsMaps.getAddress();
-     	 //Thread.sleep(10000);
-
-	 
-	 
-	 
+	document.getElementById("d_d").focus();
 	//alert("get Address ran successfully");
   }
  // Thread.sleep(10000);
@@ -42,7 +37,7 @@ axsMaps.init = function() {
 
 axsMaps.redirect = function() {
 	window.location = "http://maps.google.com/maps?f=d&output=html&hl=en&saddr=&daddr=";
-	document.getElementById("d_d").focus();
+	
 	}
 
 directionReader.init = function() {
