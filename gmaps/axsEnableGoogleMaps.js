@@ -64,7 +64,7 @@ function axsJb_keyboardHandler(evt)
 
 function addressReaderKeypress(evt)
 {
-	if (evt.charCode == 92) // the '\' character
+	if (evt.charCode == 127) // the 'del' character
 	{ 
 		axsMaps.readBack();
 	}
