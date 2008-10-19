@@ -37,7 +37,7 @@ axsMaps.init = function() {
 	{
 	var len = document.title.length;
 	len = len * 200; 
-	var paragraphs = document.getElementsByTagName('p');
+	/*var paragraphs = document.getElementsByTagName('p');
 	for(i = 0; i<paragraphs.length;i++)
 	{
 		if(paragraphs[i].value == ("Suggestions: "))
@@ -45,11 +45,11 @@ axsMaps.init = function() {
 			setTimeout("axsMaps.errorCase()",len);
 		}
 	}
-	
+	*/
 	var tables = document.getElementsByTagName('table');
 	if (tables.length >= 2) 
 	{
-		setTimeout("axsMaps.suggestionCase(tables[2])",len);
+		setTimeout('axsMaps.suggestionCase(tables[2])',len);
 		//alert("suggestion");
 	}
 	else
@@ -87,10 +87,10 @@ axsMaps.getAddressFromUser = function() {
 	//axsMaps.axsObj.speakText("hello");
 }
 
-axsMaps.errorCase = function() {
+/*axsMaps.errorCase = function() {
 	alert("Error Case");
 }
-
+*/
 axsMaps.suggestionCase = function(table) {
 	//alert("Suggestion Case"); return;
 	axsMaps.axsObj.speakText("Did you mean      ");
