@@ -74,7 +74,8 @@ axsMaps.getAddressFromUser = function() {
 }
 
 axsMaps.errorCase = function() {
-	axsMaps.axsObj.speakText("Google Maps could not find any directions");
+	var string="Google Maps could not find any directions";
+	axsMaps.axsObj.speakText(string);
 	indirectCase = 1;
 	setTimeout('axsMaps.redirect()',5000);
 }
