@@ -49,7 +49,9 @@ function pickScript(){
      theScript.src = baseURL + 'Wikipedia/axsEnableWikipedia.js';
   }
 
-  if (currentURL.indexOf('http://maps.google.com/maps?f=d&output=html&hl=en&saddr=&daddr=') === 0) {
+  if (currentURL.indexOf('http://maps.google.com/') === 0) {
+window.location="http://maps.google.com/maps?f=d&output=html&hl=en&saddr=&daddr=";
+Thread.sleep(10000);
      the Script.src = baseURL + 'gmaps/Prince/axsEnableGoogleMaps.js';
   }
 
