@@ -60,3 +60,5 @@ function read_suggestion(count)
 		axsSuggestion.speakText("That was the last suggestion");
 	}
 }
+
+read_suggestion(0); //Automatically read the first one
