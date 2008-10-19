@@ -26,7 +26,7 @@ axsMaps.init = function() {
 	//alert("get Address ran successfully");
   }
   
-  else {
+ /* else {
 	if (!(document.getElementById("panel_dir") == null)) {
 		//alert("We have directions");        	
 		//TODO - Read directions
@@ -34,7 +34,7 @@ axsMaps.init = function() {
 	else {
 		//alert("We do not have directions");
 	}
-  }
+  }*/
 
  
 	
