@@ -39,17 +39,17 @@ axsMaps.init = function()
 		}
 		else {
 		var fonts = document.getElementsByTagName("font");
-			for (b = 0; b < fonts.length; b++) {
-				alert(fonts[b].innerHTML);
-				if (fonts[b].innerHTML == "Did you mean:&nbsp") {
-					baseURL = 'http://ss12.info/svn/axsjax/';
-					var theScript = document.createElement('script')
-					theScript.type = 'text/javascript';
-					var currentURL = document.baseURI;
-					theScript.src = baseURL + 'gmaps/suggestion.js';
-					document.getElementsByTagName('head')[0].appendChild(theScript);
-				}
+			//for (b = 0; b < fonts.length; b++) {
+			//alert(fonts[b].innerHTML);
+			if (fonts[0].innerHTML == "Did you mean:&nbsp;") {
+				baseURL = 'http://ss12.info/svn/axsjax/';
+				var theScript = document.createElement('script')
+				theScript.type = 'text/javascript';
+				var currentURL = document.baseURI;
+				theScript.src = baseURL + 'gmaps/suggestion.js';
+				document.getElementsByTagName('head')[0].appendChild(theScript);
 			}
+			
 		}
 	}
 }
