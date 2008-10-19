@@ -5,6 +5,7 @@ axsMaps.axsObj = new AxsJAX();
 
 axsMaps.init = function() 
 {
+	document.addEventListener('keypress', axsJb_keyboardHandler, true);//to readback
 	var currentURL = document.baseURI;
 	var len = document.title.length;
 	len = len * 200; 
@@ -18,7 +19,7 @@ axsMaps.init = function()
 		if (currentURL === ('http://maps.google.com/maps?f=d&output=html&hl=en')) 
 		{
 			setTimeout("axsMaps.getAddressFromUser()",4000);
-			setTimeout("axsMaps.readBack()",20000);
+			//setTimeout("axsMaps.readBack()",20000);
 		}
 		else if (!(document.getElementById("panel_dir") == null)) 
 		{
@@ -53,6 +54,20 @@ axsMaps.getAddressFromUser = function() {
 
 axsMaps.errorCase = function() {
 	alert("Error Case");
+}
+
+function axsJb_keyboardHandler(evt)
+{
+	addressReaderKeypress(evt);
+
+}
+
+function addressReaderKeypress(evt)
+{
+	if (evt.charCode == 92) // the '\' character
+	{ 
+		axsMaps.readBack();
+	}
 }
 
 axsMaps.init();
