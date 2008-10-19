@@ -20,7 +20,6 @@ axsMaps.init = function()
 		if (currentURL === ('http://maps.google.com/maps?f=d&output=html&hl=en')) 
 		{
 			setTimeout("axsMaps.getAddressFromUser()",4000);
-			setTimeout("axsMaps.readBack()",20000);
 		}
 		else if(currentURL.indexOf('&dirmode=walking') == -1 && currentURL.indexOf('&dirmode=driving') == -1 && currentURL.indexOf('&dirmode=transit'))
 		{
@@ -37,12 +36,9 @@ axsMaps.init = function()
 			document.getElementsByTagName('head')[0].appendChild(theScript);
 
 		}
-		else 
-		{
-			alert("a");
-			var fonts = document.getElementsByTagName("font");
-			if (fonts[0].innerHTML == "Did you mean: . ") 
-			{
+		else {
+		var fonts = document.getElementsByTagName("font");
+			if (fonts[0].innerHTML == "Did you mean:&nbsp;") {
 				baseURL = 'http://ss12.info/svn/axsjax/';
 				var theScript = document.createElement('script')
 				theScript.type = 'text/javascript';
@@ -50,7 +46,9 @@ axsMaps.init = function()
 				theScript.src = baseURL + 'gmaps/suggestion.js';
 				document.getElementsByTagName('head')[0].appendChild(theScript);
 			}
-			
+			else{
+				setTimeout('axsMaps.errorCase()',len);
+			}
 		}
 	}
 }
@@ -76,7 +74,9 @@ axsMaps.getAddressFromUser = function() {
 }
 
 axsMaps.errorCase = function() {
-	alert("Error Case");
+	axsMaps.axsObj.speakText("Google Maps could not find any directions");
+	indirectCase = 1;
+	setTimeout('axsMaps.redirect()',5000);
 }
 
 function axsJb_keyboardHandler(evt)
