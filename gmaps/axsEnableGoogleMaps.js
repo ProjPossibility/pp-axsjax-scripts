@@ -45,15 +45,7 @@ axsMaps.init = function() {
 
 }
 
-function keyboardEvent(evt)
-{
-	if(evt.charKey == 114)//r
-	{
-		alert("Hello!");
-		document.getElementById(null).focus();
-		document.getElementById("d_d").focus();
-	}
-}
+
 
 axsMaps.redirect = function() {
 	window.location = "http://maps.google.com/maps?f=d&output=html&hl=en&saddr=&daddr=";
