@@ -23,7 +23,7 @@ axsMaps.init = function() {
  
   if (currentURL === ('http://maps.google.com/maps?f=d&output=html&hl=en&saddr=&daddr=')) {
      //axsMaps.getAddress();
-	 document.getElementsByTagName('saddr').focus();
+	 document.getElementById("d_d").focus();
 	 //alert("get Address ran successfully");
   }
 
