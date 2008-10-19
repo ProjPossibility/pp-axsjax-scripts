@@ -39,7 +39,7 @@ function keyboardEvent(evt)
 {
 	if(evt.charKey == 114)
 	{
-		document.getElementById("0").focus();
+		document.getElementById("d_daddr").focus();
 		document.getElementById("d_d").focus();
 	}
 }
