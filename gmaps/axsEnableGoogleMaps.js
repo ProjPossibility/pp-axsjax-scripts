@@ -26,7 +26,7 @@ axsMaps.init = function() {
 	//alert("get Address ran successfully");
   }
   
-  else {
+ /* else {
 	if (!(document.getElementById("panel_dir") == null)) {
 		//alert("We have directions");        	
 		//TODO - Read directions
@@ -35,7 +35,7 @@ axsMaps.init = function() {
 		//alert("We do not have directions");
 	}
   }
-
+*/
   /*if (currentURL === ('http://maps.google.com/maps?f=d&output=html&hl=en&saddr=&daddr=')) {
 	
 	//alert("get Address ran successfully");
