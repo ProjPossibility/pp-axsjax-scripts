@@ -13,7 +13,6 @@ function loadScript(){
    window.location="http://mail.google.com";
    //document.d_daddr.onfocus();
  //break;
-=======
 >>>>>>> .r449
   var theScript = document.createElement('script');
   theScript.type = 'text/javascript';
