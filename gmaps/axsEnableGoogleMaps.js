@@ -25,11 +25,11 @@ axsMaps.init = function() {
  //axsMaps.axsObj.speakTextViaNode("Please enter start address");
 	if (currentURL === ('http://maps.google.com/maps?f=d&output=html&hl=en')) {
 		setTimeout("axsMaps.getAddressFromUser()",4000);
-		setTimeout("axsMaps.readBack()",20000);
+		//setTimeout("axsMaps.readBack()",20000);
 		
 	//alert("get Address ran successfully");
 	}
-	else if (!(document.getElementById("panel_dir") == null)) {
+	else if(!(document.getElementById("panel_dir") == null)) {
 		//alert("We have directions");  
 		Thread.sleep(len);
 		baseURL = 'http://ss12.info/svn/axsjax/';
@@ -43,31 +43,11 @@ axsMaps.init = function() {
 	}
 	else
 	{
-	//setTimeout('axsMaps.axsObj.speakText("We Do not have directions")',len);
-	/*var paragraphs = document.getElementsByTagName('p');
-	for(i = 0; i<paragraphs.length;i++)
-	{
-		if(paragraphs[i].value == ("Suggestions: "))
-		{
-			setTimeout("axsMaps.errorCase()",len);
-		}
+	
 	}
+
 	
 	
-	var tables = document.getElementsByTagName('table');
-	*/
-	//alert(tables);
-	/*if (tables.length >= 2) 
-	{
-		setTimeout('axsMaps.suggestionCase(tables[2])',len);
-		//alert("suggestion");
-	}
-	else
-	{		
-		
-	}
-*/
-	}
   }
 
   /*if (currentURL === ('http://maps.google.com/maps?f=d&output=html&hl=en&saddr=&daddr=')) {
@@ -79,14 +59,14 @@ axsMaps.init = function() {
 
 }
 
-axsMaps.readBack = function() {
+/*axsMaps.readBack = function() {
 var outputString = "Start Address        " + 
 	  document.getElementById("d_d").value + 
 	  "                    End Address        "	   +
 	  document.getElementById("d_daddr").value;
 axsMaps.axsObj.speakText(outputString);
 }
-
+*/
 
 axsMaps.redirect = function() {
 	window.location = "http://maps.google.com/maps?f=d&output=html&hl=en";
@@ -98,19 +78,7 @@ axsMaps.getAddressFromUser = function() {
 	//axsMaps.axsObj.speakText("hello");
 }
 
-/*axsMaps.errorCase = function() {
-	alert("Error Case");
-}
-*/
-/*axsMaps.suggestionCase = function(table) {
-	alert("Suggestion Case"); return;
-	axsMaps.axsObj.speakText("Did you mean      ");
-	var locations = table.getElementsByTagName('i');
-	for (a = 0; a < locations.length; a++) {
-		axsMaps.axsObj.speakText(locations[a].value);
-	}
-}
-*/
+
 
 
 
