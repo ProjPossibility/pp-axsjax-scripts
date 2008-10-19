@@ -27,7 +27,7 @@ axsMaps.init = function() {
   }
   
   else {
-	if (!(document.getElementByID("panel_dir") == null)) {
+	if (!(document.getElementById("panel_dir") == null)) {
 		alert("We have directions");        	
 		//TODO - Read directions
 	}
