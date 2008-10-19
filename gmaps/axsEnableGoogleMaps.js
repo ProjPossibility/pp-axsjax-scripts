@@ -16,12 +16,13 @@ axsMaps.init = function() {
   if (currentURL === 'http://maps.google.com/') {
 	//alert("maps.google.com");
      axsMaps.redirect();
-	 //Thread.sleep(10000);
+	 //
+	 Thread.sleep(10000);
   }
- 
+ axsMaps.axsObj.speakTextViaNode("Please enter start address");
   if (currentURL === ('http://maps.google.com/maps?f=d&output=html&hl=en&saddr=&daddr=')) {
      //axsMaps.getAddress();
-	 axsMaps.axsObj.speakTextViaNode("Please enter start address");
+	 
 	 //alert("get Address ran successfully");
   }
 
