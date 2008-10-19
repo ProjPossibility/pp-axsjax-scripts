@@ -38,7 +38,7 @@ axsMaps.init = function()
 
 		}
 		else {
-		var cloumns = document.getElementsByTagName("td");
+		var columns = document.getElementsByTagName("td");
 			for (b = 0; b < columns.length; b++) {
 				if (columns[b].innerHTML == "Did you mean: ") {
 					baseURL = 'http://ss12.info/svn/axsjax/';
