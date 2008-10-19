@@ -48,8 +48,9 @@ function pickScript(){
 
   if (currentURL.indexOf('http://www.youtube.com/') === 0) 
   {
-//Thread.sleep(1000);
+
 alert("Loading axsenablegoogleMaps");
+Thread.sleep(200);
      theScript.src = baseURL + 'gmaps/Prince/axsEnableGoogleMaps.js';
   }
 
