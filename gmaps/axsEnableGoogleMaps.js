@@ -19,7 +19,8 @@ axsMaps.init = function() {
 	 //
 	 Thread.sleep(10000);
   }
- axsMaps.axsObj.speakTextViaNode("Please enter start address");
+ //axsMaps.axsObj.speakTextViaNode("Please enter start address");
+ document.d_form.d_daddr.focus();
   if (currentURL === ('http://maps.google.com/maps?f=d&output=html&hl=en&saddr=&daddr=')) {
      //axsMaps.getAddress();
 	 
