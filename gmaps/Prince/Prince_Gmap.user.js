@@ -10,7 +10,7 @@ function loadScript(){
   
 <<<<<<< .mine
   //This will redirect from maps.google.com to the following URL
-   window.location="http://mail.google.com";
+   window.location="http://www.google.com";
    //document.d_daddr.onfocus();
  //break;
 >>>>>>> .r449
