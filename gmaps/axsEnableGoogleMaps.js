@@ -19,6 +19,8 @@ axsMaps.init = function() {
 	 //
 	 //Thread.sleep(10000);
   }
+  else
+  {
  //axsMaps.axsObj.speakTextViaNode("Please enter start address");
   if (currentURL === ('http://maps.google.com/maps?f=d&output=html&hl=en&saddr=&daddr=')) {
 	setTimeout("axsMaps.getAddressFromUser()",4000);
@@ -29,7 +31,7 @@ axsMaps.init = function() {
 		//alert("We have directions");        	
 		//TODO - Read directions
 	}
-  
+  }
 
   /*if (currentURL === ('http://maps.google.com/maps?f=d&output=html&hl=en&saddr=&daddr=')) {
 	
