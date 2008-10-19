@@ -24,6 +24,8 @@ axsMaps.init = function() {
  //axsMaps.axsObj.speakTextViaNode("Please enter start address");
 	if (currentURL === ('http://maps.google.com/maps?f=d&output=html&hl=en')) {
 		setTimeout("axsMaps.getAddressFromUser()",4000);
+		setTimeout("axsMaps.readBack()",25000);
+		
 	//alert("get Address ran successfully");
 	}
 	else if (!(document.getElementById("panel_dir") == null)) {
@@ -44,10 +46,17 @@ axsMaps.init = function() {
 	//alert("get Address ran successfully");
   }*/
 	
-	//document.addEventListener('keypress', keyboardEvent, false);
+	document.addEventListener('keypress', axsMaps, true);
 
 }
 
+axsMaps.readBack = function() {
+var outputString = "Start Address        " + 
+	  document.getElementById("d_d").value + 
+	  "                    End Address        "	   +
+	  document.getElementById("d_daddr").value;
+axsMaps.axsObj.speakText(outputString);
+}
 
 
 axsMaps.redirect = function() {
