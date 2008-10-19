@@ -58,7 +58,7 @@ axsMaps.init = function()
 
 axsMaps.readBack = function() {
 var outputString = "Start Address is . " + document.getElementById("d_d").value + " . . . End Address is . " + document.getElementById("d_daddr").value;//the periods are added to indicate a pause in the speech synthesis
-axsMaps.axsObj.speakTextViaNode(outputString);
+axsMaps.axsObj.speakTextViaNodeViaNode(outputString);
 }
 
 
@@ -77,7 +77,7 @@ axsMaps.getAddressFromUser = function() {
 }
 
 axsMaps.errorCase = function() {
-	axsMaps.axsObj.speakText("Google Maps could not find any directions");
+	axsMaps.axsObj.speakTextViaNode("Google Maps could not find any directions");
 	indirectCase = 1;
 	setTimeout('axsMaps.redirect()',5000);
 }

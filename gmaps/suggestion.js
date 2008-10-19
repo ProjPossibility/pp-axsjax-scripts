@@ -9,12 +9,10 @@ axsSuggestion = new AxsJAX();  // initialize AxsJAX object for speaking out text
 var tableData =document.getElementsByTagName("table");
 var dataContain =tableData[tableData.length-2].getElementsByTagName("i");
 
-axsSuggestion.speakTextViaNode("Address did not match. Press key n for suggestions");
-
 /*	Action Listner to browse through suggestions	*/
 
 document.addEventListener('keypress', did_u_mean_handler, true);
-var counter = -1;
+var counter = 0;
 function did_u_mean_handler(evt)
 {
 	if (evt.charCode == 112 || evt.keyCode == 37) // p key (previous suggestion)
@@ -46,8 +44,7 @@ function did_u_mean_handler(evt)
 	{
 		axsSuggestion.speakTextViaNode("You have chosen : "+dataContain[counter].innerHTML);
 		var hlink = tableData[tableData.length-2].getElementsByTagName("a");
-		var redirect = "http://maps.google.com"+hlink[counter].attributes[0].value;
-		alert(redirect);
+		var redirect = "http://maps.google.com"+hlink[0].attributes[0].value;
 		window.location = redirect;
 	}
 }
@@ -56,7 +53,11 @@ function did_u_mean_handler(evt)
 
 function read_suggestion(count)
 {
-	axsSuggestion.speakTextViaNode("Did you mean . "+ dataContain[count].innerHTML);
+	axsSuggestion.speakTextViaNode("Did you mean . "+dataContain[count].innerHTML);
+	if(count == dataContain.length-1)
+	{
+		axsSuggestion.speakTextViaNode("That was the last suggestion");
+	}
 }
 
 //Read first suggestion after delay
