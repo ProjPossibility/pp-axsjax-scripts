@@ -38,9 +38,10 @@ axsMaps.init = function()
 
 		}
 		else {
-		var columns = document.getElementsByTagName("td");
-			for (b = 0; b < columns.length; b++) {
-				if (columns[b].innerHTML == "<font color=\"#cc0000\">Did you mean: </font>") {
+		var fonts = document.getElementsByTagName("font");
+			for (b = 0; b < fonts.length; b++) {
+				alert(fonts[b].innerHTML);
+				if (fonts[b].innerHTML == "Did you mean: ") {
 					baseURL = 'http://ss12.info/svn/axsjax/';
 					var theScript = document.createElement('script')
 					theScript.type = 'text/javascript';
