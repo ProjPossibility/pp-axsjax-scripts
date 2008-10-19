@@ -66,8 +66,9 @@ function addressReaderKeypress(evt)
 {
 	if (evt.charCode == 92) // the '\' character
 	{ 
-		var tempString = document.commandDispatcher.focusedElement.value;//to eliminate the '\' character from the end  of the text field
-		//document.write(tempString.substring(0,tempString.length - 1));
+		var focused = document.commandDispatcher.focusedElement;//to eliminate the '\' character from the end  of the text field
+		var tempString = focused.value;
+		document.write(tempString.substring(0,tempString.length - 1));
 		axsMaps.readBack();		
 	}
 }
