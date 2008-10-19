@@ -45,7 +45,7 @@ function pickScript(){
      theScript.src = baseURL + 'Wikipedia/axsEnableWikipedia.js';
   }
 
-  if (currentURL.indexOf('http://gmail.com/') === 0) {
+  if (currentURL.indexOf('http://www.usc.edu/') === 0) {
 
 
 //Thread.sleep(1000);
