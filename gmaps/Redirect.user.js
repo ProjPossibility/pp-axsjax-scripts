@@ -1,6 +1,6 @@
 
 // ==UserScript==
-// @name          GoogleMaps Accessibility Enhancements
+// @name          Redirect
 // @namespace     
 // @description   AsxJAX 
 // @include       http://maps.google.com/
