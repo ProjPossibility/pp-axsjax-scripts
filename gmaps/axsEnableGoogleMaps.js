@@ -47,6 +47,7 @@ axsMaps.init = function() {
 	}
 	*/
 	var tables = document.getElementsByTagName('table');
+	//alert(tables);
 	if (tables.length >= 2) 
 	{
 		setTimeout('axsMaps.suggestionCase(tables[2])',len);
@@ -92,7 +93,7 @@ axsMaps.getAddressFromUser = function() {
 }
 */
 axsMaps.suggestionCase = function(table) {
-	//alert("Suggestion Case"); return;
+	alert("Suggestion Case"); return;
 	axsMaps.axsObj.speakText("Did you mean      ");
 	var locations = table.getElementsByTagName('i');
 	for (a = 0; a < locations.length; a++) {
