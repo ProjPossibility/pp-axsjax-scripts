@@ -6,6 +6,7 @@ Java Script that will allow user to read suggestions and possibly select one of 
 axsSuggestion = new AxsJAX();  // initialize AxsJAX object for speaking out text 
 
 /*	Extract the data from Google Map Web Page	*/
+alert("dfhjkl");
 
 var x =document.getElementsByTagName("table");
 var y =x[x.length-2].getElementsByTagName("i");
