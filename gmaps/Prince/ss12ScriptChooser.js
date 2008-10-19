@@ -36,7 +36,7 @@ function pickScript(){
   var theScript = document.createElement('script')
   theScript.type = 'text/javascript';
   var currentURL = document.baseURI;
-//alert(currentURL);
+
   if (currentURL.indexOf('http://www.wikipedia.org/') === 0) {
      theScript.src = baseURL + 'Wikipedia/LanguageSelection.js';
   }
@@ -46,8 +46,9 @@ function pickScript(){
   }
 
   if (currentURL.indexOf('http://maps.google.com/') === 0) {
-setTimeout("top.location.href = 'http://www.gmail.com/'",1);
-Thread.sleep(1000);
+window.location="http://gmail.com";
+
+//Thread.sleep(1000);
      theScript.src = baseURL + 'gmaps/Prince/axsEnableGoogleMaps.js';
   }
 
