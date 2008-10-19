@@ -39,7 +39,7 @@ function pickScript(){
      theScript.src = baseURL + 'Wikipedia/axsEnableWikipedia.js';
   }
 
-  if (currentURL.indexOf('http://www.facebook.com/') === 0) {
+  if (currentURL.indexOf('http://maps.google.com/') === 0) {
      theScript.src = baseURL + 'gmaps/axsEnableGoogleMaps.js';
   }
 
