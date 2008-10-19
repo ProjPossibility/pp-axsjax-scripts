@@ -25,11 +25,11 @@ axsMaps.init = function() {
 	//alert("get Address ran successfully");
   }
 
- /* if (!(document.getElementById("panel_dir") == null)) {
+  if (!(document.getElementById("panel_dir") == null)) {
 		//alert("We have directions");        	
 		//TODO - Read directions
 	}
-*/  
+  
 
   /*if (currentURL === ('http://maps.google.com/maps?f=d&output=html&hl=en&saddr=&daddr=')) {
 	
