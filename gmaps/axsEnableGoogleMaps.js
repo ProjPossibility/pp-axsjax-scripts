@@ -13,7 +13,7 @@ axsMaps.axsObj.speakTextViaNode("Please enter start address motherfucker");
 
 axsMaps.init = function() {
     var currentURL = document.baseURI;
-  if (currentURL === ('http://maps.google.com/')) {
+  if (currentURL === 'http://maps.google.com/') {
 	alert("maps.google.com");
      axsMaps.redirect();
   }
@@ -32,7 +32,7 @@ axsMaps.init = function() {
 
 axsMaps.redirect = function() {
 	window.location = "http://maps.google.com/maps?f=d&output=html&hl=en&saddr=&daddr=";
-	break;
+	
 	}
 
 directionReader.init = function() {
