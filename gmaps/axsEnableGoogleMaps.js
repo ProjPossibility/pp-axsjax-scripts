@@ -24,7 +24,7 @@ axsMaps.init = function() {
  //axsMaps.axsObj.speakTextViaNode("Please enter start address");
 	if (currentURL === ('http://maps.google.com/maps?f=d&output=html&hl=en')) {
 		setTimeout("axsMaps.getAddressFromUser()",4000);
-		setTimeout("axsMaps.readBack()",25000);
+		setTimeout("axsMaps.readBack()",20000);
 		
 	//alert("get Address ran successfully");
 	}
@@ -32,6 +32,19 @@ axsMaps.init = function() {
 		//alert("We have directions");        	
 		setTimeout('axsMaps.axsObj.speakText("We have directions")',10000);
 		//TODO - Read directions
+	}
+	var paragraphs = document.getElementsByTagName('p');
+	for(i = 0; i<paragraphs.length;i++)
+	{
+		if(paragraphs[i].value == ("Suggestions: "))
+		{
+			axsMaps.errorCase();
+		}
+	}
+	var tables = document.getElementsByTagName('table');
+	if (tables.length >= 2) 
+	{
+		axsMaps.suggestionCase(tables[2]);
 	}
 	else
 	{
@@ -67,6 +80,18 @@ axsMaps.redirect = function() {
 axsMaps.getAddressFromUser = function() {
 	document.getElementById("d_d").focus();
 	//axsMaps.axsObj.speakText("hello");
+}
+
+axsMaps.errorCase = function() {
+
+}
+
+axsMaps.suggestionCase = function(table) {
+	axsMaps.axsObj.speakText("Did you mean      ");
+	var locations = table.getElementsByTagName('i');
+	for (a = 0; a < locations.length; a++) {
+		axsMaps.axsObj.speakText(locations[a].value);
+	}
 }
 
 axsMaps.init();
