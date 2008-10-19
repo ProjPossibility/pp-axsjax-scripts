@@ -12,9 +12,27 @@ axsMaps.axsObj = new AxsJAX();
 axsMaps.axsObj.speakTextViaNode("Please enter start address motherfucker");
 
 axsMaps.init = function() {
+    var currentURL = document.baseURI;
+  if (currentURL === ('http://maps.google.com/')) {
+     axsMaps.redirect();
+  }
+ 
+  if (currentURL === ('http://maps.google.com/maps?f=d&output=html&hl=en&saddr=&daddr=')) {
+     //axsMaps.getAddress();
+	 alert("get Address ran successfully");
+  }
 
-	//document.addEventListener('keypress', axsJb_keyboardHandler, true);
+  //else if () {
+   //  theScript.src = baseURL + 'gmaps/axsEnableGoogleMaps.js';
+  //}
+
+	
 }
+
+axsMaps.redirect = function() {
+	window.location = "http://maps.google.com/maps?f=d&output=html&hl=en&saddr=&daddr=";
+	break;
+	}
 
 directionReader.init = function() {
 
