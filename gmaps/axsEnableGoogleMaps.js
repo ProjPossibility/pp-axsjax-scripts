@@ -72,7 +72,7 @@ function axsJb_keyboardHandler(evt)
 
 function addressReaderKeypress(evt)
 {
-	if (evt.charCode == 123) //f12
+	if (evt.keyCode == 123) //f12
 	{ 
 		axsMaps.readBack();
 	}
