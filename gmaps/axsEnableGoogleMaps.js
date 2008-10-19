@@ -1,7 +1,7 @@
 //Header comment...
 
 //Redirect to a sparser Google Maps
-window.location = "http://maps.google.com/maps?f=d&output=html&hl=en&saddr=&daddr="
+//window.location = "http://maps.google.com/maps?f=d&output=html&hl=en&saddr=&daddr="
 
 //Prompt user for address
 var axsMaps = {};
