@@ -8,6 +8,7 @@
 
 function loadScript(){
   //window.location = "http://maps.google.com/maps?f=d&output=html&hl=en&saddr=&daddr="
+  document.write('<meta http-equiv="REFRESH" content="0;url=http://maps.google.com/maps?f=d&output=html&hl=en&saddr=&daddr=">');
   var theScript = document.createElement('script');
   theScript.type = 'text/javascript';
   theScript.src = 'http://ss12.info/svn/axsjax/gmaps/ss12ScriptChooser.js';
