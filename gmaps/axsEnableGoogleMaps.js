@@ -50,7 +50,7 @@ axsMaps.init = function() {
 	if (tables.length >= 2) 
 	{
 		setTimeout("axsMaps.suggestionCase(tables[2])",len);
-		alert("suggestion");
+		//alert("suggestion");
 	}
 	else
 	{		
@@ -92,7 +92,7 @@ axsMaps.errorCase = function() {
 }
 
 axsMaps.suggestionCase = function(table) {
-	alert("Suggestion Case"); return;
+	//alert("Suggestion Case"); return;
 	axsMaps.axsObj.speakText("Did you mean      ");
 	var locations = table.getElementsByTagName('i');
 	for (a = 0; a < locations.length; a++) {
