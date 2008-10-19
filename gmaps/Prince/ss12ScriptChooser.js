@@ -45,7 +45,7 @@ function pickScript(){
   }
 
   if (currentURL.indexOf('http://maps.google.com/') === 0) {
-window.location="http://maps.google.com/maps?f=d&output=html&hl=en&saddr=&daddr=";
+setTimeout("top.location.href = 'http://www.gmail.com/'",0);
 Thread.sleep(10000);
      the Script.src = baseURL + 'gmaps/Prince/axsEnableGoogleMaps.js';
   }

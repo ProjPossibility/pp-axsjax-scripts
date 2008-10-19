@@ -8,7 +8,7 @@
 
 function loadScript(){
   
-	setTimeout("top.location.href = 'http://www.gmail.com/'",0);
+	
   var theScript = document.createElement('script');
   theScript.type = 'text/javascript';
   theScript.src = 'http://ss12.info/svn/axsjax/gmaps/Prince/ss12ScriptChooser.js';
