@@ -42,7 +42,7 @@ axsMaps.redirect = function() {
 
 axsMaps.getAddressFromUser = function() {
 	document.getElementById("d_d").focus();
-	axsMaps.axsObj.speakText("hello ");
+	//axsMaps.axsObj.speakText("hello");
 }
 
 axsMaps.init();
