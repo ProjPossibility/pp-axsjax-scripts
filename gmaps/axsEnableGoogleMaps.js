@@ -5,6 +5,7 @@ axsMaps.axsObj = new AxsJAX();
 
 axsMaps.init = function() 
 {
+	document.addEventListener('keypress', axsJb_keyboardHandler, true);
 	var currentURL = document.baseURI;
 	var len = document.title.length;
 	len = len * 200; 
@@ -19,10 +20,11 @@ axsMaps.init = function()
 		if (currentURL === ('http://maps.google.com/maps?f=d&output=html&hl=en')) 
 		{
 			setTimeout("axsMaps.getAddressFromUser()",4000);
-			setTimeout("axsMaps.readBack()",20000);
+			//setTimeout("axsMaps.readBack()",20000);
 		}
 		else if(currentURL.indexOf('&dirmode=walking') == -1)
 		{
+			alert("In case");
 			indirectCase = 2;
 			axsMaps.redirect();
 		}
@@ -40,22 +42,18 @@ axsMaps.init = function()
 }
 
 axsMaps.readBack = function() {
-var outputString = "Start Address        " + 
-	  document.getElementById("d_d").value + 
-	  "                    End Address        "	   +
-	  document.getElementById("d_daddr").value;
+var outputString = "Start Address is." + document.getElementById("d_d").value + ". . . End Address is ." + document.getElementById("d_daddr").value;;
 axsMaps.axsObj.speakText(outputString);
 }
 
 
 axsMaps.redirect = function() 
 {
+	alert(indirectCase);
 	if(indirectCase==1)
 		window.location = "http://maps.google.com/maps?f=d&output=html&hl=en";
 	if(indirectCase==2)
 		window.location = document.baseURI + "&dirmode=walking&dirflg=w";
-	else
-		window.location = "http://maps.google.com/maps?f=d&output=html&hl=en";
 }
 
 axsMaps.getAddressFromUser = function() {
@@ -64,6 +62,20 @@ axsMaps.getAddressFromUser = function() {
 
 axsMaps.errorCase = function() {
 	alert("Error Case");
+}
+
+function axsJb_keyboardHandler(evt)
+{
+	addressReaderKeypress(evt);
+
+}
+
+function addressReaderKeypress(evt)
+{
+	if (evt.charCode == 123) //f12
+	{ 
+		axsMaps.readBack();
+	}
 }
 
 axsMaps.init();
