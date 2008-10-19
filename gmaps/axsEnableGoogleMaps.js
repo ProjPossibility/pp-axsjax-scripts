@@ -1,17 +1,17 @@
 var axsMaps = {};
 var directionReader = {};
-var indirectCase =0;
+
 axsMaps.axsObj = new AxsJAX();
 
 axsMaps.init = function() 
 {
+	document.addEventListener('keypress', axsJb_keyboardHandler, true);//to readback
 	var currentURL = document.baseURI;
 	var len = document.title.length;
 	len = len * 200; 
 
 	if (currentURL === 'http://maps.google.com/') 
 	{
-		indirectCase = 1;
 		axsMaps.redirect();
 	}
 	else
@@ -19,7 +19,7 @@ axsMaps.init = function()
 		if (currentURL === ('http://maps.google.com/maps?f=d&output=html&hl=en')) 
 		{
 			setTimeout("axsMaps.getAddressFromUser()",4000);
-			setTimeout("axsMaps.readBack()",20000);
+			//setTimeout("axsMaps.readBack()",20000);
 		}
 		else if (!(document.getElementById("panel_dir") == null)) 
 		{
@@ -27,36 +27,26 @@ axsMaps.init = function()
 			var theScript = document.createElement('script')
 			theScript.type = 'text/javascript';
 			var currentURL = document.baseURI;
+			alert("Script uploaded");
 			theScript.src = baseURL + 'gmaps/gmapsparser.js';
 			document.getElementsByTagName('head')[0].appendChild(theScript);
-
-			if(currentURL.indexOf('&dirmode=walking&dirflg=w') != 0)
-			{
-				alert("In case");
-				indirectCase = 2;
-				axsMaps.redirect();
-			}
 		}
 	}
 }
 
 axsMaps.readBack = function() {
-var outputString = "Start Address        " + 
-	  document.getElementById("d_d").value + 
-	  "                    End Address        "	   +
-	  document.getElementById("d_daddr").value;
+var outputString = "Start Address is " + document.getElementById("d_d").value; 
+axsMaps.axsObj.speakText(outputString);
+Thread.sleep(1000);//wait for a second before continuing to read the end address
+outputString = "End Address is " + document.getElementById("d_daddr").value;
 axsMaps.axsObj.speakText(outputString);
 }
 
 
-axsMaps.redirect = function() 
-{
-	alert(indirectCase);
-	if(indirectCase==1)
-		window.location = "http://maps.google.com/maps?f=d&output=html&hl=en";
-	if(indirectCase==2)
-		window.location = document.baseURI + "&dirmode=walking&dirflg=w";
-}
+axsMaps.redirect = function() {
+	window.location = "http://maps.google.com/maps?f=d&output=html&hl=en";
+	
+	}
 
 axsMaps.getAddressFromUser = function() {
 	document.getElementById("d_d").focus();
@@ -64,6 +54,30 @@ axsMaps.getAddressFromUser = function() {
 
 axsMaps.errorCase = function() {
 	alert("Error Case");
+}
+
+function axsJb_keyboardHandler(evt)
+{
+	addressReaderKeypress(evt);
+
+}
+
+function addressReaderKeypress(evt)
+{
+	if (evt.charCode == 92) // the '\' character
+	{
+		if(document.getElementById("d_d").focused())
+		{
+		var tempString = document.getElementById("d_d").value;
+		document.getElementById.("d_d").value = tempString.substring(0,tempString.length - 1);
+		}
+		else if(document.getElementById("d_daddr").focused())
+		{
+		var tempString = document.getElementById("d_daddr").value;
+		document.getElementById.("d_daddr").value = tempString.substring(0,tempString.length - 1);
+		}	
+		axsMaps.readBack();
+	}
 }
 
 axsMaps.init();
