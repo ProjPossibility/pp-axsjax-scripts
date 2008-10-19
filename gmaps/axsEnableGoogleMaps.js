@@ -54,4 +54,4 @@ axsMaps.getAddressFromUser = function() {
 	//axsMaps.axsObj.speakText("hello");
 }
 
-axsMaps.init();
+//axsMaps.init();
