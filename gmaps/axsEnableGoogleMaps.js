@@ -37,9 +37,10 @@ axsMaps.init = function() {
 
 function keyboardEvent(evt)
 {
-	if(evt.charKey == 114)
+	if(evt.charKey == 114)//r
 	{
-		document.getElementById("d_daddr").focus();
+		alert("Hello!");
+		document.getElementById(null).focus();
 		document.getElementById("d_d").focus();
 	}
 }
