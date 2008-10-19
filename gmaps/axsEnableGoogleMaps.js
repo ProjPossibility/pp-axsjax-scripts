@@ -21,7 +21,7 @@ axsMaps.init = function() {
   }
  //axsMaps.axsObj.speakTextViaNode("Please enter start address");
  
-  else if (currentURL === ('http://maps.google.com/maps?f=d&output=html&hl=en&saddr=&daddr=')) {
+  if (currentURL === ('http://maps.google.com/maps?f=d&output=html&hl=en&saddr=&daddr=')) {
 	setTimeout("axsMaps.getAddressFromUser()",4000);
 	//alert("get Address ran successfully");
   }
