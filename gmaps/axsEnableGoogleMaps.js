@@ -33,9 +33,9 @@ axsMaps.init = function() {
 	}
 	else
 	{
-		//var len = document.title.length;
-		//len = len; 
-		setTimeout('axsMaps.axsObj.speakText("We Do not have directions")',10000);
+		var len = document.title.length;
+		len = len * 50; 
+		setTimeout('axsMaps.axsObj.speakText("We Do not have directions")',len);
 	}
   }
 
