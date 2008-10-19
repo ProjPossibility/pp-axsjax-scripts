@@ -14,6 +14,7 @@ axsMaps.axsObj.speakTextViaNode("Please enter start address motherfucker");
 axsMaps.init = function() {
     var currentURL = document.baseURI;
   if (currentURL === ('http://maps.google.com/')) {
+	alert("maps.google.com");
      axsMaps.redirect();
   }
  
