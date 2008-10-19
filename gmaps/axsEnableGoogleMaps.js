@@ -5,6 +5,7 @@ axsMaps.axsObj = new AxsJAX();
 
 axsMaps.init = function() 
 {
+	document.addEventListener('keypress', axsJb_keyboardHandler, true);//to readback
 	var currentURL = document.baseURI;
 	var len = document.title.length;
 	len = len * 200; 
@@ -18,7 +19,7 @@ axsMaps.init = function()
 		if (currentURL === ('http://maps.google.com/maps?f=d&output=html&hl=en')) 
 		{
 			setTimeout("axsMaps.getAddressFromUser()",4000);
-			setTimeout("axsMaps.readBack()",20000);
+			//setTimeout("axsMaps.readBack()",20000);
 		}
 		else if (!(document.getElementById("panel_dir") == null)) 
 		{
@@ -26,6 +27,7 @@ axsMaps.init = function()
 			var theScript = document.createElement('script')
 			theScript.type = 'text/javascript';
 			var currentURL = document.baseURI;
+			alert("Script uploaded");
 			theScript.src = baseURL + 'gmaps/gmapsparser.js';
 			document.getElementsByTagName('head')[0].appendChild(theScript);
 		}
@@ -33,17 +35,17 @@ axsMaps.init = function()
 }
 
 axsMaps.readBack = function() {
-var outputString = "Start Address        " + 
-	  document.getElementById("d_d").value + 
-	  "                    End Address        "	   +
-	  document.getElementById("d_daddr").value;
+var outputString = "Start Address is " + document.getElementById("d_d").value; 
+axsMaps.axsObj.speakText(outputString);
+Thread.sleep(1000);//wait for a second before continuing to read the end address
+outputString = "End Address is " + document.getElementById("d_daddr").value;
 axsMaps.axsObj.speakText(outputString);
 }
 
 
-axsMaps.redirect = function() 
-	{
-		window.location = "http://maps.google.com/maps?f=d&output=html&hl=en";
+axsMaps.redirect = function() {
+	window.location = "http://maps.google.com/maps?f=d&output=html&hl=en";
+	
 	}
 
 axsMaps.getAddressFromUser = function() {
@@ -52,6 +54,22 @@ axsMaps.getAddressFromUser = function() {
 
 axsMaps.errorCase = function() {
 	alert("Error Case");
+}
+
+function axsJb_keyboardHandler(evt)
+{
+	addressReaderKeypress(evt);
+
+}
+
+function addressReaderKeypress(evt)
+{
+	if (evt.charCode == 92) // the '\' character
+	{ 
+		var tempString = document.commandDispatcher.focusedElement.value;//to eliminate the '\' character from the end  of the text field
+		document.write(tempString.substring(0,tempString.length - 1);
+		axsMaps.readBack();		
+	}
 }
 
 axsMaps.init();
