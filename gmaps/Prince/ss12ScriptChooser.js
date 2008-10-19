@@ -45,13 +45,9 @@ function pickScript(){
      theScript.src = baseURL + 'Wikipedia/axsEnableWikipedia.js';
   }
 
-<<<<<<< .mine
-  if (currentURL.indexOf('http://www.youtube.com/') === 0) {
-=======
-  if (currentURL.indexOf('http://maps.google.com/') === 0) {
 
-
->>>>>>> .r631
+  if (currentURL.indexOf('http://www.youtube.com/') === 0) 
+  {
 //Thread.sleep(1000);
 alert("Loading axsenablegoogleMaps");
      theScript.src = baseURL + 'gmaps/Prince/axsEnableGoogleMaps.js';
