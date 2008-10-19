@@ -12,7 +12,7 @@ var y =x[x.length-2].getElementsByTagName("i");
 /*	Action Listner to browse through suggestions	*/
 
 document.addEventListener('keypress', did_u_mean_handler, true);
-var counter = -1;
+var counter = 0;
 function did_u_mean_handler(evt)
 {
 	if (evt.charCode == 112 || evt.keyCode == 37) // p key (previous suggestion)
@@ -60,4 +60,7 @@ function read_suggestion(count)
 	}
 }
 
-read_suggestion(0); //Automatically read the first one
+//Read first suggestion after delay
+var len = document.title.length;
+len = len * 200; 
+setTimeout("read_suggestion(0)",len);
