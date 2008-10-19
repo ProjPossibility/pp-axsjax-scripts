@@ -17,7 +17,7 @@ axsMaps.init = function() {
 	//alert("maps.google.com");
      axsMaps.redirect();
 	 //
-	 Thread.sleep(10000);
+	 //Thread.sleep(10000);
   }
  //axsMaps.axsObj.speakTextViaNode("Please enter start address");
  
@@ -26,11 +26,11 @@ axsMaps.init = function() {
      	 //Thread.sleep(10000);
 
 	 
-	 document.getElementById("d_d").focus();
+	 
 	 
 	//alert("get Address ran successfully");
   }
-  Thread.sleep(10000);
+ // Thread.sleep(10000);
   axsMaps.axsObj.speakText("hello ");
 
   //else if () {
@@ -42,7 +42,7 @@ axsMaps.init = function() {
 
 axsMaps.redirect = function() {
 	window.location = "http://maps.google.com/maps?f=d&output=html&hl=en&saddr=&daddr=";
-	
+	document.getElementById("d_d").focus();
 	}
 
 directionReader.init = function() {
