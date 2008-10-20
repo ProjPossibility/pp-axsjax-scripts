@@ -1,11 +1,18 @@
+//axsEnableGoogleMaps.js
+
 var axsMaps = {};
 var directionReader = {};
 var indirectCase =0;
-axsMaps.axsObj = new AxsJAX();
+axsMaps.axsObj = new AxsJAX();//Must create an AxsJAX object in order to speak
 
-var lang = 'es'
-var lang_ext = 'es'
-
+/*axsMaps is  the main function in the program.  
+In the case that it encounters maps.google.com, it will redirect to a simplified google maps page using the axsMaps,redirect() function defined below. 
+In the case that it encounters http://maps.google.com/maps?f=d&output=html&hl=en, it will set the focus  (aka the cursor) to the "Start Address" Text Box
+After the text has been entered, the user can push F12 if they want to read back the text they have entered, to insure that its correct
+If the directions that they have entered are a direct match to locations in the google maps database, then call gmapsparser.js, which will read the directions sequentially
+If the directions are close to locations in the google maps database, then they will be refered to a suggestions page, using suggestions.js
+In the last case, when there is no match for the directions that they have inputed, the user will hear a message telling them that there is no match, and then they will be redirected to the main page.
+*/
 axsMaps.init = function() 
 {
 	document.addEventListener('keypress', axsJb_keyboardHandler, true);
@@ -13,14 +20,14 @@ axsMaps.init = function()
 	var len = document.title.length;
 	len = len * 200; 
 
-	if (currentURL === 'http://maps.google.' + lang_ext + '/') 
+	if (currentURL === 'http://maps.google.es/') 
 	{
 		indirectCase = 1;
 		axsMaps.redirect();
 	}
 	else
 	{
-		if (currentURL === ('http://maps.google.com/maps?f=d&output=html&hl=' + lang)) 
+		if (currentURL === ('http://maps.google.com/maps?f=d&output=html&hl=es')) 
 		{
 			setTimeout("axsMaps.getAddressFromUser()",4000);
 		}
@@ -56,38 +63,43 @@ axsMaps.init = function()
 	}
 }
 
+//readBack will repeat the entered start address and end address
 axsMaps.readBack = function() {
-var outputString = "Start Address is . " + document.getElementById("d_d").value + " . . . End Address is . " + document.getElementById("d_daddr").value;//the periods are added to indicate a pause in the speech synthesis
+var outputString = 'Dirección de origen es . ' + document.getElementById("d_d").value + ' . . . Dirección de destino es . ' + document.getElementById("d_daddr").value;//the periods are added to indicate a pause in the speech synthesis
 axsMaps.axsObj.speakText(outputString);
 }
 
-
+//redirect will redirect the user to a page specified by whether they are walking or driving
 axsMaps.redirect = function() 
 {
 	if(indirectCase==1)
-		window.location = "http://maps.google.com/maps?f=d&output=html&hl=" + lang;
+		window.location = "http://maps.google.com/maps?f=d&output=html&hl=es";
 	if(indirectCase==2)
 		window.location = document.baseURI + "&dirmode=walking&dirflg=w";
 	else
-		window.location = "http://maps.google.com/maps?f=d&output=html&hl=" + lang;
+		window.location = "http://maps.google.com/maps?f=d&output=html&hl=es";
 }
 
+//getAddressFromUser will make the cursor point to "Start Address" text box
 axsMaps.getAddressFromUser = function() {
 	document.getElementById("d_d").focus();
 }
 
+//errorCase encounters the case that the user has entered bad input, and they will hear the error, and then be redirected to the main page
 axsMaps.errorCase = function() {
-	axsMaps.axsObj.speakText("Google Maps could not find any directions");
+	axsMaps.axsObj.speakTextViaNode("Google Maps could not find any directions");
 	indirectCase = 1;
 	setTimeout('axsMaps.redirect()',5000);
 }
 
+//axsJb_keyboardHandler just calls addressReaderKeyPress
 function axsJb_keyboardHandler(evt)
 {
 	addressReaderKeypress(evt);
 
 }
 
+//addressReaderKeypress just listens for F12 and then calls the readback function in that case
 function addressReaderKeypress(evt)
 {
 	if (evt.keyCode == 123) //f12
@@ -96,4 +108,5 @@ function addressReaderKeypress(evt)
 	}
 }
 
+//main function call
 axsMaps.init();
