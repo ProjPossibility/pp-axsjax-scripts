@@ -23,7 +23,7 @@ var tableData =document.getElementsByTagName("table");
 var dataContain =tableData[tableData.length-2].getElementsByTagName("i");
 var len = document.title.length;
 	len = len * 200; 
-	Thread.sleep(len);
+	//Thread.sleep(len);
 	setTimeout('axsSuggestion.speakTextViaNode("Address did not match. Try suggestions")',len);
 
 
