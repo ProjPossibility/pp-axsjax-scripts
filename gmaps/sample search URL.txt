@@ -1,1 +1,0 @@
-http://maps.google.com/maps?f=d&source=s_d&abauth=e04b36ae%3AchKzIkCPbQLeD7uHxe5QgLGSkqM&output=html&hl=en&saddr=3501+Trousdale+Pkwy%2C+Los+Angeles%2C+CA+90089+%28USC%29&daddr=100+Stein+Plz%2C+Los+Angeles%2C+CA+90095+%28UCLA%29&btnG=Get+Directions
