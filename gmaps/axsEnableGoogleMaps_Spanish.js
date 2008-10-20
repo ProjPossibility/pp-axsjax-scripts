@@ -27,7 +27,7 @@ axsMaps.init = function()
 	}
 	else
 	{
-		if (currentURL === ('http://maps.google.com/maps?f=d&output=html&hl=es')) 
+		if (currentURL === ('http://maps.google.es/maps?f=d&output=html&hl=es')) 
 		{
 			setTimeout("axsMaps.getAddressFromUser()",4000);
 		}
@@ -73,11 +73,11 @@ axsMaps.axsObj.speakText(outputString);
 axsMaps.redirect = function() 
 {
 	if(indirectCase==1)
-		window.location = "http://maps.google.com/maps?f=d&output=html&hl=es";
+		window.location = "http://maps.google.es/maps?f=d&output=html&hl=es";
 	if(indirectCase==2)
 		window.location = document.baseURI + "&dirmode=walking&dirflg=w";
 	else
-		window.location = "http://maps.google.com/maps?f=d&output=html&hl=es";
+		window.location = "http://maps.google.es/maps?f=d&output=html&hl=es";
 }
 
 //getAddressFromUser will make the cursor point to "Start Address" text box
