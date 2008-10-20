@@ -21,8 +21,11 @@ axsSuggestion = new AxsJAX();  // initialize AxsJAX object for speaking out text
 /*	Extract the data from Google Map Web Page	*/
 var tableData =document.getElementsByTagName("table");
 var dataContain =tableData[tableData.length-2].getElementsByTagName("i");
+var len = document.title.length;
+	len = len * 200; 
+	Thread.sleep(len);
+	setTimeout('axsSuggestion.speakTextViaNode("Address did not match. Try suggestions")',len);
 
-alert("Address did not match. Try suggestions");
 
 /*	Action Listner to browse through suggestions	*/
 
