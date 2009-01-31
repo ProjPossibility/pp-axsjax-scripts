@@ -1,0 +1,21 @@
+<cnr next="RIGHT l" prev="LEFT h" comment="Mix and match the examples below to suit the page that you are working on.">
+  <list title="List that uses CALL to issue a call back to speakComplexDataIntelligently(itemObject) with the current item as the parameter" next="DOWN j" prev="UP k">  
+    <item action="CALL:speakComplexDataIntelligently">
+      /html/body/div[@id='page']/div[@id='content_wrap']/div[@id='content']/div[*]/h2
+    </item>
+  </list>
+</cnr>
+
+function speakLogin(currentElement) {
+	
+}
+
+<cnr next="RIGHT l" prev="LEFT h" comment="Mix and match the examples below to suit the page that you are working on.">
+
+  <list title="Simple list" next="DOWN j" prev="UP k" hotket="h">  
+    <item>
+      /html/body/div[@id='page']/div[@id='content_wrap']/div[@id='content']/div[*]/h2
+    </item>
+  </list>	
+  
+</cnr>	
