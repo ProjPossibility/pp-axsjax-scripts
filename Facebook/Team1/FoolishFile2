@@ -1,0 +1,37 @@
+// press ctrl+p to previous
+// press ctrl+n to next
+// press Enter to finish
+
+// full name 
+
+// speak "Full Name":
+
+// Focus and type in Full Name:
+
+// speak "I am"
+
+// Focus on the selection
+// and read selection highlighted
+// give option to move up and down 
+
+// 
+
+/html[@id='facebook']/body/div[@id='nonfooter']/div[@id='page_height']/div[@id='content']/div[1]/div[1]/div/div[@id='search_results']/div/div[1]
+
+/html[@id='facebook']/body/div[@id='nonfooter']/div[@id='page_height']/div[@id='content']/div[1]/div[1]/div/div[@id='search_results']/div/div[1]/
+
+div[2]/dl/dd[1]/span
+
+function readResult(currentElement) {
+	alert (currentElement.elem.childNodes[2].childNodes[0].childNodes[1])
+}
+
+function speakLogin(currentElement)
+{
+	currentElement.elem.parentNode.parentNode.parentNode.getElementsByTagName("input")[0].focus(); 	//Set focus on the selected login box
+	axsMeebo.axsJAXObj.speakTextViaNode(String(currentElement.elem.parentNode.parentNode.parentNode.parentNode.getElementsByTagName("label")[0].getAttribute("for")).split('id').join('') + ' , login'); 	//Speak the login box name intelligently
+}
+
+function readResult(currentElement) {
+	alert (currentElement.elem.childNodes[2].childNodes[0].childNodes[1])
+}
