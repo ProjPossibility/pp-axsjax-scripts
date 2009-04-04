@@ -1,0 +1,50 @@
+<cnr>
+	<list title="AIM" hotkey="a">
+		<item action="CALL:speakLogin">
+			/html/body[@id='body']/form[@id='frontpagecontainer']/div[@id='frontpage']/div[@id='loginboxes']/div[@id='loginboxescontent']/div[@id='loginboxescontain']/div[@id='aimloginbox']/div/div/table/tbody/tr[1]/td[2]/input[@id='aimid']
+		</item>
+		<target title="" hotkey="ENTER">
+			/html/body[@id=\'body\']/form[@id=\'frontpagecontainer\']/div[@id=\'frontpage\']/div[@id=\'loginboxes\']/div[@id=\'loginboxescontent\']/div[@id=\'imsignon\']
+		</target> 
+	</list>
+	<list title="Yahoo" hotkey="y">
+		<item action="CALL:speakLogin">
+			/html/body[@id='body']/form[@id='frontpagecontainer']/div[@id='frontpage']/div[@id='loginboxes']/div[@id='loginboxescontent']/div[@id='loginboxescontainer']/div[@id='yahoologinbox']/div/div/table/tbody/tr[1]/td[2]/input[@id='yahooid']
+		</item>
+		<target title="" hotkey="ENTER">
+			/html/body[@id=\'body\']/form[@id=\'frontpagecontainer\']/div[@id=\'frontpage\']/div[@id=\'loginboxes\']/div[@id=\'loginboxescontent\']/div[@id=\'imsignon\']
+		</target>
+	</list>
+	<list title="GTalk" hotkey="g">
+		<item action="CALL:speakLogin">
+			/html/body[@id='body']/form[@id='frontpagecontainer']/div[@id='frontpage']/div[@id='loginboxes']/div[@id='loginboxescontent']/div[@id='loginboxescontainer']/div[@id='gtalkloginbox']/div/div/table/tbody/tr[1]/td[2]/input[@id='gtalkid']
+		</item>
+		<target title="" hotkey="ENTER">
+			/html/body[@id=\'body\']/form[@id=\'frontpagecontainer\']/div[@id=\'frontpage\']/div[@id=\'loginboxes\']/div[@id=\'loginboxescontent\']/div[@id=\'imsignon\']
+		</target>
+	</list>
+	<list title="MSN" hotkey="m">
+		<item action="CALL:speakLogin">
+			/html/body[@id='body']/form[@id='frontpagecontainer']/div[@id='frontpage']/div[@id='loginboxes']/div[@id='loginboxescontent']/div[@id='loginboxescontainer']/div[@id='msnloginbox']/div/div/table/tbody/tr[1]/td[2]/input[@id='msnid']
+		</item>
+		<target title="" hotkey="ENTER">
+			/html/body[@id=\'body\']/form[@id=\'frontpagecontainer\']/div[@id=\'frontpage\']/div[@id=\'loginboxes\']/div[@id=\'loginboxescontent\']/div[@id=\'imsignon\']
+		</target>
+	</list>
+	<list title="Meebo" hotkey="o">
+		<item action="CALL:speakLogin">
+			/html/body[@id='body']/form[@id='frontpagecontainer']/div[@id='frontpage']/div[3]/div[@id='meebologin']/div[@id='meebologinbox']/div[@id='meebologincontent']/div[@id='meebologincontentwrapper']/div[2]/table/tbody/tr[1]/td[2]/input
+		</item>
+		<target title="You will be Signed In" hotkey="ENTER">
+			/html/body[@id=\'body\']/form[@id=\'frontpagecontainer\']/div[@id=\'frontpage\']/div[3]/div[@id=\'meebologin\']/div[@id=\'meebologinbox\']/div[@id=\'meebologincontent\']/div[@id=\'meebologincontentwrapper\']/div[2]/div[@id=\'meebosubmit\']/table/tbody/tr/td[3]/div[@id=\'meebosignon\']/div[4]
+		</target>
+	</list>
+		<list title="Myspace" hotkey="s">
+		<item action="CALL:speakLogin">
+			/html/body[@id='body']/form[@id='frontpagecontainer']/div[@id='frontpage']/div[@id='loginboxes']/div[@id='loginboxescontent']/div[@id='loginboxescontainer']/div[@id='myspaceloginbox']/div/div/table/tbody/tr[1]/td[2]/input[@id='myspaceid']
+		</item>
+		<target title="You will be Signed In" hotkey="ENTER">
+			/html/body[@id=\'body\']/form[@id=\'frontpagecontainer\']/div[@id=\'frontpage\']/div[3]/div[@id=\'meebologin\']/div[@id=\'meebologinbox\']/div[@id=\'meebologincontent\']/div[@id=\'meebologincontentwrapper\']/div[2]/div[@id=\'meebosubmit\']/table/tbody/tr/td[3]/div[@id=\'meebosignon\']/div[4]
+		</target>
+	</list>
+</cnr>
