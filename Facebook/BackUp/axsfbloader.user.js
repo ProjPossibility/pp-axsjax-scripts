@@ -47,6 +47,7 @@ var myScript = document.createElement('script');
 myScript.type = 'text/javascript';
 
 /* Modify this line to match where you have the script you are working on */
-myScript.src = 'http://www.rajivmakhijani.net/projects/accessfb/axsFB.js';
+
+myScript.src = 'http://projectpossibility.org/projects/axsjax/Facebook/WorkingVersion/axsFB.js';
 
 document.getElementsByTagName('head')[0].appendChild(myScript);
